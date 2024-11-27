@@ -1,19 +1,33 @@
-# Retrieve all DLP policies
-$allPolicies = Get-DlpCompliancePolicy
+# Retrieve all policy names
+$allPolicyNames = Get-DlpCompliancePolicy | Select-Object -ExpandProperty Name
 
-# Filter for policies with 'Pending' distribution status
-$pendingPolicies = $allPolicies | Where-Object { $_.DistributionStatus -eq 'Pending' }
+# Initialize an array to store policy distribution details
+$policyDetails = @()
 
-# Display results in the console
-if ($pendingPolicies) {
-    Write-Host "DLP Policies with Pending Distribution Status:" -ForegroundColor Green
-    $pendingPolicies | Format-Table Name, DistributionStatus, Mode, Enabled -AutoSize
-} else {
-    Write-Host "No DLP policies with 'Pending' distribution status found." -ForegroundColor Yellow
+# Iterate through each policy name and fetch accurate distribution status using -DistributionDetail
+foreach ($policyName in $allPolicyNames) {
+    try {
+        $policy = Get-DlpCompliancePolicy -Identity $policyName -DistributionDetail
+        $policyDetails += [PSCustomObject]@{
+            Name               = $policy.Name
+            DistributionStatus = $policy.DistributionStatus
+            Mode               = $policy.Mode
+            Enabled            = $policy.Enabled
+            LastModified       = $policy.WhenChanged
+        }
+    } catch {
+        Write-Host "Failed to retrieve distribution status for policy: $policyName" -ForegroundColor Red
+    }
 }
 
-# Optionally, export the results to a CSV file
-$csvFilePath = ".\DlpPolicies_PendingStatus.csv"
-$pendingPolicies | Select-Object Name, DistributionStatus, Mode, Enabled | Export-Csv -Path $csvFilePath -NoTypeInformation -Encoding UTF8
+# Display all policies with their distribution statuses in the console
+Write-Host "DLP Policies and their Distribution Statuses:" -ForegroundColor Green
+$policyDetails | Format-Table Name, DistributionStatus, Mode, Enabled, LastModified -AutoSize
 
-Write-Host "Results exported to $csvFilePath" -ForegroundColor Green
+# Export the results to a CSV file
+$csvFilePath = ".\DlpDistributionStatus.csv"
+$policyDetails | Export-Csv -Path $csvFilePath -NoTypeInformation -Encoding UTF8
+
+Write-Host "Detailed policy distribution information exported to $csvFilePath" -ForegroundColor Green
+
+
