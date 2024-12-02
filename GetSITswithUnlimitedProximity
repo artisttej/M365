@@ -1,0 +1,65 @@
+# Connect to Exchange Online (if not already connected)
+# Connect-ExchangeOnline -UserPrincipalName your_admin@domain.com
+
+# Define the output directory for XML files and results
+$outputDirectory = ".\DlpRulePacks"  # Change this to your desired directory
+if (!(Test-Path -Path $outputDirectory)) {
+    New-Item -ItemType Directory -Path $outputDirectory
+}
+
+# CSV file to log rule packs with proximity="unlimited"
+$logFile = Join-Path -Path $outputDirectory -ChildPath "ProximityUnlimitedLog.csv"
+
+# Array to store log details
+$logDetails = @()
+
+# Fetch all rule packs
+$allRulePacks = Get-DlpSensitiveInformationTypeRulePackage
+
+# Loop through each rule pack
+foreach ($rulePack in $allRulePacks) {
+    try {
+        # Skip the Microsoft Rule Package
+        if ($rulePack.Name -eq "Microsoft Rule Package") {
+            Write-Warning "Skipping Microsoft Rule Package: $($rulePack.Name)"
+            continue
+        }
+
+        # Fetch the XML content of the rule pack
+        $rulePackXml = $rulePack.ClassificationRuleCollectionXml
+
+        # Save the XML file
+        $xmlFilePath = Join-Path -Path $outputDirectory -ChildPath "$($rulePack.Name).xml"
+        $rulePackXml | Out-File -Encoding BigEndianUnicode -FilePath $xmlFilePath
+        Write-Host "Saved Rule Pack: $($rulePack.Name) to $xmlFilePath" -ForegroundColor Green
+
+        # Load the XML to check for proximity="unlimited"
+        $xmlContent = [xml]$rulePackXml
+
+        # Search for elements with proximity="unlimited"
+        $matchingElements = $xmlContent.SelectNodes("//*[@proximity='unlimited']")
+
+        if ($matchingElements.Count -gt 0) {
+            foreach ($element in $matchingElements) {
+                # Search for associated IdMatch with idRef
+                $idMatch = $element.SelectSingleNode("ancestor-or-self::ClassificationRule/IdMatch/@idRef")
+
+                # Log the rule pack, matching element, and idRef details
+                $logDetails += [PSCustomObject]@{
+                    RulePackName = $rulePack.Name
+                    RulePackId   = $rulePack.Id
+                    ElementName  = $element.Name
+                    Proximity    = "unlimited"
+                    IdMatchIdRef = $idMatch
+                    ElementPath  = $element.OuterXml
+                }
+            }
+        }
+    } catch {
+        Write-Warning "Failed to process Rule Pack: $($rulePack.Name) - $_"
+    }
+}
+
+# Export log details to CSV
+$logDetails | Export-Csv -Path $logFile -NoTypeInformation -Encoding UTF8
+Write-Host "Proximity='unlimited' details exported to $logFile" -ForegroundColor Cyan
