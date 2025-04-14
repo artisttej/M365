@@ -1,0 +1,98 @@
+# Prompt for input CSV
+$inputCsv = Read-Host "📄 Enter path to reviewed CSV file"
+
+if (-Not (Test-Path $inputCsv)) {
+    Write-Host "❌ File not found: $inputCsv" -ForegroundColor Red
+    exit
+}
+
+# Output files
+$timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
+$logCsv = ".\Dlp_ApplyRetryThenBlock_Log_$timestamp.csv"
+$htmlPath = ".\Dlp_ApplyRetryThenBlock_Report_$timestamp.html"
+
+Write-Host "`n⚙️  Processing rules in: $inputCsv" -ForegroundColor Cyan
+
+$inputRules = Import-Csv -Path $inputCsv
+$logRows = @()
+
+foreach ($entry in $inputRules) {
+    $policy = $entry.PolicyName
+    $ruleName = $entry.RuleName
+    $result = ""
+    $actualValue = ""
+
+    try {
+        # Fetch latest rule
+        $rulesInPolicy = Get-DlpComplianceRule -Policy $policy
+        $liveRule = $rulesInPolicy | Where-Object { $_.Name -eq $ruleName }
+
+        if (-not $liveRule) {
+            throw "Rule not found under policy '$policy'."
+        }
+
+        if ($liveRule.RuleErrorAction -eq "RetryThenBlock") {
+            $result = "Skipped"
+        } else {
+            Set-DlpComplianceRule -Identity $liveRule.Identity -RuleErrorAction RetryThenBlock -Confirm:$false
+            $result = "Updated"
+        }
+
+        # Get latest value after update
+        $refreshed = Get-DlpComplianceRule -Identity $liveRule.Identity
+        $actualValue = $refreshed.RuleErrorAction
+    } catch {
+        $result = "Failed"
+        $actualValue = "Error"
+        Write-Host "❌ Failed: $ruleName - $_" -ForegroundColor Red
+    }
+
+    # Track results
+    $logRows += [PSCustomObject]@{
+        PolicyName      = $policy
+        RuleName        = $ruleName
+        Result          = $result
+        RuleErrorAction = $actualValue
+    }
+
+    # Output to screen
+   	Write-Host "${result}`t${ruleName}`t(RuleErrorAction: ${actualValue})" `
+    -ForegroundColor $(if ($result -eq "Updated") { "Green" } elseif ($result -eq "Skipped") { "Yellow" } else { "Red" })
+
+}
+
+# Export CSV (raw values only)
+$logRows | Export-Csv -Path $logCsv -NoTypeInformation -Encoding UTF8
+Write-Host "📁 CSV report saved: $logCsv" -ForegroundColor Green
+
+# Generate HTML report (raw values)
+$htmlStyle = @"
+<style>
+    body { font-family: Segoe UI; font-size: 14px; margin: 20px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { padding: 8px; border: 1px solid #ccc; }
+    th { background-color: #f2f2f2; }
+</style>
+"@
+
+$htmlRows = foreach ($r in $logRows) {
+    "<tr><td>$($r.PolicyName)</td><td>$($r.RuleName)</td><td>$($r.Result)</td><td>$($r.RuleErrorAction)</td></tr>"
+}
+
+$htmlContent = @"
+<html>
+<head><title>DLP RetryThenBlock Report</title>$htmlStyle</head>
+<body>
+<h1>DLP RuleErrorAction Update Report</h1>
+<p>Generated: $(Get-Date)</p>
+<table>
+<tr><th>Policy Name</th><th>Rule Name</th><th>Result</th><th>RuleErrorAction</th></tr>
+$($htmlRows -join "`n")
+</table>
+</body>
+</html>
+"@
+
+$htmlContent | Out-File -Path $htmlPath -Encoding UTF8
+Write-Host "📄 HTML report saved: $htmlPath" -ForegroundColor Green
+Write-Host "`n✅ Done. Rules processed and reports generated." -ForegroundColor Green

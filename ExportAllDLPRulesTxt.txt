@@ -1,0 +1,23 @@
+# Output CSV path
+$timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
+$exportCsv = ".\Dlp_AllRules_Export_$timestamp.csv"
+
+Write-Host "`n🔍 Exporting all DLP rules to CSV..." -ForegroundColor Cyan
+
+$allRules = @()
+$policies = Get-DlpCompliancePolicy
+
+foreach ($policy in $policies) {
+    $rules = Get-DlpComplianceRule -Policy $policy.Name
+    foreach ($rule in $rules) {
+        $allRules += [PSCustomObject]@{
+            PolicyName      = $policy.Name
+            RuleName        = $rule.Name
+            Identity        = $rule.Identity
+            RuleErrorAction = $rule.RuleErrorAction
+        }
+    }
+}
+
+$allRules | Export-Csv -Path $exportCsv -NoTypeInformation -Encoding UTF8
+Write-Host "✅ Export complete: $exportCsv" -ForegroundColor Green
