@@ -1,0 +1,84 @@
+# Connect to Microsoft Purview
+Connect-IPPSSession
+
+# Get all DLP policies
+$dlpPolicies = Get-DlpCompliancePolicy
+
+# Initialize output
+$results = @()
+
+foreach ($policy in $dlpPolicies) {
+    $policyName = $policy.Name
+    $rules = Get-DlpComplianceRule -Policy $policyName
+
+    foreach ($rule in $rules) {
+        $ruleName = $rule.Name
+        $type = "Standard"
+        $foundSITs = @()
+
+        # 1. Standard SIT extraction
+        if ($rule.ContentContainsSensitiveInformation) {
+            foreach ($sit in $rule.ContentContainsSensitiveInformation) {
+                $foundSITs += $sit.Name
+            }
+        }
+
+        # 2. AdvancedRule JSON parsing (if present)
+        if ($rule.AdvancedRule) {
+            $type = "Advanced"
+
+            try {
+                $json = $rule.AdvancedRule | ConvertFrom-Json
+
+                # Recursive function to search for SITs inside the JSON structure
+                function Get-SITsFromAdvancedRule($node) {
+                    $sits = @()
+                    if ($null -ne $node.ConditionName -and $node.ConditionName -eq "ContentContainsSensitiveInformation") {
+                        foreach ($group in $node.Value.Groups) {
+                            foreach ($sit in $group.Sensitivetypes) {
+                                $sits += $sit.Name
+                            }
+                        }
+                    }
+
+                    if ($node.SubConditions) {
+                        foreach ($sub in $node.SubConditions) {
+                            $sits += Get-SITsFromAdvancedRule -node $sub
+                        }
+                    }
+                    return $sits
+                }
+
+                $foundSITs += Get-SITsFromAdvancedRule -node $json.Condition
+            } catch {
+                Write-Warning "Could not parse AdvancedRule JSON for rule '$ruleName'"
+            }
+        }
+
+        if ($foundSITs.Count -eq 0) {
+            $results += [PSCustomObject]@{
+                PolicyName = $policyName
+                RuleName   = $ruleName
+                RuleType   = $type
+                SIT        = "<None>"
+            }
+        } else {
+            foreach ($sit in $foundSITs | Sort-Object -Unique) {
+                $results += [PSCustomObject]@{
+                    PolicyName = $policyName
+                    RuleName   = $ruleName
+                    RuleType   = $type
+                    SIT        = $sit
+                }
+            }
+        }
+    }
+}
+
+# Display results
+$results | Format-Table -AutoSize
+
+# Export
+$csvPath = ".\DLP_Rules_SITs_AllTypes.csv"
+$results | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
+Write-Host "`n✔ Output saved to: $csvPath" -ForegroundColor Green
