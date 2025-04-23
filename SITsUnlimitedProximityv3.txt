@@ -1,0 +1,57 @@
+# Connect to Microsoft Purview Compliance Center
+# Connect-IPPSSession
+
+# Output paths
+$outputDir = ".\DlpSitRulePacks"
+$xmlPath = Join-Path $outputDir "RulePack.xml"
+$csvPath = Join-Path $outputDir "UnlimitedProximitySITs.csv"
+
+# Ensure output directory exists
+if (!(Test-Path $outputDir)) {
+    New-Item -ItemType Directory -Path $outputDir | Out-Null
+}
+
+# Get custom rule packs (skip Microsoft default)
+$rulePacks = Get-DlpSensitiveInformationTypeRulePackage | Where-Object { $_.Name -ne "Microsoft Rule Package" }
+
+$results = @()
+
+foreach ($rulePack in $rulePacks) {
+    $xmlRaw = $rulePack.ClassificationRuleCollectionXml
+    $xmlFile = Join-Path $outputDir "$($rulePack.Name).xml"
+    $xmlRaw | Out-File -Encoding BigEndianUnicode -FilePath $xmlFile
+
+    [xml]$xml = Get-Content $xmlFile
+
+    # Set up namespace manager
+    $nsMgr = New-Object System.Xml.XmlNamespaceManager($xml.NameTable)
+    $nsMgr.AddNamespace("mce", "http://schemas.microsoft.com/office/2011/mce")
+
+    # Extract Keyword <Keyword id="..."><Group>...</Group></Keyword>
+    $keywordMap = @{}
+    $keywords = $xml.SelectNodes("//mce:Keyword", $nsMgr)
+    foreach ($kw in $keywords) {
+        $id = $kw.GetAttribute("id")
+        $keywordMap[$id] = $id  # Default to ID if no further name resolution is available
+    }
+
+    # Extract all <Pattern proximity="unlimited"> entries
+    $patterns = $xml.SelectNodes("//mce:Pattern[@proximity='unlimited']", $nsMgr)
+    foreach ($pattern in $patterns) {
+        $idMatch = $pattern.SelectSingleNode("mce:IdMatch", $nsMgr)
+        if ($idMatch) {
+            $idRef = $idMatch.GetAttribute("idRef")
+            if ($keywordMap.ContainsKey($idRef)) {
+                $results += [PSCustomObject]@{
+                    SITName   = $keywordMap[$idRef]
+                    Proximity = "unlimited"
+                }
+            }
+        }
+    }
+}
+
+# Output results
+$results | Sort-Object SITName | Format-Table -AutoSize
+$results | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
+Write-Host "`n✔ Results exported to: $csvPath" -ForegroundColor Green
