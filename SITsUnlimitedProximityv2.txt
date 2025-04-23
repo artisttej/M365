@@ -1,0 +1,62 @@
+# Connect to Microsoft Purview if not already
+# Connect-IPPSSession
+
+# Output directories and files
+$outputDirectory = ".\DlpSitRulePacks"
+$csvPath = Join-Path $outputDirectory "SIT_Unlimited_Proximity.csv"
+$htmlPath = Join-Path $outputDirectory "SIT_Unlimited_Proximity.html"
+
+# Ensure output folder exists
+if (!(Test-Path $outputDirectory)) {
+    New-Item -Path $outputDirectory -ItemType Directory | Out-Null
+}
+
+$results = @()
+
+# Get only custom rule packs (skip Microsoft built-in)
+$rulePacks = Get-DlpSensitiveInformationTypeRulePackage | Where-Object { $_.Name -ne "Microsoft Rule Package" }
+
+foreach ($rulePack in $rulePacks) {
+    try {
+        $xmlContent = $rulePack.ClassificationRuleCollectionXml
+        $xmlPath = Join-Path $outputDirectory "$($rulePack.Name).xml"
+        $xmlContent | Out-File -Encoding BigEndianUnicode -FilePath $xmlPath
+
+        # Load XML and set namespace
+        [xml]$xml = Get-Content $xmlPath
+        $nsmgr = New-Object System.Xml.XmlNamespaceManager($xml.NameTable)
+        $nsmgr.AddNamespace("mce", "http://schemas.microsoft.com/office/2011/mce")
+
+        # Select all <Pattern proximity="unlimited"> nodes
+        $patternNodes = $xml.SelectNodes("//mce:Pattern[@proximity='unlimited']", $nsmgr)
+
+        foreach ($pattern in $patternNodes) {
+            $idMatch = $pattern.SelectSingleNode("mce:IdMatch", $nsmgr)
+            if ($idMatch) {
+                $sitName = $idMatch.GetAttribute("idRef")
+                $proximity = $pattern.GetAttribute("proximity")
+
+                $results += [PSCustomObject]@{
+                    SITName   = $sitName
+                    Proximity = $proximity
+                }
+            }
+        }
+    } catch {
+        Write-Warning "Failed to process rule pack '$($rulePack.Name)': $_"
+    }
+}
+
+# Show results
+# $results | Sort-Object SITName | Format-Table -AutoSize
+
+# Export to CSV
+$results | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
+Write-Host "`n✔ CSV saved to: $csvPath" -ForegroundColor Green
+
+# Export to HTML
+$results | ConvertTo-Html -Title "Unlimited Proximity SITs" `
+    -PreContent "<h2>SITs with Unlimited Proximity</h2><p>Extracted from custom rule packs.</p>" `
+    | Out-File -Encoding UTF8 -FilePath $htmlPath
+
+Write-Host "✔ HTML saved to: $htmlPath" -ForegroundColor Green
