@@ -1,0 +1,29 @@
+# Fetch all DLP policies
+$dlpPolicies = Get-DlpCompliancePolicy
+
+# Array to collect results
+$results = @()
+
+# Loop through each DLP policy
+foreach ($policy in $dlpPolicies) {
+    $policyName = $policy.Name
+
+    # Get all rules under this policy
+    $rules = Get-DlpComplianceRule -Policy $policyName
+
+    foreach ($rule in $rules) {
+        $results += [PSCustomObject]@{
+            PolicyName        = $policyName
+            RuleName          = $rule.Name
+            ReportSeverity    = $rule.ReportSeverityLevel
+            RuleMode          = $rule.Mode
+            Enabled           = $rule.Enabled
+        }
+    }
+}
+
+# Display results in the console
+$results | Format-Table -AutoSize
+
+# Optional: Export to CSV
+$results | Export-Csv -Path "DLP_ReportSeverity_Report.csv" -NoTypeInformation
