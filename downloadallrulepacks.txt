@@ -1,0 +1,39 @@
+# Connect to Microsoft Purview Compliance Center
+# Connect-IPPSSession
+
+# Output directory
+$outputDir = ".\DlpRulePacks"
+if (!(Test-Path $outputDir)) {
+    New-Item -Path $outputDir -ItemType Directory | Out-Null
+}
+
+# Exclude the default built-in Microsoft Rule Package
+$rulePacks = Get-DlpSensitiveInformationTypeRulePackage | Where-Object {
+    $_.Name -ne "Microsoft Rule Package"
+}
+
+# Counter for numbering files
+$count = 1
+
+foreach ($rulePack in $rulePacks) {
+    try {
+        # Sanitize name
+        $safeName = ($rulePack.Name -replace '[\\\/:*?"<>|]', '_')
+        $fileName = "{0:D3} - {1}.xml" -f $count, $safeName
+        $filePath = Join-Path $outputDir $fileName
+
+        # Save the rule pack XML
+        $rulePack.ClassificationRuleCollectionXml | Out-File -Encoding BigEndianUnicode -FilePath $filePath
+
+        Write-Host "✔ Saved: $fileName" -ForegroundColor Green
+        $count++
+    } catch {
+        Write-Warning "❌ Failed to save rule pack: $($rulePack.Name)"
+    }
+}
+
+if ($count -eq 1) {
+    Write-Host "⚠ No custom rule packs found (excluding Microsoft Rule Package)." -ForegroundColor Yellow
+} else {
+    Write-Host "`n✔ Download complete. Saved $($count - 1) custom rule pack(s) to: $outputDir" -ForegroundColor Cyan
+}
