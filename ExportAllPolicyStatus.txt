@@ -1,0 +1,68 @@
+# Requires Connect-IPPSession
+Write-Host "`n📋 Exporting DLP compliance policy status..." -ForegroundColor Cyan
+
+# Output Setup
+$timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
+$csvPath = ".\\Dlp_PolicyStatus_$timestamp.csv"
+$htmlPath = ".\\Dlp_PolicyStatus_$timestamp.html"
+
+# Get all DLP policies
+$policies = Get-DlpCompliancePolicy
+
+if (-not $policies) {
+    Write-Host "⚠️ No DLP policies found." -ForegroundColor Yellow
+    return
+}
+
+# Build report
+$log = foreach ($policy in $policies) {
+    $status = if ($policy.Mode -eq "Disable") { "Disabled" } else { "Enabled" }
+
+    [PSCustomObject]@{
+        PolicyName = $policy.Name
+        Mode       = $policy.Mode
+        Status     = $status
+        Workload   = $policy.Workload -join ", "
+    }
+}
+
+# Save CSV
+$log | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
+Write-Host "📁 CSV exported: $csvPath" -ForegroundColor Green
+
+# Generate HTML
+$style = @"
+<style>
+    body { font-family: Segoe UI; font-size: 14px; margin: 20px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { padding: 8px; border: 1px solid #ccc; }
+    th { background-color: #f2f2f2; }
+    .enabled { color: green; font-weight: bold; }
+    .disabled { color: red; font-weight: bold; }
+</style>
+"@
+
+$htmlRows = foreach ($r in $log) {
+    $cssClass = if ($r.Status -eq "Enabled") { "enabled" } else { "disabled" }
+    "<tr><td>$($r.PolicyName)</td><td>$($r.Mode)</td><td class='$cssClass'>$($r.Status)</td><td>$($r.Workload)</td></tr>"
+}
+
+$html = @"
+<html>
+<head><title>DLP Policy Status Report</title>
+$style
+</head>
+<body>
+<h1>DLP Policy Status Report</h1>
+<p>Generated: $(Get-Date)</p>
+<table>
+<tr><th>Policy Name</th><th>Mode</th><th>Status</th><th>Workload</th></tr>
+$($htmlRows -join "`n")
+</table>
+</body>
+</html>
+"@
+
+$html | Out-File -Path $htmlPath -Encoding UTF8
+Write-Host "📄 HTML exported: $htmlPath" -ForegroundColor Green
+Write-Host "`n✅ Policy status export complete." -ForegroundColor Green
