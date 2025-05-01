@@ -1,0 +1,46 @@
+# Requires Exchange Online connection (Connect-ExchangeOnline)
+# Customize the date range as needed
+$startDate = (Get-Date).AddDays(-7)
+$endDate = Get-Date
+
+Write-Host "`n🔍 Searching message traces from $startDate to $endDate..." -ForegroundColor Cyan
+
+# Output CSV path
+$timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
+$outputCsv = ".\\PoisonMessage_Traces_$timestamp.csv"
+$results = @()
+
+# Step 1: Get all message traces for the period
+$traces = Get-MessageTrace -StartDate $startDate -EndDate $endDate -PageSize 5000
+
+foreach ($trace in $traces) {
+    try {
+        $details = Get-MessageTraceDetail -MessageTraceId $trace.MessageTraceId -RecipientAddress $trace.RecipientAddress
+
+        foreach ($event in $details) {
+            if ($event.EventType -eq "POISONMESSAGE") {
+                $results += [PSCustomObject]@{
+                    Timestamp       = $event.Timestamp
+                    SenderAddress   = $trace.SenderAddress
+                    Recipient       = $trace.RecipientAddress
+                    Subject         = $trace.Subject
+                    EventType       = $event.EventType
+                    Detail          = $event.Detail
+                    MessageId       = $trace.MessageId
+                    MessageTraceId  = $trace.MessageTraceId
+                }
+                Write-Host "⚠️  Found POISONMESSAGE: $($trace.MessageId)" -ForegroundColor Yellow
+            }
+        }
+    } catch {
+        Write-Host "❌ Failed to retrieve details for trace ID $($trace.MessageTraceId): $_" -ForegroundColor Red
+    }
+}
+
+# Export to CSV
+if ($results.Count -gt 0) {
+    $results | Export-Csv -Path $outputCsv -NoTypeInformation -Encoding UTF8
+    Write-Host "`n📁 Export complete: $outputCsv" -ForegroundColor Green
+} else {
+    Write-Host "`n✅ No POISONMESSAGE events found in this period." -ForegroundColor Green
+}
