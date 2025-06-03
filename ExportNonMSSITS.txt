@@ -1,0 +1,23 @@
+# Get all Sensitive Info Types
+$allSITs = Get-DlpSensitiveInformationType
+
+# Filter to only non-Microsoft SITs
+$nonMicrosoftSITs = $allSITs | Where-Object { $_.Publisher -ne "Microsoft Corporation" }
+
+# Select relevant fields
+$sitData = $nonMicrosoftSITs | Select-Object Name, Description, Publisher, RecommendedConfidence
+
+# Export paths
+$timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm"
+$csvPath = "NonMicrosoftSITs_$timestamp.csv"
+$htmlPath = "NonMicrosoftSITs_$timestamp.html"
+
+# Export to CSV
+$sitData | Export-Csv -Path $csvPath -NoTypeInformation
+
+# Export to HTML
+$sitData | ConvertTo-Html -Property Name, Description, Publisher, Guid, CreatedBy, Keywords, RecommendedConfidence, RecommendedCount -Title "Non-Microsoft Sensitive Info Types" | Out-File $htmlPath
+
+Write-Output "✅ Export complete:"
+Write-Output "📄 CSV:   $csvPath"
+Write-Output "🌐 HTML: $htmlPath"
