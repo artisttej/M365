@@ -1,0 +1,75 @@
+# Generate timestamp for export filenames
+$timestamp = Get-Date -Format "yyyy-MM-dd_HHmmss"
+
+# Output paths with timestamp
+$csvPath = "DlpRulesExport_$timestamp.csv"
+$htmlPath = "DlpRulesReport_$timestamp.html"
+
+# Initialize results array
+$results = @()
+
+# Get all DLP policies
+$policies = Get-DlpCompliancePolicy
+
+foreach ($policy in $policies) {
+    $policyName = $policy.Name
+    Write-Host "`nProcessing Policy: $policyName" -ForegroundColor Cyan
+
+    # Get all rules under this policy
+    $rules = Get-DlpComplianceRule -Policy $policyName
+
+    foreach ($rule in $rules) {
+        # Parse SetHeader
+        $headers = @()
+        if ($rule.SetHeader) {
+            foreach ($entry in $rule.SetHeader.GetEnumerator()) {
+                $headers += "$($entry.Key):$($entry.Value)"
+            }
+        }
+        $headerString = ($headers -join "; ")
+
+        # Extract notification fields
+        $notifyText    = $rule.NotifyEmailCustomText
+        $notifySubject = $rule.NotifyEmailCustomSubject
+        $notifySender  = $rule.NotifyEmailCustomSenderDisplayName
+
+        # Add result object (no Actions)
+        $results += [pscustomobject]@{
+            PolicyName               = $policyName
+            RuleName                 = $rule.Name
+            HeaderNameValue          = $headerString
+            Severity                 = $rule.ReportSeverityLevel
+            NotifySubject            = $notifySubject
+            NotifyBody               = $notifyText
+            NotifySenderDisplayName  = $notifySender
+        }
+    }
+}
+
+# Export to CSV
+$results | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
+Write-Host "`n✔ CSV exported to: $csvPath" -ForegroundColor Green
+
+# Prepare HTML style
+$htmlHeader = @"
+<style>
+table { font-family: Segoe UI, sans-serif; border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #ddd; padding: 8px; vertical-align: top; }
+th { background-color: #f2f2f2; text-align: left; }
+</style>
+<h2>DLP Rule Report (Before Severity Update)</h2>
+<p>Export Timestamp: $timestamp</p>
+"@
+
+# Preserve line breaks in NotifyBody for HTML
+$results | ForEach-Object {
+    $_.NotifyBody = ($_.NotifyBody -replace "`r`n|`n", "<br>")
+}
+
+# Export to HTML
+$htmlBody = $results | ConvertTo-Html -Property PolicyName,RuleName,HeaderNameValue,Severity,NotifySubject,NotifyBody,NotifySenderDisplayName -PreContent $htmlHeader
+
+$htmlBody | Out-File -FilePath $htmlPath -Encoding UTF8
+Write-Host "✔ HTML report exported to: $htmlPath" -ForegroundColor Green
+
+
