@@ -1,7 +1,3 @@
-# Load module and connect
-Import-Module ExchangeOnlineManagement
-Connect-IPPSSession
-
 # Generate timestamp for export filenames
 $timestamp = Get-Date -Format "yyyy-MM-dd_HHmmss"
 
@@ -92,5 +88,4 @@ $htmlBody = $results | ConvertTo-Html -Property PolicyName,RuleName,HeaderNameVa
 $htmlBody | Out-File -FilePath $htmlPath -Encoding UTF8
 Write-Host "✔ HTML report exported to: $htmlPath" -ForegroundColor Green
 
-# Disconnect session
-Disconnect-ExchangeOnline -Confirm:$false
+
