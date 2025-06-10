@@ -1,0 +1,53 @@
+# Ask user for CSV path
+$csvPath = Read-Host "Enter the path to your CSV file (e.g., C:\Reports\DlpRuleUpdates.csv)"
+
+# Check if file exists
+if (-not (Test-Path -Path $csvPath)) {
+    Write-Host "`n❌ File not found at path: $csvPath" -ForegroundColor Red
+    exit
+}
+
+# Import CSV
+$rules = Import-Csv $csvPath
+
+foreach ($row in $rules) {
+    $policy       = $row.PolicyName
+    $rule         = $row.RuleName
+    $headerName   = $row.HeaderName
+    $headerValue  = $row.Value
+    $severity     = $row.Severity          # None, Low, Medium, High
+    $subject      = $row.NotifySubject
+    $body         = $row.NotifyBody
+    $senderName   = $row.NotifySenderDisplayName
+    $incidentRecipients = $row.IncidentReportRecipients
+
+    Write-Host "`nUpdating DLP Rule: $rule in Policy: $policy" -ForegroundColor Cyan
+
+    # Prepare SetHeader as a hashtable
+    $header = @{}
+    if ($headerName -and $headerValue) {
+        $header[$headerName] = $headerValue
+    }
+
+    # Prepare recipient list (exclude 'SiteAdmin' if present)
+    $recipients = @()
+    if ($incidentRecipients) {
+        $recipients = $incidentRecipients -split "," | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne "SiteAdmin" -and $_ -ne "" }
+    }
+
+try {
+    Set-DlpComplianceRule -Identity $rule `
+        -SetHeader $header `
+        -ReportSeverityLevel $severity `
+        -NotifyUser @("LastModifier") `
+        -NotifyEmailCustomText $body `
+        -NotifyEmailCustomSubject $subject `
+        -NotifyEmailCustomSenderDisplayName $senderName `
+        -GenerateIncidentReport $recipients `
+        -Confirm:$false
+
+    Write-Host "✔ Rule '$rule' updated successfully." -ForegroundColor Green
+} catch {
+    Write-Host "❌ Failed to update rule '$rule': $_" -ForegroundColor Red
+	}
+}
