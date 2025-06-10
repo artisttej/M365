@@ -1,3 +1,7 @@
+# Load module and connect
+Import-Module ExchangeOnlineManagement
+Connect-IPPSSession
+
 # Generate timestamp for export filenames
 $timestamp = Get-Date -Format "yyyy-MM-dd_HHmmss"
 
@@ -28,12 +32,19 @@ foreach ($policy in $policies) {
         }
         $headerString = ($headers -join "; ")
 
+        # Extract NotifyUser values
+        $notifyUsers = @()
+        if ($rule.NotifyUser) {
+            $notifyUsers = $rule.NotifyUser | Where-Object { $_ -ne "" }
+        }
+        $notifyUserString = ($notifyUsers -join "; ")
+
         # Extract notification fields
         $notifyText    = $rule.NotifyEmailCustomText
         $notifySubject = $rule.NotifyEmailCustomSubject
         $notifySender  = $rule.NotifyEmailCustomSenderDisplayName
 
-        # Extract incident report recipients (email only, exclude SiteAdmin)
+        # Extract incident report recipients (excluding SiteAdmin)
         $incidentRecipients = @()
         if ($rule.GenerateIncidentReport) {
             $incidentRecipients = $rule.GenerateIncidentReport | Where-Object { $_ -ne "SiteAdmin" -and $_ -ne "" }
@@ -46,6 +57,7 @@ foreach ($policy in $policies) {
             RuleName                 = $rule.Name
             HeaderNameValue          = $headerString
             Severity                 = $rule.ReportSeverityLevel
+            NotifyUserRecipients     = $notifyUserString
             NotifySubject            = $notifySubject
             NotifyBody               = $notifyText
             NotifySenderDisplayName  = $notifySender
@@ -65,7 +77,7 @@ table { font-family: Segoe UI, sans-serif; border-collapse: collapse; width: 100
 th, td { border: 1px solid #ddd; padding: 8px; vertical-align: top; }
 th { background-color: #f2f2f2; text-align: left; }
 </style>
-<h2>DLP Rule Report (Before Severity Update)</h2>
+<h2>DLP Rule Report (Exported)</h2>
 <p>Export Timestamp: $timestamp</p>
 "@
 
@@ -75,8 +87,10 @@ $results | ForEach-Object {
 }
 
 # Export to HTML
-$htmlBody = $results | ConvertTo-Html -Property PolicyName,RuleName,HeaderNameValue,Severity,NotifySubject,NotifyBody,NotifySenderDisplayName,IncidentReportRecipients -PreContent $htmlHeader
+$htmlBody = $results | ConvertTo-Html -Property PolicyName,RuleName,HeaderNameValue,Severity,NotifyUserRecipients,NotifySubject,NotifyBody,NotifySenderDisplayName,IncidentReportRecipients -PreContent $htmlHeader
 
 $htmlBody | Out-File -FilePath $htmlPath -Encoding UTF8
 Write-Host "✔ HTML report exported to: $htmlPath" -ForegroundColor Green
 
+# Disconnect session
+Disconnect-ExchangeOnline -Confirm:$false
