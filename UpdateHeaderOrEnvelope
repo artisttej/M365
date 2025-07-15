@@ -1,0 +1,20 @@
+# Path to your CSV file
+$csvPath = "DlpRuleNames.csv"
+
+# Import the CSV file
+$rules = Import-Csv $csvPath
+
+# Loop through each rule and update SenderAddressLocation
+foreach ($row in $rules) {
+    $ruleName = $row.RuleName
+
+    try {
+        Write-Host "Updating rule: $ruleName" -ForegroundColor Cyan
+        Set-DlpComplianceRule -Identity $ruleName -SenderAddressLocation "HeaderOrEnvelope"
+        Write-Host "Successfully updated: $ruleName" -ForegroundColor Green
+    }
+    catch {
+        Write-Warning "Failed to update rule: $ruleName"
+        Write-Warning $_.Exception.Message
+    }
+}
