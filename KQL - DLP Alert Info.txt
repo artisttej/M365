@@ -1,0 +1,69 @@
+// === INPUT: set an IncidentId from Microsoft Defender (Incidents & alerts) ===
+let incidentId = "INCIDENT_ID_HERE";
+
+// Pull the DLP alerts that belong to this incident
+let dlpAlerts =
+    AlertInfo
+    | where ServiceSource =~ "Data Loss Prevention"
+    | where IncidentId == incidentId
+    | project AlertId, Title, Severity, TimeGenerated, IncidentId;
+
+// Get evidence (message/file/user/device) for context we can join on
+let dlpEvidence =
+    AlertEvidence
+    | where AlertId in (dlpAlerts)
+    | project AlertId,
+              // Common pivots for joins into CloudAppEvents
+              NetworkMessageId, InternetMessageId,
+              FileName, FileSha1, FilePath, DeviceId, Url, UserName;
+
+// Join alerts+evidence
+let A = dlpAlerts
+    | join kind=leftouter dlpEvidence on AlertId
+    | project AlertId, IncidentId, Title, Severity, TimeGenerated,
+              NetworkMessageId, InternetMessageId, FileName, FileSha1, FilePath, DeviceId, Url, UserName;
+
+// Pull the raw Purview DLP events and PARSE the JSON to get matched content
+CloudAppEvents
+| where ActionType has_any ("DlpRuleMatch","DLPRuleMatch","DLPRuleUndo") // naming varies
+// Try to match event to the incident’s artifacts (email/file/url/user).
+| where tostring(RawEventData.NetworkMessageId) in (A | project NetworkMessageId)
+   or tostring(RawEventData.InternetMessageId)  in (A | project InternetMessageId)
+   or tostring(RawEventData.ObjectId)           in (A | project FileName)
+   or tostring(RawEventData.TargetFilePath)     in (A | project FilePath)
+   or tostring(RawEventData.UserId)             in (A | project UserName)
+   or tostring(RawEventData.SiteUrl)            in (A | project Url)
+// --- Parse key JSON bags ---
+| extend Workload        = tostring(RawEventData.Workload)
+| extend PolicyDetails   = parse_json(tostring(RawEventData.PolicyDetails))
+| extend ExchangeMeta    = parse_json(tostring(RawEventData.ExchangeMetaData))
+| extend SharePointMeta  = parse_json(tostring(RawEventData.SharePointMetaData))
+| extend EndpointMeta    = parse_json(tostring(RawEventData.EndpointMetaData))
+// Policy / Rule
+| extend PolicyName      = tostring(PolicyDetails[0].PolicyName)
+| extend Rules           = parse_json(tostring(PolicyDetails[0].Rules))
+// Expand rules to get ConditionsMatched → SensitiveInformation[]
+| mv-expand Rule = Rules
+| extend RuleName        = tostring(Rule.RuleName)
+| extend Severity        = tostring(Rule.Severity)
+| extend Conditions      = parse_json(tostring(Rule.ConditionsMatched))
+| mv-expand SI = Conditions.SensitiveInformation
+// Common fields for Sensitive Info Types (SIT)
+| extend SitName         = tostring(SI.SensitiveInformationTypeName)
+| extend SitId           = tostring(SI.SensitiveInformationTypeId)
+| extend SitCount        = toint(coalesce(SI.SensitiveInformationDetectionsCount, SI.DetectedCount))
+// Some tenants/payloads include detailed match info (when “Include matched content” and rights allow)
+| extend MatchDetails    = tostring(SI.SensitiveInformationMatchDetails)
+// Helpful pivots per workload
+| extend EmailSubject    = tostring(ExchangeMeta.Subject)
+| extend Recipients      = strcat("To:", tostring(ExchangeMeta.To), " CC:", tostring(ExchangeMeta.CC), " BCC:", tostring(ExchangeMeta.BCC))
+| extend SPO_FileName    = tostring(SharePointMeta.FileName)
+| extend SPO_Site        = tostring(SharePointMeta.SiteCollectionUrl)
+| extend EP_Operation    = tostring(EndpointMeta.EndpointOperation)
+| extend EP_TargetDomain = tostring(EndpointMeta.TargetDomain)
+// Output
+| project Timestamp, Workload, PolicyName, RuleName, Severity,
+          SitName, SitId, SitCount, MatchDetails,
+          EmailSubject, Recipients, SPO_FileName, SPO_Site, EP_Operation, EP_TargetDomain,
+          ObjectId=tostring(RawEventData.ObjectId), NetworkMessageId=tostring(RawEventData.NetworkMessageId)
+| order by Timestamp desc
