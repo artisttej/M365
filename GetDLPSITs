@@ -1,54 +1,197 @@
-# File path for output
-$outputFile = "E:\M365\DlpSITNames.csv"
+# --- Config: timestamped output ---
+$baseDir    = "E:\M365"
+$baseName   = "DlpSITNames"
+$timestamp  = Get-Date -Format "yyyyMMdd_HHmmss"
+$outputFile = Join-Path $baseDir ("{0}_{1}.csv" -f $baseName, $timestamp)
+$null = New-Item -ItemType Directory -Path $baseDir -Force -ErrorAction SilentlyContinue
 
-$dlpPolicies = Get-DLPCompliancePolicy
+# ---------- Helpers ----------
+function Get-First {
+    param($obj, [string[]]$names)
+    foreach ($n in $names) {
+        if ($null -ne $obj -and $obj.PSObject.Properties.Name -contains $n) { return $obj.$n }
+    }
+    return $null
+}
 
-$dlpRule = Get-DlpComplianceRule | Select-Object -ExpandProperty AdvancedRule
+# Build a friendly-name map for policies (supports GUID/IDs)
+function New-PolicyMap {
+    $map = @{}
+    $pols = Get-DlpCompliancePolicy
+    foreach ($p in $pols) {
+        $name = $p.Name
+        $keys = @()
+        foreach ($k in @('Guid','Id','ImmutableId','ExternalDirectoryObjectId','Identity','PolicyId','ObjectId','ExchangeObjectId','ExchangeGuid')) {
+            if ($p.PSObject.Properties.Name -contains $k -and $p.$k) { $keys += $p.$k.ToString() }
+        }
+        $keys += $name
+        foreach ($k in $keys) {
+            if (![string]::IsNullOrWhiteSpace($k)) {
+                $map[$k] = $name
+                $map[$k.Trim('{}')] = $name
+                $map[($k.ToUpper())] = $name
+            }
+        }
+    }
+    return $map
+}
 
-$allPolicyDetails = @()
+function Resolve-PolicyName {
+    param($rule, $policyMap)
+    # Prefer explicit name if present
+    $candidate = Get-First $rule @('ParentPolicyName')
+    if ([string]::IsNullOrWhiteSpace($candidate)) {
+        $candidate = Get-First $rule @('ParentPolicy','Policy','ParentPolicyId','PolicyId')
+    }
+    if ([string]::IsNullOrWhiteSpace($candidate)) { return '<UnknownPolicy>' }
 
-# Iterate through each policy and its rules
-foreach ($policy in $dlpPolicies) {
-    $policyName = $policy.Name
+    $key = $candidate.ToString()
+    foreach ($probe in @($key, $key.Trim('{}'), $key.ToUpper())) {
+        if ($policyMap.ContainsKey($probe)) { return $policyMap[$probe] }
+    }
+    # Sometimes 'Policy' is an object with Name
+    $maybeObjName = Get-First $candidate @('Name')
+    if ($maybeObjName) { return $maybeObjName }
+    return $key  # fallback (what you currently see)
+}
 
-    # Retrieve all rules for the policy
-    $dlpRules = Get-DlpComplianceRule -Policy $policyName
+# Add a row to results (WITHOUT min/max/confidence)
+function Add-Row {
+    param(
+        [System.Collections.Generic.List[object]]$Bucket,
+        [string]$PolicyName,
+        [string]$RuleName,
+        [psobject]$SitObj,
+        [string]$FoundAt
+    )
+    if ($null -eq $SitObj) { return }
+    $sitName = Get-First $SitObj @('Name','DisplayName','SensitiveInformationTypeName')
+    if ([string]::IsNullOrWhiteSpace($sitName)) { return }
 
-    foreach ($rule in $dlpRules) {
-        $ruleName = $rule.Name
+    $sitId = Get-First $SitObj @('Id','id','SensitiveInformationTypeId','Guid')
 
-        # Extract the AdvancedRule property
-        if ($rule.AdvancedRule) {
-            $advancedRule = $rule.AdvancedRule | ConvertFrom-Json
+    $Bucket.Add([PSCustomObject]@{
+        PolicyName = $PolicyName
+        RuleName   = $RuleName
+        SITName    = $sitName
+        SITId      = $sitId
+        SourcePath = $FoundAt
+    }) | Out-Null
+}
 
-            # Extract SITs from the AdvancedRule
-            $sitDetails = $advancedRule.Condition.SubConditions |
-                Where-Object { $_.ConditionName -eq "ContentContainsSensitiveInformation" } |
-                ForEach-Object {
-                    $_.Value.Groups | ForEach-Object {
-                        $_.Sensitivetypes | ForEach-Object {
-                            [PSCustomObject]@{
-                                PolicyName     = $policyName
-                                RuleName       = $ruleName
-                                SITName        = $_.Name
-                                Confidence     = $_.Confidencelevel
-                                MinConfidence  = $_.Minconfidence
-                                MaxConfidence  = $_.Maxconfidence
-                            }
+# Iterative walker (no recursion)
+function Collect-SITs-From-AdvancedRule {
+    param(
+        [psobject]$Ar,
+        [string]$PolicyName,
+        [string]$RuleName,
+        [System.Collections.Generic.List[object]]$Out
+    )
+    if ($null -eq $Ar) { return }
+
+    $targetConditionNames = @(
+        'ContentContainsSensitiveInformation',
+        'DocumentMatchesSensitiveInformation',
+        'MessageContainsSensitiveInformation'
+    )
+
+    $stack = [System.Collections.Generic.Stack[object]]::new()
+    $stack.Push([pscustomobject]@{ Node = $Ar; Path = '$' })
+
+    $maxNodes  = 200000
+    $seenPaths = [System.Collections.Generic.HashSet[string]]::new()
+
+    while ($stack.Count -gt 0) {
+        $cur  = $stack.Pop()
+        $node = $cur.Node
+        $path = $cur.Path
+
+        if ($null -eq $node) { continue }
+        if ($seenPaths.Contains($path)) { continue } else { [void]$seenPaths.Add($path) }
+        if ($seenPaths.Count -gt $maxNodes) { Write-Warning "Traversal capped at $maxNodes nodes."; break }
+
+        # 1) Condition nodes with target names
+        $condName = Get-First $node @('ConditionName')
+        if ($condName -and ($targetConditionNames -contains $condName)) {
+            $value  = Get-First $node @('Value')
+            $groups = Get-First $value @('Groups','Group','groups')
+            foreach ($g in @($groups)) {
+                $sensList = $null
+                foreach ($n in @('SensitivityTypes','Sensitivetypes','SensitiveTypes')) {
+                    if ($g -and $g.PSObject.Properties.Name -contains $n) { $sensList = $g.$n; break }
+                }
+                foreach ($s in @($sensList)) {
+                    Add-Row -Bucket $Out -PolicyName $PolicyName -RuleName $RuleName -SitObj $s -FoundAt "$path($condName)"
+                }
+            }
+        }
+
+        # 2) Fallback: direct SensitivityTypes/SensitiveTypes
+        foreach ($propName in @('SensitivityTypes','Sensitivetypes','SensitiveTypes')) {
+            if ($node.PSObject.Properties.Name -contains $propName) {
+                foreach ($s in @($node.$propName)) {
+                    Add-Row -Bucket $Out -PolicyName $PolicyName -RuleName $RuleName -SitObj $s -FoundAt "$path.$propName"
+                }
+            }
+        }
+
+        # 3) Push likely branches
+        $childPropNames = @('Condition','SubConditions','Conditions','Children','Operands','Operand',
+                            'Value','Values','Groups','Group','AnyOf','AllOf','Then','Else')
+        foreach ($childName in $childPropNames) {
+            if ($node.PSObject.Properties.Name -contains $childName) {
+                $child = $node.$childName
+                if ($null -ne $child) {
+                    if ($child -is [System.Collections.IEnumerable] -and -not ($child -is [string])) {
+                        $i = 0
+                        foreach ($item in $child) {
+                            $stack.Push([pscustomobject]@{ Node = $item; Path = "$path.$childName`[$i`]" })
+                            $i++
                         }
+                    } else {
+                        $stack.Push([pscustomobject]@{ Node = $child; Path = "$path.$childName" })
                     }
                 }
-
-            # Add SIT details to the array
-            if ($sitDetails) {
-                $allPolicyDetails += $sitDetails
             }
         }
     }
 }
 
+# ---------- Main ----------
+$results    = [System.Collections.Generic.List[object]]::new()
+$policyMap  = New-PolicyMap
 
-# Export the details to a CSV file
-$allPolicyDetails | Export-Csv -Path $outputFile -NoTypeInformation -Encoding UTF8
+# Prefer global rules; fallback to per-policy if needed
+$allRules = @()
+try { $allRules = Get-DlpComplianceRule } catch { Write-Warning "Global Get-DlpComplianceRule failed: $($_.Exception.Message)" }
+if (-not $allRules -or $allRules.Count -eq 0) {
+    foreach ($p in (Get-DlpCompliancePolicy)) {
+        try { $r = Get-DlpComplianceRule -Policy $p.Name; if ($r) { $allRules += $r } }
+        catch { Write-Warning "Get-DlpComplianceRule -Policy '$($p.Name)' failed: $($_.Exception.Message)" }
+    }
+}
 
-Write-Output "All DLP Policies, Rules, and SITs exported to $outputFile"
+foreach ($rule in $allRules) {
+    $policyName = Resolve-PolicyName -rule $rule -policyMap $policyMap
+    if ($rule.AdvancedRule) {
+        try {
+            $ar = $rule.AdvancedRule | ConvertFrom-Json -ErrorAction Stop
+        } catch {
+            Write-Warning "AdvancedRule JSON parse failed for rule '$($rule.Name)' (policy '$policyName'): $($_.Exception.Message)"
+            continue
+        }
+        Collect-SITs-From-AdvancedRule -Ar $ar -PolicyName $policyName -RuleName $rule.Name -Out $results
+    }
+}
+
+# De-dupe & export (no min/max/confidence columns)
+$results =
+    $results |
+    Sort-Object PolicyName, RuleName, SITName, SITId, SourcePath -Unique |
+    Sort-Object PolicyName, RuleName, SITName
+
+$results | Export-Csv -Path $outputFile -NoTypeInformation -Encoding UTF8
+"Exported AdvancedRule SIT map to: $outputFile"
+
+# Optional on-screen summary
+$results | Group-Object PolicyName | Select-Object Name,Count | Sort-Object Name | Format-Table -AutoSize
