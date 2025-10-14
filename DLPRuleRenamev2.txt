@@ -1,0 +1,51 @@
+# Path to input CSV
+$csvPath = "C:\temp\Renamedlp.csv"
+
+# Output log file with timestamp
+$timestamp = (Get-Date -Format "yyyyMMdd_HHmmss")
+$logPath = "C:\temp\Rename-DlpRules_Log_$timestamp.csv"
+
+# Import the CSV (must contain OldName and NewName columns)
+$rules = Import-Csv -Path $csvPath
+
+# Create array for log results
+$log = @()
+
+Write-Host "`nStarting DLP Rule Rename Process..." -ForegroundColor Cyan
+
+foreach ($row in $rules) {
+    $oldName = $row.OldName.Trim()
+    $newName = $row.NewName.Trim()
+    $status = ""
+    $message = ""
+
+    try {
+        Write-Host "Renaming: '$oldName' -> '$newName'" -ForegroundColor Yellow
+
+        # Execute rename
+        Set-DlpComplianceRule -Identity $oldName -DisplayName $newName -Confirm:$false -ErrorAction Stop
+
+        $status = "Success"
+        $message = "Renamed successfully"
+        Write-Host "✔ Success: $oldName → $newName" -ForegroundColor Green
+    }
+    catch {
+        $status = "Failed"
+        $message = $_.Exception.Message
+        Write-Host "❌ Failed: $oldName → $newName | $message" -ForegroundColor Red
+    }
+
+    # Add entry to log array
+    $log += [PSCustomObject]@{
+        Timestamp = (Get-Date -Format "yyyy-MM-dd HH:mm:ss")
+        OldName   = $oldName
+        NewName   = $newName
+        Status    = $status
+        Message   = $message
+    }
+}
+
+# Export log to CSV
+$log | Export-Csv -Path $logPath -NoTypeInformation -Encoding UTF8
+
+Write-Host "`nProcess complete. Log saved to: $logPath" -ForegroundColor Cyan
