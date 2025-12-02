@@ -1,0 +1,185 @@
+<#
+.SYNOPSIS
+    Export ALL Sensitive Information Types (SITs) and their proximity settings.
+
+.DESCRIPTION
+    - Connects to Purview/Compliance PowerShell (IPPS).
+    - Reads all DLP Sensitive Information Type Rule Packages.
+    - Parses the underlying XML rule packs.
+    - Exports ONE row per Entity (SIT definition), including:
+        * RulePackName, RulePackPublisher
+        * EntityId
+        * SIT Name (friendly name)
+        * patternsProximity (raw)
+        * relaxProximity
+        * recommendedConfidence
+        * IsUnlimitedProximity (calculated flag)
+        * ProximityCategory (text description)
+    - Output CSV: All-SITs-WithProximity.csv (by default)
+#>
+
+param(
+    [string]$OutputPath = ".\All-SITs-WithProximity.csv",
+
+    # Minimum value to treat as "unlimited" (for very large numeric proximities)
+    [int]$UnlimitedThreshold = 999999,
+
+    [switch]$TreatZeroAsUnlimited = $true,
+    [switch]$TreatMissingAsUnlimited = $true
+)
+
+Write-Host "Connecting to Purview / Compliance PowerShell (IPPS)..." -ForegroundColor Cyan
+
+#try {
+    # Will reuse existing session if already connected
+    #Connect-IPPSSession -ErrorAction Stop
+#}
+#catch {
+ #   Write-Warning "Could not connect to IPP session automatically. Make sure you are connected before #running the script."
+#    throw
+#}
+
+Write-Host "Retrieving DLP Sensitive Information Type rule packages..." -ForegroundColor Cyan
+$rulePacks = Get-DlpSensitiveInformationTypeRulePackage
+
+if (-not $rulePacks) {
+    Write-Warning "No DLP Sensitive Information Type Rule Packages found."
+    return
+}
+
+$results = @()
+
+foreach ($rp in $rulePacks) {
+    Write-Host "Processing RulePack: $($rp.Name)" -ForegroundColor Yellow
+
+    $bytes = $rp.SerializedClassificationRuleCollection
+    if (-not $bytes) {
+        Write-Warning "  No SerializedClassificationRuleCollection for $($rp.Name). Skipping."
+        continue
+    }
+
+    # Rule packs are stored as UTF-16 XML
+    $xmlText = [System.Text.Encoding]::Unicode.GetString($bytes)
+
+    # Load as XML
+    $xml = New-Object System.Xml.XmlDocument
+    $xml.PreserveWhitespace = $false
+    $xml.LoadXml($xmlText)
+
+    # Use local-name() to ignore namespaces
+    $entityNodes   = $xml.SelectNodes("//*[local-name()='Entity']")
+    $resourceNodes = $xml.SelectNodes("//*[local-name()='Resource']")
+
+    # Build a lookup of Entity ID -> Display Name (from LocalizedStrings)
+    $nameLookup = @{}
+    foreach ($res in $resourceNodes) {
+        $idRefAttr = $res.Attributes['idRef']
+        if (-not $idRefAttr) { continue }
+
+        $idRef = $idRefAttr.Value
+
+        # Try to find the default Name element first, otherwise any Name
+        $nameNode = $res.SelectSingleNode("*[local-name()='Name' and @default='true']")
+        if (-not $nameNode) {
+            $nameNode = $res.SelectSingleNode("*[local-name()='Name']")
+        }
+
+        $displayName = if ($nameNode) { $nameNode.InnerText } else { $null }
+
+        if ($displayName) {
+            $nameLookup[$idRef] = $displayName
+        }
+    }
+
+    foreach ($entity in $entityNodes) {
+        $idAttr = $entity.Attributes['id']
+        if (-not $idAttr) { continue }
+
+        $entityId = $idAttr.Value
+
+        # patternsProximity / relaxProximity attributes on <Entity>
+        $proxAttr    = $entity.Attributes['patternsProximity']
+        $relaxAttr   = $entity.Attributes['relaxProximity']
+        $recConfAttr = $entity.Attributes['recommendedConfidence']
+
+        $proxRaw = if ($proxAttr) { $proxAttr.Value } else { $null }
+        $relaxProx = if ($relaxAttr) { $relaxAttr.Value } else { $null }
+        $recommendedConfidence = if ($recConfAttr) { $recConfAttr.Value } else { $null }
+
+        # -------------------------------
+        # Detection logic for "unlimited"
+        # -------------------------------
+        $isUnlimited = $false
+        $category    = "Unknown"
+
+        # 1. Literal "unlimited" (any case, with optional whitespace)
+        if ($proxRaw -and $proxRaw.Trim().ToLower() -eq "unlimited") {
+            $isUnlimited = $true
+            $category    = "Unlimited (literal 'unlimited')"
+        }
+        elseif ([string]::IsNullOrWhiteSpace($proxRaw)) {
+            # 2. Missing proximity
+            $category = "No proximity specified"
+            if ($TreatMissingAsUnlimited) {
+                $isUnlimited = $true
+                $category    = "Unlimited (missing, treated as unlimited)"
+            }
+        }
+        else {
+            # 3. Try numeric interpretation
+            $proxInt = $null
+            if ([int]::TryParse($proxRaw, [ref]$proxInt)) {
+                if ($TreatZeroAsUnlimited -and $proxInt -eq 0) {
+                    $isUnlimited = $true
+                    $category    = "Unlimited (0 treated as unlimited)"
+                }
+                elseif ($proxInt -ge $UnlimitedThreshold) {
+                    $isUnlimited = $true
+                    $category    = "Unlimited (>= threshold $UnlimitedThreshold)"
+                }
+                else {
+                    $category = "Bounded ($proxInt)"
+                }
+            }
+            else {
+                # 4. Any other non-numeric value → treat as unlimited / special
+                $isUnlimited = $true
+                $category    = "Unlimited / special (non-numeric '$proxRaw')"
+            }
+        }
+
+        # Look up a friendly name for this Entity (SIT)
+        $sitName = if ($nameLookup.ContainsKey($entityId)) {
+            $nameLookup[$entityId]
+        }
+        else {
+            # Fallback if no LocalizedStrings entry found
+            "[Unknown Name] (EntityId: $entityId)"
+        }
+
+        # Add to results (ALL entities, regardless of unlimited or not)
+        $results += [PSCustomObject]@{
+            RulePackName           = $rp.Name
+            RulePackPublisher      = $rp.Publisher
+            EntityId               = $entityId
+            SitName                = $sitName
+            PatternsProximityRaw   = $proxRaw
+            RelaxProximity         = $relaxProx
+            RecommendedConfidence  = $recommendedConfidence
+            IsUnlimitedProximity   = $isUnlimited
+            ProximityCategory      = $category
+        }
+    }
+}
+
+if ($results.Count -eq 0) {
+    Write-Warning "No SIT entities found to export."
+}
+else {
+    Write-Host "Exporting $($results.Count) SIT Entity records to CSV..." -ForegroundColor Green
+    $results |
+        Sort-Object SitName, RulePackName |
+        Export-Csv -Path $OutputPath -NoTypeInformation -Encoding UTF8
+
+    Write-Host "Export complete: $OutputPath" -ForegroundColor Green
+}
