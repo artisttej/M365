@@ -1,44 +1,46 @@
 <#
 .SYNOPSIS
-    Export ALL Sensitive Information Types (SITs) and their proximity settings.
+    Export all SITs (Entities) and their associated elements that define
+    proximity="..." as well as the Entity-level patternsProximity.
 
 .DESCRIPTION
-    - Connects to Purview/Compliance PowerShell (IPPS).
-    - Reads all DLP Sensitive Information Type Rule Packages.
-    - Parses the underlying XML rule packs.
-    - Exports ONE row per Entity (SIT definition), including:
-        * RulePackName, RulePackPublisher
-        * EntityId
-        * SIT Name (friendly name)
-        * patternsProximity (raw)
-        * relaxProximity
-        * recommendedConfidence
-        * IsUnlimitedProximity (calculated flag)
-        * ProximityCategory (text description)
-    - Output CSV: All-SITs-WithProximity.csv (by default)
+    For each DLP Sensitive Information Type Rule Package:
+
+    - Parses the XML rule pack.
+    - For each <Entity> (SIT):
+        * Outputs ONE ROW for the SIT itself (NodeType = 'Entity'),
+          using the Entity's patternsProximity attribute (if present).
+        * Finds ALL descendant nodes under that Entity that have a
+          proximity="..." attribute (e.g. <Pattern>, <Match>, <Any>, etc.)
+          and outputs ONE ROW PER such node.
+
+    Output columns:
+        RulePackName
+        RulePackPublisher
+        EntityId
+        SitName
+        NodeType          (Entity / Pattern / Match / Any / etc.)
+        NodeIdRef         (idRef if present, e.g. Func_aba_routing)
+        NodeMinMatches    (minMatches if present, e.g. on <Any>)
+        NodeConfidence    (confidenceLevel if present, e.g. on <Pattern>)
+        NodeProximity     (for Entity row: patternsProximity; for others: proximity)
 #>
 
 param(
-    [string]$OutputPath = ".\All-SITs-WithProximity.csv",
-
-    # Minimum value to treat as "unlimited" (for very large numeric proximities)
-    [int]$UnlimitedThreshold = 999999,
-
-    [switch]$TreatZeroAsUnlimited = $true,
-    [switch]$TreatMissingAsUnlimited = $true
+    [string]$OutputPath = ".\All-SITs-EntityAndProximityNodes.csv"
 )
 
-Write-Host "Connecting to Purview / Compliance PowerShell (IPPS)..." -ForegroundColor Cyan
+<#Write-Host "Connecting to Purview / Compliance PowerShell (IPPS)..." -ForegroundColor Cyan
 
-#try {
-    # Will reuse existing session if already connected
-    #Connect-IPPSSession -ErrorAction Stop
-#}
-#catch {
- #   Write-Warning "Could not connect to IPP session automatically. Make sure you are connected before #running the script."
-#    throw
-#}
-
+try {
+    # Reuses an existing session if one is already established
+    Connect-IPPSSession -ErrorAction Stop
+}
+catch {
+    Write-Warning "Could not connect to IPP session automatically. Make sure you are connected before running the script."
+    throw
+}
+#>
 Write-Host "Retrieving DLP Sensitive Information Type rule packages..." -ForegroundColor Cyan
 $rulePacks = Get-DlpSensitiveInformationTypeRulePackage
 
@@ -61,16 +63,16 @@ foreach ($rp in $rulePacks) {
     # Rule packs are stored as UTF-16 XML
     $xmlText = [System.Text.Encoding]::Unicode.GetString($bytes)
 
-    # Load as XML
+    # Load XML
     $xml = New-Object System.Xml.XmlDocument
     $xml.PreserveWhitespace = $false
     $xml.LoadXml($xmlText)
 
-    # Use local-name() to ignore namespaces
+    # Get Entity & Resource nodes (ignore namespaces)
     $entityNodes   = $xml.SelectNodes("//*[local-name()='Entity']")
     $resourceNodes = $xml.SelectNodes("//*[local-name()='Resource']")
 
-    # Build a lookup of Entity ID -> Display Name (from LocalizedStrings)
+    # Build EntityId -> DisplayName lookup from Resources
     $nameLookup = @{}
     foreach ($res in $resourceNodes) {
         $idRefAttr = $res.Attributes['idRef']
@@ -78,14 +80,13 @@ foreach ($rp in $rulePacks) {
 
         $idRef = $idRefAttr.Value
 
-        # Try to find the default Name element first, otherwise any Name
+        # Default Name first, otherwise any Name
         $nameNode = $res.SelectSingleNode("*[local-name()='Name' and @default='true']")
         if (-not $nameNode) {
             $nameNode = $res.SelectSingleNode("*[local-name()='Name']")
         }
 
         $displayName = if ($nameNode) { $nameNode.InnerText } else { $null }
-
         if ($displayName) {
             $nameLookup[$idRef] = $displayName
         }
@@ -97,88 +98,72 @@ foreach ($rp in $rulePacks) {
 
         $entityId = $idAttr.Value
 
-        # patternsProximity / relaxProximity attributes on <Entity>
-        $proxAttr    = $entity.Attributes['patternsProximity']
-        $relaxAttr   = $entity.Attributes['relaxProximity']
-        $recConfAttr = $entity.Attributes['recommendedConfidence']
-
-        $proxRaw = if ($proxAttr) { $proxAttr.Value } else { $null }
-        $relaxProx = if ($relaxAttr) { $relaxAttr.Value } else { $null }
-        $recommendedConfidence = if ($recConfAttr) { $recConfAttr.Value } else { $null }
-
-        # -------------------------------
-        # Detection logic for "unlimited"
-        # -------------------------------
-        $isUnlimited = $false
-        $category    = "Unknown"
-
-        # 1. Literal "unlimited" (any case, with optional whitespace)
-        if ($proxRaw -and $proxRaw.Trim().ToLower() -eq "unlimited") {
-            $isUnlimited = $true
-            $category    = "Unlimited (literal 'unlimited')"
-        }
-        elseif ([string]::IsNullOrWhiteSpace($proxRaw)) {
-            # 2. Missing proximity
-            $category = "No proximity specified"
-            if ($TreatMissingAsUnlimited) {
-                $isUnlimited = $true
-                $category    = "Unlimited (missing, treated as unlimited)"
-            }
-        }
-        else {
-            # 3. Try numeric interpretation
-            $proxInt = $null
-            if ([int]::TryParse($proxRaw, [ref]$proxInt)) {
-                if ($TreatZeroAsUnlimited -and $proxInt -eq 0) {
-                    $isUnlimited = $true
-                    $category    = "Unlimited (0 treated as unlimited)"
-                }
-                elseif ($proxInt -ge $UnlimitedThreshold) {
-                    $isUnlimited = $true
-                    $category    = "Unlimited (>= threshold $UnlimitedThreshold)"
-                }
-                else {
-                    $category = "Bounded ($proxInt)"
-                }
-            }
-            else {
-                # 4. Any other non-numeric value → treat as unlimited / special
-                $isUnlimited = $true
-                $category    = "Unlimited / special (non-numeric '$proxRaw')"
-            }
-        }
-
-        # Look up a friendly name for this Entity (SIT)
+        # Friendly SIT name
         $sitName = if ($nameLookup.ContainsKey($entityId)) {
             $nameLookup[$entityId]
         }
         else {
-            # Fallback if no LocalizedStrings entry found
             "[Unknown Name] (EntityId: $entityId)"
         }
 
-        # Add to results (ALL entities, regardless of unlimited or not)
+        # 1) Always output ONE ROW per Entity (SIT) using patternsProximity
+        $patternsProximityAttr = $entity.Attributes['patternsProximity']
+        $entityPatternsProximity = if ($patternsProximityAttr) { $patternsProximityAttr.Value } else { $null }
+
         $results += [PSCustomObject]@{
-            RulePackName           = $rp.Name
-            RulePackPublisher      = $rp.Publisher
-            EntityId               = $entityId
-            SitName                = $sitName
-            PatternsProximityRaw   = $proxRaw
-            RelaxProximity         = $relaxProx
-            RecommendedConfidence  = $recommendedConfidence
-            IsUnlimitedProximity   = $isUnlimited
-            ProximityCategory      = $category
+            RulePackName      = $rp.Name
+            RulePackPublisher = $rp.Publisher
+            EntityId          = $entityId
+            SitName           = $sitName
+            NodeType          = "Entity"
+            NodeIdRef         = $null
+            NodeMinMatches    = $null
+            NodeConfidence    = $null
+            NodeProximity     = $entityPatternsProximity
+        }
+
+        # 2) Now, for this Entity, find ALL descendant nodes with proximity="..."
+        $proxNodes = $entity.SelectNodes(".//*[@proximity]")
+
+        foreach ($pn in $proxNodes) {
+            $proxAttr = $pn.Attributes['proximity']
+            if (-not $proxAttr) { continue }
+
+            $nodeProximity = $proxAttr.Value
+            $nodeType      = $pn.LocalName
+
+            # Optional extras for context on the child node
+            $idRefAttr  = $pn.Attributes['idRef']
+            $minAttr    = $pn.Attributes['minMatches']
+            $confAttr   = $pn.Attributes['confidenceLevel']
+
+            $nodeIdRef      = if ($idRefAttr) { $idRefAttr.Value } else { $null }
+            $nodeMinMatches = if ($minAttr) { $minAttr.Value } else { $null }
+            $nodeConfidence = if ($confAttr) { $confAttr.Value } else { $null }
+
+            $results += [PSCustomObject]@{
+                RulePackName      = $rp.Name
+                RulePackPublisher = $rp.Publisher
+                EntityId          = $entityId
+                SitName           = $sitName
+                NodeType          = $nodeType
+                NodeIdRef         = $nodeIdRef
+                NodeMinMatches    = $nodeMinMatches
+                NodeConfidence    = $nodeConfidence
+                NodeProximity     = $nodeProximity
+            }
         }
     }
 }
 
 if ($results.Count -eq 0) {
-    Write-Warning "No SIT entities found to export."
+    Write-Warning "No SIT entities or proximity attributes found to export."
 }
 else {
-    Write-Host "Exporting $($results.Count) SIT Entity records to CSV..." -ForegroundColor Green
+    Write-Host "Exporting $($results.Count) rows to CSV..." -ForegroundColor Green
+
     $results |
-        Sort-Object SitName, RulePackName |
+        Sort-Object SitName, RulePackName, EntityId, NodeType, NodeIdRef |
         Export-Csv -Path $OutputPath -NoTypeInformation -Encoding UTF8
 
     Write-Host "Export complete: $OutputPath" -ForegroundColor Green
