@@ -42,27 +42,15 @@ It’s tuned to catch “embedded tokens”
 
 The “scan 2000 chars” makes it match even if the token starts far away from where the engine begins checking.
 
+
+=------------------------------------------------------------------------------------------------------
+
 What the “lighter” generic regex does (conceptually)
 
-A typical lighter version is like:
+does not scan ahead with .{0,2000}?
 
-(?!https?:\/\/)\b(?:[0-9A-Fa-f]{32,2000}|[A-Za-z0-9+\/]{32,2000}(?:==|=)?)\b
+it tries to match only where there is already a long run of eligible characters
 
+the Base64 part is structured as 4-char blocks, which tends to reduce random matches and avoid a lot of “try this length, now try that length” behavior.
 
-It matches the blob directly
-
-No “scan 0–2000 then test”.
-
-It only tries to match when it sees a run of eligible characters.
-
-It matches a single contiguous encoded string
-
-Hex: one run of hex chars.
-
-Base64: one run of Base64 chars (optional = padding at the end).
-
-It does not require “3 chunks” like your original.
-
-Much less backtracking
-
-Bounded repetition on one class is generally cheaper than “scan + nested big groups”.
+So in practice it’s typically much faster / fewer timeouts.
