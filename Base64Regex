@@ -7,3 +7,62 @@
 
 \b(?!https?:\/\/)(?:[A-Za-z0-9+\/]{40,120}\.){2}[A-Za-z0-9+\/]{40,120}\b
 (?!https?:\/\/)\b(?:[0-9A-Fa-f]{32,2000}|(?:[A-Za-z0-9+\/]{4}){8,500}(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?)\b
+
+
+
+
+Big difference is how the engine is forced to search.
+What your original does
+\b(?:^|[^.])[^\s]{0,2000}?(
+  ([A-Za-z0-9+\/]{40,120})
+  ([A-Za-z0-9+\.]{40,120})
+  ([A-Za-z0-9+\/]{40,120})
+)
+
+
+It scans first, then tries to match
+
+[^\s]{0,2000}? = “from here, try every possible start position up to 2000 chars forward”
+
+At each position it then attempts the 3 big {40,120} chunks.
+
+That’s why it’s “heavy”: lots of backtracking and retries.
+
+It’s not actually Base64/Base16
+
+It’s looking for three adjacent long runs of characters from those sets.
+
+Middle chunk allows . ([A-Za-z0-9+\.]), so it can match things like:
+
+AAAAA....BBBBB without requiring real dot separators.
+
+It does not validate Base64 padding or 4-char block structure.
+
+It’s tuned to catch “embedded tokens”
+
+The “scan 2000 chars” makes it match even if the token starts far away from where the engine begins checking.
+
+What the “lighter” generic regex does (conceptually)
+
+A typical lighter version is like:
+
+(?!https?:\/\/)\b(?:[0-9A-Fa-f]{32,2000}|[A-Za-z0-9+\/]{32,2000}(?:==|=)?)\b
+
+
+It matches the blob directly
+
+No “scan 0–2000 then test”.
+
+It only tries to match when it sees a run of eligible characters.
+
+It matches a single contiguous encoded string
+
+Hex: one run of hex chars.
+
+Base64: one run of Base64 chars (optional = padding at the end).
+
+It does not require “3 chunks” like your original.
+
+Much less backtracking
+
+Bounded repetition on one class is generally cheaper than “scan + nested big groups”.
