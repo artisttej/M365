@@ -1,1 +1,2 @@
 (?i)^(?:mailto:)?[A-Z0-9._%+-]+@barclays\.(?:com|co\.uk)$
+(?i)^(?:mailto:)?[A-Z0-9._%+-]+@(?:[A-Z0-9-]+\.)*barclays\.(?:com|co\.uk)$
