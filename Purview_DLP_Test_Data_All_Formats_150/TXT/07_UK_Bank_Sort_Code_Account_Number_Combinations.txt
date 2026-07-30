@@ -1,0 +1,1203 @@
+PURVIEW DLP TEST DATA - UK Bank Sort Code and Account Number Combination
+FICTIONAL SYNTHETIC DATA - AUTHORIZED DLP TESTING ONLY
+Records: 150
+
+RecordID: TEST-001
+FullName: Thomas Jack White
+PhysicalAddress: Flat 1, 1115 Abbey Close Road, London, SW1A 2AA, United Kingdom
+SensitiveData: Sort code: 10-00-00; Account number: 50000001
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-002
+FullName: Lily Oliver Williams
+PhysicalAddress: Flat 2, 1152 Bramble Close Road, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: Sort code: 11-03-07; Account number: 50000002
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-003
+FullName: Charlie James Hall
+PhysicalAddress: Flat 3, 1189 Cedar Close Road, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: Sort code: 12-06-14; Account number: 50000003
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-004
+FullName: Grace Thomas Davies
+PhysicalAddress: Flat 4, 1226 Church Close Road, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: Sort code: 13-09-21; Account number: 50000004
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-005
+FullName: Harry Jack Wood
+PhysicalAddress: Flat 5, 1263 Crown Close Road, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: Sort code: 14-12-28; Account number: 50000005
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-006
+FullName: Sophia Oliver Thompson
+PhysicalAddress: Flat 6, 1300 Elm Close Road, Leeds, LS1 4AP, United Kingdom
+SensitiveData: Sort code: 15-15-35; Account number: 50000006
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-007
+FullName: Jack James Smith
+PhysicalAddress: Flat 7, 1337 Hawthorn Close Road, Leicester, LE1 5YP, United Kingdom
+SensitiveData: Sort code: 16-18-42; Account number: 50000007
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-008
+FullName: Mia Thomas White
+PhysicalAddress: Flat 8, 1374 Kingfisher Close Road, Birmingham, B1 1BB, United Kingdom
+SensitiveData: Sort code: 17-21-49; Account number: 50000008
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-009
+FullName: Arthur Jack Williams
+PhysicalAddress: Flat 9, 1411 Mill Close Road, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: Sort code: 18-24-56; Account number: 50000009
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-010
+FullName: Ava Oliver Thomas
+PhysicalAddress: Flat 10, 1448 Orchard Close Road, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: Sort code: 19-27-63; Account number: 50000010
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-011
+FullName: George James Davies
+PhysicalAddress: Flat 11, 1485 Station Close Road, Bristol, BS1 4ST, United Kingdom
+SensitiveData: Sort code: 20-30-70; Account number: 50000011
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-012
+FullName: Isla Thomas Wood
+PhysicalAddress: Flat 12, 1522 Victoria Close Road, Oxford, OX1 1AA, United Kingdom
+SensitiveData: Sort code: 21-33-77; Account number: 50000012
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-013
+FullName: Oliver Jack Thompson
+PhysicalAddress: Flat 13, 1559 Abbey Grove Road, Glasgow, G1 2FF, United Kingdom
+SensitiveData: Sort code: 22-36-84; Account number: 50000013
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-014
+FullName: Amelia Oliver Jones
+PhysicalAddress: Flat 14, 1596 Bramble Grove Road, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: Sort code: 23-39-91; Account number: 50000014
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-015
+FullName: Edward Sophie White
+PhysicalAddress: Flat 15, 1633 Cedar Grove Road, Manchester, M1 2WD, United Kingdom
+SensitiveData: Sort code: 24-42-98; Account number: 50000015
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-016
+FullName: Lucy Lily Williams
+PhysicalAddress: Flat 16, 1670 Church Grove Road, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: Sort code: 25-45-05; Account number: 50000016
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-017
+FullName: Henry Mia Thomas
+PhysicalAddress: Flat 17, 1707 Crown Grove Road, London, SW1A 2AA, United Kingdom
+SensitiveData: Sort code: 26-48-12; Account number: 50000017
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-018
+FullName: Evie Amelia Patel
+PhysicalAddress: Flat 18, 1744 Elm Grove Road, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: Sort code: 27-51-19; Account number: 50000018
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-019
+FullName: James Sophie Wood
+PhysicalAddress: Flat 19, 1781 Hawthorn Grove Road, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: Sort code: 28-54-26; Account number: 50000019
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-020
+FullName: Sophie Lily Thompson
+PhysicalAddress: Flat 20, 1818 Kingfisher Grove Road, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: Sort code: 29-57-33; Account number: 50000020
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-021
+FullName: William Mia Jones
+PhysicalAddress: Flat 21, 1855 Mill Grove Road, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: Sort code: 30-60-40; Account number: 50000021
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-022
+FullName: Emily Amelia Roberts
+PhysicalAddress: Flat 22, 1892 Orchard Grove Road, Leeds, LS1 4AP, United Kingdom
+SensitiveData: Sort code: 31-63-47; Account number: 50000022
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-023
+FullName: Oscar Sophie Williams
+PhysicalAddress: Flat 23, 1929 Station Grove Road, Leicester, LE1 5YP, United Kingdom
+SensitiveData: Sort code: 32-66-54; Account number: 50000023
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-024
+FullName: Freya Lily Thomas
+PhysicalAddress: Flat 24, 1966 Victoria Grove Road, Birmingham, B1 1BB, United Kingdom
+SensitiveData: Sort code: 33-69-61; Account number: 50000024
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-025
+FullName: Thomas Mia Patel
+PhysicalAddress: Flat 25, 2003 Abbey Mead Road, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: Sort code: 34-72-68; Account number: 50000025
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-026
+FullName: Lily Amelia Harris
+PhysicalAddress: Flat 26, 2040 Bramble Mead Road, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: Sort code: 35-75-75; Account number: 50000026
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-027
+FullName: Charlie Sophie Thompson
+PhysicalAddress: Flat 27, 2077 Cedar Mead Road, Bristol, BS1 4ST, United Kingdom
+SensitiveData: Sort code: 36-78-82; Account number: 50000027
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-028
+FullName: Grace Lily Jones
+PhysicalAddress: Flat 28, 2114 Church Mead Road, Oxford, OX1 1AA, United Kingdom
+SensitiveData: Sort code: 37-81-89; Account number: 50000028
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-029
+FullName: Harry Mia Roberts
+PhysicalAddress: Flat 29, 2151 Crown Mead Road, Glasgow, G1 2FF, United Kingdom
+SensitiveData: Sort code: 38-84-96; Account number: 50000029
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-030
+FullName: Sophia Amelia Wilson
+PhysicalAddress: Flat 30, 2188 Elm Mead Road, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: Sort code: 39-87-03; Account number: 50000030
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-031
+FullName: Jack Sophie Thomas
+PhysicalAddress: Flat 31, 2225 Hawthorn Mead Road, Manchester, M1 2WD, United Kingdom
+SensitiveData: Sort code: 40-90-10; Account number: 50000031
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-032
+FullName: Mia Lily Patel
+PhysicalAddress: Flat 32, 2262 Kingfisher Mead Road, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: Sort code: 41-93-17; Account number: 50000032
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-033
+FullName: Arthur Mia Harris
+PhysicalAddress: Flat 33, 2299 Mill Mead Road, London, SW1A 2AA, United Kingdom
+SensitiveData: Sort code: 42-96-24; Account number: 50000033
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-034
+FullName: Ava Amelia Evans
+PhysicalAddress: Flat 34, 2336 Orchard Mead Road, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: Sort code: 43-99-31; Account number: 50000034
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-035
+FullName: George Sophie Jones
+PhysicalAddress: Flat 35, 2373 Station Mead Road, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: Sort code: 44-02-38; Account number: 50000035
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-036
+FullName: Isla Lily Roberts
+PhysicalAddress: Flat 36, 2410 Victoria Mead Road, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: Sort code: 45-05-45; Account number: 50000036
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-037
+FullName: Oliver Mia Wilson
+PhysicalAddress: Flat 37, 2447 Abbey Park Road, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: Sort code: 46-08-52; Account number: 50000037
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-038
+FullName: Amelia Jack Clarke
+PhysicalAddress: Flat 38, 2484 Bramble Park Road, Leeds, LS1 4AP, United Kingdom
+SensitiveData: Sort code: 47-11-59; Account number: 50000038
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-039
+FullName: Edward William Patel
+PhysicalAddress: Flat 39, 2521 Cedar Park Road, Leicester, LE1 5YP, United Kingdom
+SensitiveData: Sort code: 48-14-66; Account number: 50000039
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-040
+FullName: Lucy Charlie Harris
+PhysicalAddress: Flat 40, 2558 Church Park Road, Birmingham, B1 1BB, United Kingdom
+SensitiveData: Sort code: 49-17-73; Account number: 50000040
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-041
+FullName: Henry Arthur Evans
+PhysicalAddress: Flat 41, 2595 Crown Park Road, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: Sort code: 50-20-80; Account number: 50000041
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-042
+FullName: Evie Edward Jones
+PhysicalAddress: Flat 42, 2632 Elm Park Road, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: Sort code: 51-23-87; Account number: 50000042
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-043
+FullName: James William Roberts
+PhysicalAddress: Flat 43, 2669 Hawthorn Park Road, Bristol, BS1 4ST, United Kingdom
+SensitiveData: Sort code: 52-26-94; Account number: 50000043
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-044
+FullName: Sophie Charlie Wilson
+PhysicalAddress: Flat 44, 2706 Kingfisher Park Road, Oxford, OX1 1AA, United Kingdom
+SensitiveData: Sort code: 53-29-01; Account number: 50000044
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-045
+FullName: William Arthur Clarke
+PhysicalAddress: Flat 45, 2743 Mill Park Road, Glasgow, G1 2FF, United Kingdom
+SensitiveData: Sort code: 54-32-08; Account number: 50000045
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-046
+FullName: Emily Edward Patel
+PhysicalAddress: Flat 46, 2780 Orchard Park Road, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: Sort code: 55-35-15; Account number: 50000046
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-047
+FullName: Oscar William Harris
+PhysicalAddress: Flat 47, 2817 Station Park Road, Manchester, M1 2WD, United Kingdom
+SensitiveData: Sort code: 56-38-22; Account number: 50000047
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-048
+FullName: Freya Charlie Evans
+PhysicalAddress: Flat 48, 2854 Victoria Park Road, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: Sort code: 57-41-29; Account number: 50000048
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-049
+FullName: Thomas Arthur Taylor
+PhysicalAddress: Flat 49, 2891 Abbey Rise Road, London, SW1A 2AA, United Kingdom
+SensitiveData: Sort code: 58-44-36; Account number: 50000049
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-050
+FullName: Lily Edward Roberts
+PhysicalAddress: Flat 50, 2928 Bramble Rise Road, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: Sort code: 59-47-43; Account number: 50000050
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-051
+FullName: Charlie William Wilson
+PhysicalAddress: Flat 51, 2965 Cedar Rise Road, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: Sort code: 60-50-50; Account number: 50000051
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-052
+FullName: Grace Charlie Clarke
+PhysicalAddress: Flat 52, 3002 Church Rise Road, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: Sort code: 61-53-57; Account number: 50000052
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-053
+FullName: Harry Arthur Robinson
+PhysicalAddress: Flat 53, 3039 Crown Rise Road, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: Sort code: 62-56-64; Account number: 50000053
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-054
+FullName: Sophia Edward Harris
+PhysicalAddress: Flat 54, 3076 Elm Rise Road, Leeds, LS1 4AP, United Kingdom
+SensitiveData: Sort code: 63-59-71; Account number: 50000054
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-055
+FullName: Jack William Evans
+PhysicalAddress: Flat 55, 3113 Hawthorn Rise Road, Leicester, LE1 5YP, United Kingdom
+SensitiveData: Sort code: 64-62-78; Account number: 50000055
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-056
+FullName: Mia Charlie Taylor
+PhysicalAddress: Flat 56, 3150 Kingfisher Rise Road, Birmingham, B1 1BB, United Kingdom
+SensitiveData: Sort code: 65-65-85; Account number: 50000056
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-057
+FullName: Arthur Lily Green
+PhysicalAddress: Flat 57, 3187 Mill Rise Road, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: Sort code: 66-68-92; Account number: 50000057
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-058
+FullName: Ava Edward Wilson
+PhysicalAddress: Flat 58, 3224 Orchard Rise Road, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: Sort code: 67-71-99; Account number: 50000058
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-059
+FullName: George William Clarke
+PhysicalAddress: Flat 59, 3261 Station Rise Road, Bristol, BS1 4ST, United Kingdom
+SensitiveData: Sort code: 68-74-06; Account number: 50000059
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-060
+FullName: Isla Charlie Robinson
+PhysicalAddress: Flat 60, 3298 Victoria Rise Road, Oxford, OX1 1AA, United Kingdom
+SensitiveData: Sort code: 69-77-13; Account number: 50000060
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-061
+FullName: Oliver Arthur Edwards
+PhysicalAddress: Flat 61, 3335 Abbey Vale Road, Glasgow, G1 2FF, United Kingdom
+SensitiveData: Sort code: 70-80-20; Account number: 50000061
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-062
+FullName: Amelia Edward Evans
+PhysicalAddress: Flat 62, 3372 Bramble Vale Road, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: Sort code: 71-83-27; Account number: 50000062
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-063
+FullName: Edward Emily Taylor
+PhysicalAddress: Flat 63, 3409 Cedar Vale Road, Manchester, M1 2WD, United Kingdom
+SensitiveData: Sort code: 72-86-34; Account number: 50000063
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-064
+FullName: Lucy Grace Green
+PhysicalAddress: Flat 64, 3446 Church Vale Road, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: Sort code: 73-89-41; Account number: 50000064
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-065
+FullName: Henry Ava Johnson
+PhysicalAddress: Flat 65, 3483 Crown Vale Road, London, SW1A 2AA, United Kingdom
+SensitiveData: Sort code: 74-92-48; Account number: 50000065
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-066
+FullName: Evie Lucy Clarke
+PhysicalAddress: Flat 66, 3520 Elm Vale Road, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: Sort code: 75-95-55; Account number: 50000066
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-067
+FullName: James Emily Robinson
+PhysicalAddress: Flat 67, 3557 Hawthorn Vale Road, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: Sort code: 76-98-62; Account number: 50000067
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-068
+FullName: Sophie Grace Edwards
+PhysicalAddress: Flat 68, 3594 Kingfisher Vale Road, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: Sort code: 77-01-69; Account number: 50000068
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-069
+FullName: William Ava Walker
+PhysicalAddress: Flat 69, 3631 Mill Vale Road, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: Sort code: 78-04-76; Account number: 50000069
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-070
+FullName: Emily Lucy Taylor
+PhysicalAddress: Flat 70, 3668 Orchard Vale Road, Leeds, LS1 4AP, United Kingdom
+SensitiveData: Sort code: 79-07-83; Account number: 50000070
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-071
+FullName: Oscar Emily Green
+PhysicalAddress: Flat 71, 3705 Station Vale Road, Leicester, LE1 5YP, United Kingdom
+SensitiveData: Sort code: 10-10-90; Account number: 50000071
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-072
+FullName: Freya Grace Johnson
+PhysicalAddress: Flat 72, 3742 Victoria Vale Road, Birmingham, B1 1BB, United Kingdom
+SensitiveData: Sort code: 11-13-97; Account number: 50000072
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-073
+FullName: Thomas Ava Jackson
+PhysicalAddress: Flat 1, 3779 Abbey View Road, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: Sort code: 12-16-04; Account number: 50000073
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-074
+FullName: Lily Lucy Robinson
+PhysicalAddress: Flat 2, 3816 Bramble View Road, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: Sort code: 13-19-11; Account number: 50000074
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-075
+FullName: Charlie Emily Edwards
+PhysicalAddress: Flat 3, 3853 Cedar View Road, Bristol, BS1 4ST, United Kingdom
+SensitiveData: Sort code: 14-22-18; Account number: 50000075
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-076
+FullName: Grace William Walker
+PhysicalAddress: Flat 4, 3890 Church View Road, Oxford, OX1 1AA, United Kingdom
+SensitiveData: Sort code: 15-25-25; Account number: 50000076
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-077
+FullName: Harry Ava Brown
+PhysicalAddress: Flat 5, 3927 Crown View Road, Glasgow, G1 2FF, United Kingdom
+SensitiveData: Sort code: 16-28-32; Account number: 50000077
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-078
+FullName: Sophia Lucy Green
+PhysicalAddress: Flat 6, 3964 Elm View Road, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: Sort code: 17-31-39; Account number: 50000078
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-079
+FullName: Jack Emily Johnson
+PhysicalAddress: Flat 7, 4001 Hawthorn View Road, Manchester, M1 2WD, United Kingdom
+SensitiveData: Sort code: 18-34-46; Account number: 50000079
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-080
+FullName: Mia Grace Jackson
+PhysicalAddress: Flat 8, 4038 Kingfisher View Road, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: Sort code: 19-37-53; Account number: 50000080
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-081
+FullName: Arthur Ava Wright
+PhysicalAddress: Flat 9, 4075 Mill View Road, London, SW1A 2AA, United Kingdom
+SensitiveData: Sort code: 20-40-60; Account number: 50000081
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-082
+FullName: Ava Lucy Edwards
+PhysicalAddress: Flat 10, 4112 Orchard View Road, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: Sort code: 21-43-67; Account number: 50000082
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-083
+FullName: George Emily Walker
+PhysicalAddress: Flat 11, 4149 Station View Road, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: Sort code: 22-46-74; Account number: 50000083
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-084
+FullName: Isla Grace Brown
+PhysicalAddress: Flat 12, 4186 Victoria View Road, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: Sort code: 23-49-81; Account number: 50000084
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-085
+FullName: Oliver Ava Hall
+PhysicalAddress: Flat 13, 4223 Abbey Wood Road, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: Sort code: 24-52-88; Account number: 50000085
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-086
+FullName: Amelia Lucy Johnson
+PhysicalAddress: Flat 14, 4260 Bramble Wood Road, Leeds, LS1 4AP, United Kingdom
+SensitiveData: Sort code: 25-55-95; Account number: 50000086
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-087
+FullName: Edward Oscar Jackson
+PhysicalAddress: Flat 15, 4297 Cedar Wood Road, Leicester, LE1 5YP, United Kingdom
+SensitiveData: Sort code: 26-58-02; Account number: 50000087
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-088
+FullName: Lucy Harry Wright
+PhysicalAddress: Flat 16, 4334 Church Wood Road, Birmingham, B1 1BB, United Kingdom
+SensitiveData: Sort code: 27-61-09; Account number: 50000088
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-089
+FullName: Henry George Smith
+PhysicalAddress: Flat 17, 4371 Crown Wood Road, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: Sort code: 28-64-16; Account number: 50000089
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-090
+FullName: Evie Henry Walker
+PhysicalAddress: Flat 18, 4408 Elm Wood Road, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: Sort code: 29-67-23; Account number: 50000090
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-091
+FullName: James Oscar Brown
+PhysicalAddress: Flat 19, 4445 Hawthorn Wood Road, Bristol, BS1 4ST, United Kingdom
+SensitiveData: Sort code: 30-70-30; Account number: 50000091
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-092
+FullName: Sophie Harry Hall
+PhysicalAddress: Flat 20, 4482 Kingfisher Wood Road, Oxford, OX1 1AA, United Kingdom
+SensitiveData: Sort code: 31-73-37; Account number: 50000092
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-093
+FullName: William George Davies
+PhysicalAddress: Flat 21, 4519 Mill Wood Road, Glasgow, G1 2FF, United Kingdom
+SensitiveData: Sort code: 32-76-44; Account number: 50000093
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-094
+FullName: Emily Henry Jackson
+PhysicalAddress: Flat 22, 4556 Orchard Wood Road, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: Sort code: 33-79-51; Account number: 50000094
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-095
+FullName: Oscar Lucy Wright
+PhysicalAddress: Flat 23, 4593 Station Wood Road, Manchester, M1 2WD, United Kingdom
+SensitiveData: Sort code: 34-82-58; Account number: 50000095
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-096
+FullName: Freya Harry Smith
+PhysicalAddress: Flat 24, 4630 Victoria Wood Road, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: Sort code: 35-85-65; Account number: 50000096
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-097
+FullName: Thomas George White
+PhysicalAddress: Flat 25, 4667 Abbey Green Road, London, SW1A 2AA, United Kingdom
+SensitiveData: Sort code: 36-88-72; Account number: 50000097
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-098
+FullName: Lily Henry Brown
+PhysicalAddress: Flat 26, 4704 Bramble Green Road, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: Sort code: 37-91-79; Account number: 50000098
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-099
+FullName: Charlie Oscar Hall
+PhysicalAddress: Flat 27, 4741 Cedar Green Road, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: Sort code: 38-94-86; Account number: 50000099
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-100
+FullName: Grace Harry Davies
+PhysicalAddress: Flat 28, 4778 Church Green Road, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: Sort code: 39-97-93; Account number: 50000100
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-101
+FullName: Harry George Wood
+PhysicalAddress: Flat 29, 4815 Crown Green Road, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: Sort code: 40-00-00; Account number: 50000101
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-102
+FullName: Sophia Henry Wright
+PhysicalAddress: Flat 30, 4852 Elm Green Road, Leeds, LS1 4AP, United Kingdom
+SensitiveData: Sort code: 41-03-07; Account number: 50000102
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-103
+FullName: Jack Oscar Smith
+PhysicalAddress: Flat 31, 4889 Hawthorn Green Road, Leicester, LE1 5YP, United Kingdom
+SensitiveData: Sort code: 42-06-14; Account number: 50000103
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-104
+FullName: Mia Harry White
+PhysicalAddress: Flat 32, 4926 Kingfisher Green Road, Birmingham, B1 1BB, United Kingdom
+SensitiveData: Sort code: 43-09-21; Account number: 50000104
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-105
+FullName: Arthur George Williams
+PhysicalAddress: Flat 33, 4963 Mill Green Road, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: Sort code: 44-12-28; Account number: 50000105
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-106
+FullName: Ava Henry Hall
+PhysicalAddress: Flat 34, 5000 Orchard Green Road, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: Sort code: 45-15-35; Account number: 50000106
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-107
+FullName: George Oscar Davies
+PhysicalAddress: Flat 35, 5037 Station Green Road, Bristol, BS1 4ST, United Kingdom
+SensitiveData: Sort code: 46-18-42; Account number: 50000107
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-108
+FullName: Isla Harry Wood
+PhysicalAddress: Flat 36, 5074 Victoria Green Road, Oxford, OX1 1AA, United Kingdom
+SensitiveData: Sort code: 47-21-49; Account number: 50000108
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-109
+FullName: Oliver George Thompson
+PhysicalAddress: Flat 37, 5111 Abbey Heath Road, Glasgow, G1 2FF, United Kingdom
+SensitiveData: Sort code: 48-24-56; Account number: 50000109
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-110
+FullName: Amelia Henry Smith
+PhysicalAddress: Flat 38, 5148 Bramble Heath Road, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: Sort code: 49-27-63; Account number: 50000110
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-111
+FullName: Edward Freya White
+PhysicalAddress: Flat 39, 5185 Cedar Heath Road, Manchester, M1 2WD, United Kingdom
+SensitiveData: Sort code: 50-30-70; Account number: 50000111
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-112
+FullName: Lucy Sophia Williams
+PhysicalAddress: Flat 40, 5222 Church Heath Road, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: Sort code: 51-33-77; Account number: 50000112
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-113
+FullName: Henry Isla Thomas
+PhysicalAddress: Flat 41, 5259 Crown Heath Road, London, SW1A 2AA, United Kingdom
+SensitiveData: Sort code: 52-36-84; Account number: 50000113
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-114
+FullName: Evie George Davies
+PhysicalAddress: Flat 42, 5296 Elm Heath Road, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: Sort code: 53-39-91; Account number: 50000114
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-115
+FullName: James Freya Wood
+PhysicalAddress: Flat 43, 5333 Hawthorn Heath Road, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: Sort code: 54-42-98; Account number: 50000115
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-116
+FullName: Sophie Sophia Thompson
+PhysicalAddress: Flat 44, 5370 Kingfisher Heath Road, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: Sort code: 55-45-05; Account number: 50000116
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-117
+FullName: William Isla Jones
+PhysicalAddress: Flat 45, 5407 Mill Heath Road, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: Sort code: 56-48-12; Account number: 50000117
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-118
+FullName: Emily Evie White
+PhysicalAddress: Flat 46, 5444 Orchard Heath Road, Leeds, LS1 4AP, United Kingdom
+SensitiveData: Sort code: 57-51-19; Account number: 50000118
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-119
+FullName: Oscar Freya Williams
+PhysicalAddress: Flat 47, 5481 Station Heath Road, Leicester, LE1 5YP, United Kingdom
+SensitiveData: Sort code: 58-54-26; Account number: 50000119
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-120
+FullName: Freya Sophia Thomas
+PhysicalAddress: Flat 48, 5518 Victoria Heath Road, Birmingham, B1 1BB, United Kingdom
+SensitiveData: Sort code: 59-57-33; Account number: 50000120
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-121
+FullName: Thomas Isla Patel
+PhysicalAddress: Flat 49, 5555 Abbey Cross Road, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: Sort code: 60-60-40; Account number: 50000121
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-122
+FullName: Lily Evie Wood
+PhysicalAddress: Flat 50, 5592 Bramble Cross Road, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: Sort code: 61-63-47; Account number: 50000122
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-123
+FullName: Charlie Freya Thompson
+PhysicalAddress: Flat 51, 5629 Cedar Cross Road, Bristol, BS1 4ST, United Kingdom
+SensitiveData: Sort code: 62-66-54; Account number: 50000123
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-124
+FullName: Grace Sophia Jones
+PhysicalAddress: Flat 52, 5666 Church Cross Road, Oxford, OX1 1AA, United Kingdom
+SensitiveData: Sort code: 63-69-61; Account number: 50000124
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-125
+FullName: Harry Isla Roberts
+PhysicalAddress: Flat 53, 5703 Crown Cross Road, Glasgow, G1 2FF, United Kingdom
+SensitiveData: Sort code: 64-72-68; Account number: 50000125
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-126
+FullName: Sophia Evie Williams
+PhysicalAddress: Flat 54, 5740 Elm Cross Road, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: Sort code: 65-75-75; Account number: 50000126
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-127
+FullName: Jack Freya Thomas
+PhysicalAddress: Flat 55, 5777 Hawthorn Cross Road, Manchester, M1 2WD, United Kingdom
+SensitiveData: Sort code: 66-78-82; Account number: 50000127
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-128
+FullName: Mia Sophia Patel
+PhysicalAddress: Flat 56, 5814 Kingfisher Cross Road, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: Sort code: 67-81-89; Account number: 50000128
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-129
+FullName: Arthur Isla Harris
+PhysicalAddress: Flat 57, 5851 Mill Cross Road, London, SW1A 2AA, United Kingdom
+SensitiveData: Sort code: 68-84-96; Account number: 50000129
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-130
+FullName: Ava Evie Thompson
+PhysicalAddress: Flat 58, 5888 Orchard Cross Road, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: Sort code: 69-87-03; Account number: 50000130
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-131
+FullName: George Freya Jones
+PhysicalAddress: Flat 59, 5925 Station Cross Road, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: Sort code: 70-90-10; Account number: 50000131
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-132
+FullName: Isla Sophia Roberts
+PhysicalAddress: Flat 60, 5962 Victoria Cross Road, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: Sort code: 71-93-17; Account number: 50000132
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-133
+FullName: Oliver Isla Wilson
+PhysicalAddress: Flat 61, 5999 Abbey Gate Road, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: Sort code: 72-96-24; Account number: 50000133
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-134
+FullName: Amelia Evie Thomas
+PhysicalAddress: Flat 62, 6036 Bramble Gate Road, Leeds, LS1 4AP, United Kingdom
+SensitiveData: Sort code: 73-99-31; Account number: 50000134
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-135
+FullName: Edward Thomas Patel
+PhysicalAddress: Flat 63, 6073 Cedar Gate Road, Leicester, LE1 5YP, United Kingdom
+SensitiveData: Sort code: 74-02-38; Account number: 50000135
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-136
+FullName: Lucy Jack Harris
+PhysicalAddress: Flat 64, 6110 Church Gate Road, Birmingham, B1 1BB, United Kingdom
+SensitiveData: Sort code: 75-05-45; Account number: 50000136
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-137
+FullName: Henry Oliver Evans
+PhysicalAddress: Flat 65, 6147 Crown Gate Road, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: Sort code: 76-08-52; Account number: 50000137
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-138
+FullName: Evie James Jones
+PhysicalAddress: Flat 66, 6184 Elm Gate Road, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: Sort code: 77-11-59; Account number: 50000138
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-139
+FullName: James Thomas Roberts
+PhysicalAddress: Flat 67, 6221 Hawthorn Gate Road, Bristol, BS1 4ST, United Kingdom
+SensitiveData: Sort code: 78-14-66; Account number: 50000139
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-140
+FullName: Sophie Jack Wilson
+PhysicalAddress: Flat 68, 6258 Kingfisher Gate Road, Oxford, OX1 1AA, United Kingdom
+SensitiveData: Sort code: 79-17-73; Account number: 50000140
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-141
+FullName: William Oliver Clarke
+PhysicalAddress: Flat 69, 6295 Mill Gate Road, Glasgow, G1 2FF, United Kingdom
+SensitiveData: Sort code: 10-20-80; Account number: 50000141
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-142
+FullName: Emily James Patel
+PhysicalAddress: Flat 70, 6332 Orchard Gate Road, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: Sort code: 11-23-87; Account number: 50000142
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-143
+FullName: Oscar Thomas Harris
+PhysicalAddress: Flat 71, 6369 Station Gate Road, Manchester, M1 2WD, United Kingdom
+SensitiveData: Sort code: 12-26-94; Account number: 50000143
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-144
+FullName: Freya Jack Evans
+PhysicalAddress: Flat 72, 6406 Victoria Gate Road, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: Sort code: 13-29-01; Account number: 50000144
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-145
+FullName: Thomas Oliver Taylor
+PhysicalAddress: Flat 1, 6443 Abbey Close Street, London, SW1A 2AA, United Kingdom
+SensitiveData: Sort code: 14-32-08; Account number: 50000145
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-146
+FullName: Lily James Roberts
+PhysicalAddress: Flat 2, 6480 Bramble Close Street, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: Sort code: 15-35-15; Account number: 50000146
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-147
+FullName: Charlie Thomas Wilson
+PhysicalAddress: Flat 3, 6517 Cedar Close Street, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: Sort code: 16-38-22; Account number: 50000147
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-148
+FullName: Grace Jack Clarke
+PhysicalAddress: Flat 4, 6554 Church Close Street, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: Sort code: 17-41-29; Account number: 50000148
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-149
+FullName: Harry Oliver Robinson
+PhysicalAddress: Flat 5, 6591 Crown Close Street, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: Sort code: 18-44-36; Account number: 50000149
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-150
+FullName: Sophia James Harris
+PhysicalAddress: Flat 6, 6628 Elm Close Street, Leeds, LS1 4AP, United Kingdom
+SensitiveData: Sort code: 19-47-43; Account number: 50000150
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE

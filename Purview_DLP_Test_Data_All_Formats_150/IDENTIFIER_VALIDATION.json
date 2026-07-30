@@ -1,0 +1,280 @@
+{
+  "pack": "Purview_DLP_Synthetic_Test_Data_150",
+  "revision": 2,
+  "generated": "2026-07-30",
+  "test_case_files": 26,
+  "required_rows_per_file": 150,
+  "total_rows": 3900,
+  "globally_unique_full_names": 3900,
+  "globally_unique_physical_addresses": 3900,
+  "placeholder_address_hits": 0,
+  "dlptest_integrated_rows": 10,
+  "dlptest_sources": [
+    "https://dlptest.com/sample-data/nameccnzip/",
+    "https://dlptest.com/sample-data/namessndob/"
+  ],
+  "all_identifier_format_and_checksum_validations_passed": true,
+  "all_structural_validations_passed": true,
+  "checks": [
+    {
+      "file": "01_Credit_Card_Numbers.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 5,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "02_US_Social_Security_Numbers.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 5,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "03_US_Drivers_License_Numbers.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "04_US_Adoption_Taxpayer_ID_Numbers.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "05_US_Preparer_Taxpayer_ID_Numbers.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "06_US_Individual_Tax_ID_Numbers.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "07_UK_Bank_Sort_Code_Account_Number_Combinations.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "08_Spanish_National_ID.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "09_Italian_Fiscal_Codes.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "10_Italian_IBAN_Codes.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "11_Pakistan_IBAN_Codes.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "12_Singapore_National_ID_Numbers.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "13_UAE_IBAN_Codes.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "14_UK_Drivers_License_Numbers.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "15_UK_Electoral_Roll_Numbers.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "16_UK_National_Insurance_Numbers.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "17_UK_Tax_ID_Numbers.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "18_UK_NHS_Numbers.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "19_Hong_Kong_National_ID_Numbers.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "20_Indian_Aadhaar_Card_Numbers.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "21_Indian_PAN_Card_Numbers.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "22_ABA_Routing_Numbers.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "23_Burgerservicenummer.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "24_French_Social_Security_Numbers.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "25_Japanese_My_Number_Corporate.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    },
+    {
+      "file": "26_Japanese_My_Number_Personal.csv",
+      "row_count": 150,
+      "unique_names": 150,
+      "unique_addresses": 150,
+      "unique_sensitive_values": 150,
+      "dlptest_integrated_rows": 0,
+      "address_placeholder_hits": 0,
+      "pass": true
+    }
+  ]
+}

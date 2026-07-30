@@ -1,0 +1,1203 @@
+PURVIEW DLP TEST DATA - National Registration Identity Card (NRIC)
+FICTIONAL SYNTHETIC DATA - AUTHORIZED DLP TESTING ONLY
+Records: 150
+
+RecordID: TEST-001
+FullName: Cheryl Joanne Ho
+PhysicalAddress: Block 1089, Unit #01-100, Angsana Heights Road, Singapore 018956
+SensitiveData: S1000000I
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-002
+FullName: Ryan Rachel Ng
+PhysicalAddress: Block 1126, Unit #02-101, Bedok Heights Road, Singapore 560123
+SensitiveData: S1000001G
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-003
+FullName: Li Xuan Cheryl Chong
+PhysicalAddress: Block 1163, Unit #03-102, Clementi Heights Road, Singapore 569933
+SensitiveData: S1000002E
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-004
+FullName: Jian Wei Mei Lin Chua
+PhysicalAddress: Block 1200, Unit #04-103, Dover Heights Road, Singapore 730101
+SensitiveData: S1000003C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-005
+FullName: Hui Min Joanne Seah
+PhysicalAddress: Block 1237, Unit #05-104, Fernvale Heights Road, Singapore 768019
+SensitiveData: S1000004A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-006
+FullName: Zhi Hao Rachel Teo
+PhysicalAddress: Block 1274, Unit #06-105, Harbour Heights Road, Singapore 460209
+SensitiveData: S1000005Z
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-007
+FullName: Mei Lin Cheryl Tan
+PhysicalAddress: Block 1311, Unit #07-106, Jellicoe Heights Road, Singapore 529510
+SensitiveData: S1000006H
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-008
+FullName: Kai Wen Mei Lin Low
+PhysicalAddress: Block 1348, Unit #08-107, Kallang Heights Road, Singapore 238801
+SensitiveData: S1000007F
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-009
+FullName: Xin Yi Joanne Ng
+PhysicalAddress: Block 1385, Unit #09-108, Marina Heights Road, Singapore 640201
+SensitiveData: S1000008D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-010
+FullName: Jun Jie Rachel Chong
+PhysicalAddress: Block 1422, Unit #10-109, Orchard Heights Road, Singapore 408600
+SensitiveData: S1000009B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-011
+FullName: Jia Hui Cheryl Chua
+PhysicalAddress: Block 1459, Unit #11-110, Pandan Heights Road, Singapore 150083
+SensitiveData: S1000010F
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-012
+FullName: Wei Ming Mei Lin Chew
+PhysicalAddress: Block 1496, Unit #12-111, Tampines Heights Road, Singapore 119077
+SensitiveData: S1000011D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-013
+FullName: Joanne Bryan Teo
+PhysicalAddress: Block 1533, Unit #13-112, Angsana Rise Road, Singapore 018956
+SensitiveData: S1000012B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-014
+FullName: Bryan Ethan Tan
+PhysicalAddress: Block 1570, Unit #14-113, Bedok Rise Road, Singapore 560123
+SensitiveData: S1000013J
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-015
+FullName: Nicole Ryan Low
+PhysicalAddress: Block 1607, Unit #15-114, Clementi Rise Road, Singapore 569933
+SensitiveData: S1000014I
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-016
+FullName: Adrian Kai Wen Ong
+PhysicalAddress: Block 1644, Unit #16-115, Dover Rise Road, Singapore 730101
+SensitiveData: S1000015G
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-017
+FullName: Vanessa Bryan Chong
+PhysicalAddress: Block 1681, Unit #17-116, Fernvale Rise Road, Singapore 768019
+SensitiveData: S1000016E
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-018
+FullName: Isaac Ethan Chua
+PhysicalAddress: Block 1718, Unit #18-117, Harbour Rise Road, Singapore 460209
+SensitiveData: S1000017C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-019
+FullName: Rachel Ryan Chew
+PhysicalAddress: Block 1755, Unit #19-118, Jellicoe Rise Road, Singapore 529510
+SensitiveData: S1000018A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-020
+FullName: Ethan Kai Wen Ang
+PhysicalAddress: Block 1792, Unit #20-119, Kallang Rise Road, Singapore 238801
+SensitiveData: S1000019Z
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-021
+FullName: Felicia Bryan Tan
+PhysicalAddress: Block 1829, Unit #21-120, Marina Rise Road, Singapore 640201
+SensitiveData: S1000020C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-022
+FullName: Darren Ethan Low
+PhysicalAddress: Block 1866, Unit #22-121, Orchard Rise Road, Singapore 408600
+SensitiveData: S1000021A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-023
+FullName: Alicia Ryan Ong
+PhysicalAddress: Block 1903, Unit #23-122, Pandan Rise Road, Singapore 150083
+SensitiveData: S1000022Z
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-024
+FullName: Marcus Kai Wen Yap
+PhysicalAddress: Block 1940, Unit #24-123, Tampines Rise Road, Singapore 119077
+SensitiveData: S1000023H
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-025
+FullName: Cheryl Bryan Chua
+PhysicalAddress: Block 1977, Unit #25-124, Angsana View Road, Singapore 018956
+SensitiveData: S1000024F
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-026
+FullName: Ryan Ethan Chew
+PhysicalAddress: Block 2014, Unit #26-125, Bedok View Road, Singapore 560123
+SensitiveData: S1000025D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-027
+FullName: Li Xuan Ryan Ang
+PhysicalAddress: Block 2051, Unit #27-126, Clementi View Road, Singapore 569933
+SensitiveData: S1000026B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-028
+FullName: Jian Wei Kai Wen Lim
+PhysicalAddress: Block 2088, Unit #28-127, Dover View Road, Singapore 730101
+SensitiveData: S1000027J
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-029
+FullName: Hui Min Bryan Low
+PhysicalAddress: Block 2125, Unit #29-128, Fernvale View Road, Singapore 768019
+SensitiveData: S1000028I
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-030
+FullName: Zhi Hao Ethan Ong
+PhysicalAddress: Block 2162, Unit #30-129, Harbour View Road, Singapore 460209
+SensitiveData: S1000029G
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-031
+FullName: Mei Lin Ryan Yap
+PhysicalAddress: Block 2199, Unit #31-130, Jellicoe View Road, Singapore 529510
+SensitiveData: S1000030J
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-032
+FullName: Kai Wen Cheryl Chan
+PhysicalAddress: Block 2236, Unit #32-131, Kallang View Road, Singapore 238801
+SensitiveData: S1000031I
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-033
+FullName: Xin Yi Bryan Chew
+PhysicalAddress: Block 2273, Unit #33-132, Marina View Road, Singapore 640201
+SensitiveData: S1000032G
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-034
+FullName: Jun Jie Ethan Ang
+PhysicalAddress: Block 2310, Unit #34-133, Orchard View Road, Singapore 408600
+SensitiveData: S1000033E
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-035
+FullName: Jia Hui Ryan Lim
+PhysicalAddress: Block 2347, Unit #35-134, Pandan View Road, Singapore 150083
+SensitiveData: S1000034C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-036
+FullName: Wei Ming Kai Wen Toh
+PhysicalAddress: Block 2384, Unit #36-135, Tampines View Road, Singapore 119077
+SensitiveData: S1000035A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-037
+FullName: Joanne Nicole Ong
+PhysicalAddress: Block 2421, Unit #37-136, Angsana Green Road, Singapore 018956
+SensitiveData: S1000036Z
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-038
+FullName: Bryan Felicia Yap
+PhysicalAddress: Block 2458, Unit #38-137, Bedok Green Road, Singapore 560123
+SensitiveData: S1000037H
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-039
+FullName: Nicole Li Xuan Chan
+PhysicalAddress: Block 2495, Unit #39-138, Clementi Green Road, Singapore 569933
+SensitiveData: S1000038F
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-040
+FullName: Adrian Xin Yi Foo
+PhysicalAddress: Block 2532, Unit #40-139, Dover Green Road, Singapore 730101
+SensitiveData: S1000039D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-041
+FullName: Vanessa Nicole Ang
+PhysicalAddress: Block 2569, Unit #41-140, Fernvale Green Road, Singapore 768019
+SensitiveData: S1000040H
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-042
+FullName: Isaac Felicia Lim
+PhysicalAddress: Block 2606, Unit #42-141, Harbour Green Road, Singapore 460209
+SensitiveData: S1000041F
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-043
+FullName: Rachel Li Xuan Toh
+PhysicalAddress: Block 2643, Unit #43-142, Jellicoe Green Road, Singapore 529510
+SensitiveData: S1000042D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-044
+FullName: Ethan Xin Yi Wong
+PhysicalAddress: Block 2680, Unit #44-143, Kallang Green Road, Singapore 238801
+SensitiveData: S1000043B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-045
+FullName: Felicia Nicole Yap
+PhysicalAddress: Block 2717, Unit #45-144, Marina Green Road, Singapore 640201
+SensitiveData: S1000044J
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-046
+FullName: Darren Felicia Chan
+PhysicalAddress: Block 2754, Unit #46-145, Orchard Green Road, Singapore 408600
+SensitiveData: S1000045I
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-047
+FullName: Alicia Li Xuan Foo
+PhysicalAddress: Block 2791, Unit #47-146, Pandan Green Road, Singapore 150083
+SensitiveData: S1000046G
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-048
+FullName: Marcus Xin Yi Yeo
+PhysicalAddress: Block 2828, Unit #48-147, Tampines Green Road, Singapore 119077
+SensitiveData: S1000047E
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-049
+FullName: Cheryl Nicole Lim
+PhysicalAddress: Block 2865, Unit #49-148, Angsana Park Road, Singapore 018956
+SensitiveData: S1000048C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-050
+FullName: Ryan Felicia Toh
+PhysicalAddress: Block 2902, Unit #50-149, Bedok Park Road, Singapore 560123
+SensitiveData: S1000049A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-051
+FullName: Li Xuan Ethan Wong
+PhysicalAddress: Block 2939, Unit #51-150, Clementi Park Road, Singapore 569933
+SensitiveData: S1000050E
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-052
+FullName: Jian Wei Xin Yi Loh
+PhysicalAddress: Block 2976, Unit #52-151, Dover Park Road, Singapore 730101
+SensitiveData: S1000051C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-053
+FullName: Hui Min Nicole Chan
+PhysicalAddress: Block 3013, Unit #53-152, Fernvale Park Road, Singapore 768019
+SensitiveData: S1000052A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-054
+FullName: Zhi Hao Felicia Foo
+PhysicalAddress: Block 3050, Unit #54-153, Harbour Park Road, Singapore 460209
+SensitiveData: S1000053Z
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-055
+FullName: Mei Lin Li Xuan Yeo
+PhysicalAddress: Block 3087, Unit #55-154, Jellicoe Park Road, Singapore 529510
+SensitiveData: S1000054H
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-056
+FullName: Kai Wen Xin Yi Lee
+PhysicalAddress: Block 3124, Unit #56-155, Kallang Park Road, Singapore 238801
+SensitiveData: S1000055F
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-057
+FullName: Xin Yi Nicole Toh
+PhysicalAddress: Block 3161, Unit #57-156, Marina Park Road, Singapore 640201
+SensitiveData: S1000056D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-058
+FullName: Jun Jie Felicia Wong
+PhysicalAddress: Block 3198, Unit #58-157, Orchard Park Road, Singapore 408600
+SensitiveData: S1000057B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-059
+FullName: Jia Hui Li Xuan Loh
+PhysicalAddress: Block 3235, Unit #59-158, Pandan Park Road, Singapore 150083
+SensitiveData: S1000058J
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-060
+FullName: Wei Ming Xin Yi Koh
+PhysicalAddress: Block 3272, Unit #60-159, Tampines Park Road, Singapore 119077
+SensitiveData: S1000059I
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-061
+FullName: Joanne Adrian Foo
+PhysicalAddress: Block 3309, Unit #61-160, Angsana Central Road, Singapore 018956
+SensitiveData: S1000060B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-062
+FullName: Bryan Darren Yeo
+PhysicalAddress: Block 3346, Unit #62-161, Bedok Central Road, Singapore 560123
+SensitiveData: S1000061J
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-063
+FullName: Nicole Jian Wei Lee
+PhysicalAddress: Block 3383, Unit #63-162, Clementi Central Road, Singapore 569933
+SensitiveData: S1000062I
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-064
+FullName: Adrian Jun Jie Sim
+PhysicalAddress: Block 3420, Unit #64-163, Dover Central Road, Singapore 730101
+SensitiveData: S1000063G
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-065
+FullName: Vanessa Adrian Wong
+PhysicalAddress: Block 3457, Unit #65-164, Fernvale Central Road, Singapore 768019
+SensitiveData: S1000064E
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-066
+FullName: Isaac Darren Loh
+PhysicalAddress: Block 3494, Unit #66-165, Harbour Central Road, Singapore 460209
+SensitiveData: S1000065C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-067
+FullName: Rachel Jian Wei Koh
+PhysicalAddress: Block 3531, Unit #67-166, Jellicoe Central Road, Singapore 529510
+SensitiveData: S1000066A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-068
+FullName: Ethan Jun Jie Quek
+PhysicalAddress: Block 3568, Unit #68-167, Kallang Central Road, Singapore 238801
+SensitiveData: S1000067Z
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-069
+FullName: Felicia Adrian Yeo
+PhysicalAddress: Block 3605, Unit #69-168, Marina Central Road, Singapore 640201
+SensitiveData: S1000068H
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-070
+FullName: Darren Nicole Lee
+PhysicalAddress: Block 3642, Unit #70-169, Orchard Central Road, Singapore 408600
+SensitiveData: S1000069F
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-071
+FullName: Alicia Jian Wei Sim
+PhysicalAddress: Block 3679, Unit #71-170, Pandan Central Road, Singapore 150083
+SensitiveData: S1000070Z
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-072
+FullName: Marcus Jun Jie Goh
+PhysicalAddress: Block 3716, Unit #72-171, Tampines Central Road, Singapore 119077
+SensitiveData: S1000071H
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-073
+FullName: Cheryl Adrian Loh
+PhysicalAddress: Block 3753, Unit #01-172, Angsana Grove Road, Singapore 018956
+SensitiveData: S1000072F
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-074
+FullName: Ryan Darren Koh
+PhysicalAddress: Block 3790, Unit #02-173, Bedok Grove Road, Singapore 560123
+SensitiveData: S1000073D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-075
+FullName: Li Xuan Jian Wei Quek
+PhysicalAddress: Block 3827, Unit #03-174, Clementi Grove Road, Singapore 569933
+SensitiveData: S1000074B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-076
+FullName: Jian Wei Jun Jie Ho
+PhysicalAddress: Block 3864, Unit #04-175, Dover Grove Road, Singapore 730101
+SensitiveData: S1000075J
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-077
+FullName: Hui Min Adrian Lee
+PhysicalAddress: Block 3901, Unit #05-176, Fernvale Grove Road, Singapore 768019
+SensitiveData: S1000076I
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-078
+FullName: Zhi Hao Darren Sim
+PhysicalAddress: Block 3938, Unit #06-177, Harbour Grove Road, Singapore 460209
+SensitiveData: S1000077G
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-079
+FullName: Mei Lin Jian Wei Goh
+PhysicalAddress: Block 3975, Unit #07-178, Jellicoe Grove Road, Singapore 529510
+SensitiveData: S1000078E
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-080
+FullName: Kai Wen Jun Jie Seah
+PhysicalAddress: Block 4012, Unit #08-179, Kallang Grove Road, Singapore 238801
+SensitiveData: S1000079C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-081
+FullName: Xin Yi Adrian Koh
+PhysicalAddress: Block 4049, Unit #09-180, Marina Grove Road, Singapore 640201
+SensitiveData: S1000080G
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-082
+FullName: Jun Jie Darren Quek
+PhysicalAddress: Block 4086, Unit #10-181, Orchard Grove Road, Singapore 408600
+SensitiveData: S1000081E
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-083
+FullName: Jia Hui Jian Wei Ho
+PhysicalAddress: Block 4123, Unit #11-182, Pandan Grove Road, Singapore 150083
+SensitiveData: S1000082C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-084
+FullName: Wei Ming Jun Jie Ng
+PhysicalAddress: Block 4160, Unit #12-183, Tampines Grove Road, Singapore 119077
+SensitiveData: S1000083A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-085
+FullName: Joanne Vanessa Sim
+PhysicalAddress: Block 4197, Unit #13-184, Angsana Terrace Road, Singapore 018956
+SensitiveData: S1000084Z
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-086
+FullName: Bryan Alicia Goh
+PhysicalAddress: Block 4234, Unit #14-185, Bedok Terrace Road, Singapore 560123
+SensitiveData: S1000085H
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-087
+FullName: Nicole Hui Min Seah
+PhysicalAddress: Block 4271, Unit #15-186, Clementi Terrace Road, Singapore 569933
+SensitiveData: S1000086F
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-088
+FullName: Adrian Jia Hui Teo
+PhysicalAddress: Block 4308, Unit #16-187, Dover Terrace Road, Singapore 730101
+SensitiveData: S1000087D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-089
+FullName: Vanessa Jun Jie Quek
+PhysicalAddress: Block 4345, Unit #17-188, Fernvale Terrace Road, Singapore 768019
+SensitiveData: S1000088B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-090
+FullName: Isaac Alicia Ho
+PhysicalAddress: Block 4382, Unit #18-189, Harbour Terrace Road, Singapore 460209
+SensitiveData: S1000089J
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-091
+FullName: Rachel Hui Min Ng
+PhysicalAddress: Block 4419, Unit #19-190, Jellicoe Terrace Road, Singapore 529510
+SensitiveData: S1000090D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-092
+FullName: Ethan Jia Hui Chong
+PhysicalAddress: Block 4456, Unit #20-191, Kallang Terrace Road, Singapore 238801
+SensitiveData: S1000091B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-093
+FullName: Felicia Vanessa Goh
+PhysicalAddress: Block 4493, Unit #21-192, Marina Terrace Road, Singapore 640201
+SensitiveData: S1000092J
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-094
+FullName: Darren Alicia Seah
+PhysicalAddress: Block 4530, Unit #22-193, Orchard Terrace Road, Singapore 408600
+SensitiveData: S1000093I
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-095
+FullName: Alicia Hui Min Teo
+PhysicalAddress: Block 4567, Unit #23-194, Pandan Terrace Road, Singapore 150083
+SensitiveData: S1000094G
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-096
+FullName: Marcus Jia Hui Tan
+PhysicalAddress: Block 4604, Unit #24-195, Tampines Terrace Road, Singapore 119077
+SensitiveData: S1000095E
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-097
+FullName: Cheryl Vanessa Ho
+PhysicalAddress: Block 4641, Unit #25-196, Angsana Crescent Road, Singapore 018956
+SensitiveData: S1000096C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-098
+FullName: Ryan Alicia Ng
+PhysicalAddress: Block 4678, Unit #26-197, Bedok Crescent Road, Singapore 560123
+SensitiveData: S1000097A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-099
+FullName: Li Xuan Hui Min Chong
+PhysicalAddress: Block 4715, Unit #27-198, Clementi Crescent Road, Singapore 569933
+SensitiveData: S1000098Z
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-100
+FullName: Jian Wei Jia Hui Chua
+PhysicalAddress: Block 4752, Unit #28-199, Dover Crescent Road, Singapore 730101
+SensitiveData: S1000099H
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-101
+FullName: Hui Min Vanessa Seah
+PhysicalAddress: Block 4789, Unit #29-200, Fernvale Crescent Road, Singapore 768019
+SensitiveData: S1000100E
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-102
+FullName: Zhi Hao Alicia Teo
+PhysicalAddress: Block 4826, Unit #30-201, Harbour Crescent Road, Singapore 460209
+SensitiveData: S1000101C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-103
+FullName: Mei Lin Hui Min Tan
+PhysicalAddress: Block 4863, Unit #31-202, Jellicoe Crescent Road, Singapore 529510
+SensitiveData: S1000102A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-104
+FullName: Kai Wen Jia Hui Low
+PhysicalAddress: Block 4900, Unit #32-203, Kallang Crescent Road, Singapore 238801
+SensitiveData: S1000103Z
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-105
+FullName: Xin Yi Vanessa Ng
+PhysicalAddress: Block 4937, Unit #33-204, Marina Crescent Road, Singapore 640201
+SensitiveData: S1000104H
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-106
+FullName: Jun Jie Alicia Chong
+PhysicalAddress: Block 4974, Unit #34-205, Orchard Crescent Road, Singapore 408600
+SensitiveData: S1000105F
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-107
+FullName: Jia Hui Hui Min Chua
+PhysicalAddress: Block 5011, Unit #35-206, Pandan Crescent Road, Singapore 150083
+SensitiveData: S1000106D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-108
+FullName: Wei Ming Jia Hui Chew
+PhysicalAddress: Block 5048, Unit #36-207, Tampines Crescent Road, Singapore 119077
+SensitiveData: S1000107B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-109
+FullName: Joanne Isaac Teo
+PhysicalAddress: Block 5085, Unit #37-208, Angsana Point Road, Singapore 018956
+SensitiveData: S1000108J
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-110
+FullName: Bryan Marcus Tan
+PhysicalAddress: Block 5122, Unit #38-209, Bedok Point Road, Singapore 560123
+SensitiveData: S1000109I
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-111
+FullName: Nicole Zhi Hao Low
+PhysicalAddress: Block 5159, Unit #39-210, Clementi Point Road, Singapore 569933
+SensitiveData: S1000110B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-112
+FullName: Adrian Wei Ming Ong
+PhysicalAddress: Block 5196, Unit #40-211, Dover Point Road, Singapore 730101
+SensitiveData: S1000111J
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-113
+FullName: Vanessa Isaac Chong
+PhysicalAddress: Block 5233, Unit #41-212, Fernvale Point Road, Singapore 768019
+SensitiveData: S1000112I
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-114
+FullName: Isaac Marcus Chua
+PhysicalAddress: Block 5270, Unit #42-213, Harbour Point Road, Singapore 460209
+SensitiveData: S1000113G
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-115
+FullName: Rachel Zhi Hao Chew
+PhysicalAddress: Block 5307, Unit #43-214, Jellicoe Point Road, Singapore 529510
+SensitiveData: S1000114E
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-116
+FullName: Ethan Wei Ming Ang
+PhysicalAddress: Block 5344, Unit #44-215, Kallang Point Road, Singapore 238801
+SensitiveData: S1000115C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-117
+FullName: Felicia Isaac Tan
+PhysicalAddress: Block 5381, Unit #45-216, Marina Point Road, Singapore 640201
+SensitiveData: S1000116A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-118
+FullName: Darren Marcus Low
+PhysicalAddress: Block 5418, Unit #46-217, Orchard Point Road, Singapore 408600
+SensitiveData: S1000117Z
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-119
+FullName: Alicia Zhi Hao Ong
+PhysicalAddress: Block 5455, Unit #47-218, Pandan Point Road, Singapore 150083
+SensitiveData: S1000118H
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-120
+FullName: Marcus Wei Ming Yap
+PhysicalAddress: Block 5492, Unit #48-219, Tampines Point Road, Singapore 119077
+SensitiveData: S1000119F
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-121
+FullName: Cheryl Isaac Chua
+PhysicalAddress: Block 5529, Unit #49-220, Angsana Gardens Road, Singapore 018956
+SensitiveData: S1000120Z
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-122
+FullName: Ryan Marcus Chew
+PhysicalAddress: Block 5566, Unit #50-221, Bedok Gardens Road, Singapore 560123
+SensitiveData: S1000121H
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-123
+FullName: Li Xuan Zhi Hao Ang
+PhysicalAddress: Block 5603, Unit #51-222, Clementi Gardens Road, Singapore 569933
+SensitiveData: S1000122F
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-124
+FullName: Jian Wei Wei Ming Lim
+PhysicalAddress: Block 5640, Unit #52-223, Dover Gardens Road, Singapore 730101
+SensitiveData: S1000123D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-125
+FullName: Hui Min Isaac Low
+PhysicalAddress: Block 5677, Unit #53-224, Fernvale Gardens Road, Singapore 768019
+SensitiveData: S1000124B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-126
+FullName: Zhi Hao Marcus Ong
+PhysicalAddress: Block 5714, Unit #54-225, Harbour Gardens Road, Singapore 460209
+SensitiveData: S1000125J
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-127
+FullName: Mei Lin Zhi Hao Yap
+PhysicalAddress: Block 5751, Unit #55-226, Jellicoe Gardens Road, Singapore 529510
+SensitiveData: S1000126I
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-128
+FullName: Kai Wen Wei Ming Chan
+PhysicalAddress: Block 5788, Unit #56-227, Kallang Gardens Road, Singapore 238801
+SensitiveData: S1000127G
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-129
+FullName: Xin Yi Isaac Chew
+PhysicalAddress: Block 5825, Unit #57-228, Marina Gardens Road, Singapore 640201
+SensitiveData: S1000128E
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-130
+FullName: Jun Jie Marcus Ang
+PhysicalAddress: Block 5862, Unit #58-229, Orchard Gardens Road, Singapore 408600
+SensitiveData: S1000129C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-131
+FullName: Jia Hui Zhi Hao Lim
+PhysicalAddress: Block 5899, Unit #59-230, Pandan Gardens Road, Singapore 150083
+SensitiveData: S1000130G
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-132
+FullName: Wei Ming Hui Min Toh
+PhysicalAddress: Block 5936, Unit #60-231, Tampines Gardens Road, Singapore 119077
+SensitiveData: S1000131E
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-133
+FullName: Joanne Rachel Ong
+PhysicalAddress: Block 5973, Unit #61-232, Angsana Vale Road, Singapore 018956
+SensitiveData: S1000132C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-134
+FullName: Bryan Cheryl Yap
+PhysicalAddress: Block 6010, Unit #62-233, Bedok Vale Road, Singapore 560123
+SensitiveData: S1000133A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-135
+FullName: Nicole Mei Lin Chan
+PhysicalAddress: Block 6047, Unit #63-234, Clementi Vale Road, Singapore 569933
+SensitiveData: S1000134Z
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-136
+FullName: Adrian Joanne Chew
+PhysicalAddress: Block 6084, Unit #64-235, Dover Vale Road, Singapore 730101
+SensitiveData: S1000135H
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-137
+FullName: Vanessa Rachel Ang
+PhysicalAddress: Block 6121, Unit #65-236, Fernvale Vale Road, Singapore 768019
+SensitiveData: S1000136F
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-138
+FullName: Isaac Cheryl Lim
+PhysicalAddress: Block 6158, Unit #66-237, Harbour Vale Road, Singapore 460209
+SensitiveData: S1000137D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-139
+FullName: Rachel Mei Lin Toh
+PhysicalAddress: Block 6195, Unit #67-238, Jellicoe Vale Road, Singapore 529510
+SensitiveData: S1000138B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-140
+FullName: Ethan Joanne Ong
+PhysicalAddress: Block 6232, Unit #68-239, Kallang Vale Road, Singapore 238801
+SensitiveData: S1000139J
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-141
+FullName: Felicia Rachel Yap
+PhysicalAddress: Block 6269, Unit #69-240, Marina Vale Road, Singapore 640201
+SensitiveData: S1000140D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-142
+FullName: Darren Cheryl Chan
+PhysicalAddress: Block 6306, Unit #70-241, Orchard Vale Road, Singapore 408600
+SensitiveData: S1000141B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-143
+FullName: Alicia Mei Lin Foo
+PhysicalAddress: Block 6343, Unit #71-242, Pandan Vale Road, Singapore 150083
+SensitiveData: S1000142J
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-144
+FullName: Marcus Joanne Ang
+PhysicalAddress: Block 6380, Unit #72-243, Tampines Vale Road, Singapore 119077
+SensitiveData: S1000143I
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-145
+FullName: Cheryl Rachel Lim
+PhysicalAddress: Block 6417, Unit #01-244, Angsana Heights Avenue, Singapore 018956
+SensitiveData: S1000144G
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-146
+FullName: Ryan Cheryl Toh
+PhysicalAddress: Block 6454, Unit #02-245, Bedok Heights Avenue, Singapore 560123
+SensitiveData: S1000145E
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-147
+FullName: Li Xuan Mei Lin Wong
+PhysicalAddress: Block 6491, Unit #03-246, Clementi Heights Avenue, Singapore 569933
+SensitiveData: S1000146C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-148
+FullName: Jian Wei Joanne Yap
+PhysicalAddress: Block 6528, Unit #04-247, Dover Heights Avenue, Singapore 730101
+SensitiveData: S1000147A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-149
+FullName: Hui Min Rachel Chan
+PhysicalAddress: Block 6565, Unit #05-248, Fernvale Heights Avenue, Singapore 768019
+SensitiveData: S1000148Z
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-150
+FullName: Zhi Hao Cheryl Foo
+PhysicalAddress: Block 6602, Unit #06-249, Harbour Heights Avenue, Singapore 460209
+SensitiveData: S1000149H
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE

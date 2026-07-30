@@ -1,0 +1,1203 @@
+PURVIEW DLP TEST DATA - National Insurance Number (NINO)
+FICTIONAL SYNTHETIC DATA - AUTHORIZED DLP TESTING ONLY
+Records: 150
+
+RecordID: TEST-001
+FullName: William Lily Evans
+PhysicalAddress: Flat 19, 7885 Hawthorn Grove Avenue, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: AB 10 00 00 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-002
+FullName: Emily Mia Taylor
+PhysicalAddress: Flat 20, 7922 Kingfisher Grove Avenue, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: AC 10 00 01 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-003
+FullName: Oscar Amelia Green
+PhysicalAddress: Flat 21, 7959 Mill Grove Avenue, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: AE 10 00 02 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-004
+FullName: Freya Sophie Wilson
+PhysicalAddress: Flat 22, 7996 Orchard Grove Avenue, Leeds, LS1 4AP, United Kingdom
+SensitiveData: AH 10 00 03 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-005
+FullName: Thomas Lily Clarke
+PhysicalAddress: Flat 23, 8033 Station Grove Avenue, Leicester, LE1 5YP, United Kingdom
+SensitiveData: AJ 10 00 04 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-006
+FullName: Lily Mia Robinson
+PhysicalAddress: Flat 24, 8070 Victoria Grove Avenue, Birmingham, B1 1BB, United Kingdom
+SensitiveData: AK 10 00 05 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-007
+FullName: Charlie Amelia Edwards
+PhysicalAddress: Flat 25, 8107 Abbey Mead Avenue, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: AL 10 00 06 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-008
+FullName: Grace Sophie Evans
+PhysicalAddress: Flat 26, 8144 Bramble Mead Avenue, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: AM 10 00 07 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-009
+FullName: Harry Lily Taylor
+PhysicalAddress: Flat 27, 8181 Cedar Mead Avenue, Bristol, BS1 4ST, United Kingdom
+SensitiveData: AP 10 00 08 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-010
+FullName: Sophia Mia Green
+PhysicalAddress: Flat 28, 8218 Church Mead Avenue, Oxford, OX1 1AA, United Kingdom
+SensitiveData: AR 10 00 09 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-011
+FullName: Jack Amelia Johnson
+PhysicalAddress: Flat 29, 8255 Crown Mead Avenue, Glasgow, G1 2FF, United Kingdom
+SensitiveData: AS 10 00 10 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-012
+FullName: Mia Sophie Clarke
+PhysicalAddress: Flat 30, 8292 Elm Mead Avenue, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: AT 10 00 11 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-013
+FullName: Arthur Lily Robinson
+PhysicalAddress: Flat 31, 8329 Hawthorn Mead Avenue, Manchester, M1 2WD, United Kingdom
+SensitiveData: AW 10 00 12 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-014
+FullName: Ava Mia Edwards
+PhysicalAddress: Flat 32, 8366 Kingfisher Mead Avenue, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: AX 10 00 13 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-015
+FullName: George Amelia Walker
+PhysicalAddress: Flat 33, 8403 Mill Mead Avenue, London, SW1A 2AA, United Kingdom
+SensitiveData: AY 10 00 14 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-016
+FullName: Isla Sophie Taylor
+PhysicalAddress: Flat 34, 8440 Orchard Mead Avenue, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: CA 10 00 15 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-017
+FullName: Oliver Lily Green
+PhysicalAddress: Flat 35, 8477 Station Mead Avenue, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: CE 10 00 16 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-018
+FullName: Amelia Mia Johnson
+PhysicalAddress: Flat 36, 8514 Victoria Mead Avenue, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: CH 10 00 17 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-019
+FullName: Edward Mia Clarke
+PhysicalAddress: Flat 37, 8551 Abbey Park Avenue, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: CJ 10 00 18 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-020
+FullName: Lucy William Robinson
+PhysicalAddress: Flat 38, 8588 Bramble Park Avenue, Leeds, LS1 4AP, United Kingdom
+SensitiveData: CK 10 00 19 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-021
+FullName: Henry Charlie Edwards
+PhysicalAddress: Flat 39, 8625 Cedar Park Avenue, Leicester, LE1 5YP, United Kingdom
+SensitiveData: CL 10 00 20 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-022
+FullName: Evie Arthur Walker
+PhysicalAddress: Flat 40, 8662 Church Park Avenue, Birmingham, B1 1BB, United Kingdom
+SensitiveData: CM 10 00 21 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-023
+FullName: James Edward Taylor
+PhysicalAddress: Flat 41, 8699 Crown Park Avenue, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: CP 10 00 22 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-024
+FullName: Sophie William Green
+PhysicalAddress: Flat 42, 8736 Elm Park Avenue, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: CR 10 00 23 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-025
+FullName: William Charlie Johnson
+PhysicalAddress: Flat 43, 8773 Hawthorn Park Avenue, Bristol, BS1 4ST, United Kingdom
+SensitiveData: CS 10 00 24 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-026
+FullName: Emily Arthur Jackson
+PhysicalAddress: Flat 44, 8810 Kingfisher Park Avenue, Oxford, OX1 1AA, United Kingdom
+SensitiveData: CW 10 00 25 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-027
+FullName: Oscar Edward Robinson
+PhysicalAddress: Flat 45, 8847 Mill Park Avenue, Glasgow, G1 2FF, United Kingdom
+SensitiveData: CX 10 00 26 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-028
+FullName: Freya William Edwards
+PhysicalAddress: Flat 46, 8884 Orchard Park Avenue, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: CY 10 00 27 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-029
+FullName: Thomas Charlie Walker
+PhysicalAddress: Flat 47, 8921 Station Park Avenue, Manchester, M1 2WD, United Kingdom
+SensitiveData: EA 10 00 28 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-030
+FullName: Lily Arthur Brown
+PhysicalAddress: Flat 48, 8958 Victoria Park Avenue, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: EC 10 00 29 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-031
+FullName: Charlie Edward Green
+PhysicalAddress: Flat 49, 8995 Abbey Rise Avenue, London, SW1A 2AA, United Kingdom
+SensitiveData: EH 10 00 30 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-032
+FullName: Grace William Johnson
+PhysicalAddress: Flat 50, 9032 Bramble Rise Avenue, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: EJ 10 00 31 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-033
+FullName: Harry Charlie Jackson
+PhysicalAddress: Flat 51, 9069 Cedar Rise Avenue, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: EK 10 00 32 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-034
+FullName: Sophia Arthur Wright
+PhysicalAddress: Flat 52, 9106 Church Rise Avenue, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: EL 10 00 33 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-035
+FullName: Jack Edward Edwards
+PhysicalAddress: Flat 53, 9143 Crown Rise Avenue, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: EM 10 00 34 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-036
+FullName: Mia William Walker
+PhysicalAddress: Flat 54, 9180 Elm Rise Avenue, Leeds, LS1 4AP, United Kingdom
+SensitiveData: EN 10 00 35 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-037
+FullName: Arthur Charlie Brown
+PhysicalAddress: Flat 55, 9217 Hawthorn Rise Avenue, Leicester, LE1 5YP, United Kingdom
+SensitiveData: EP 10 00 36 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-038
+FullName: Ava Arthur Hall
+PhysicalAddress: Flat 56, 9254 Kingfisher Rise Avenue, Birmingham, B1 1BB, United Kingdom
+SensitiveData: ER 10 00 37 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-039
+FullName: George Edward Johnson
+PhysicalAddress: Flat 57, 9291 Mill Rise Avenue, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: ES 10 00 38 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-040
+FullName: Isla William Jackson
+PhysicalAddress: Flat 58, 9328 Orchard Rise Avenue, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: ET 10 00 39 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-041
+FullName: Oliver Charlie Wright
+PhysicalAddress: Flat 59, 9365 Station Rise Avenue, Bristol, BS1 4ST, United Kingdom
+SensitiveData: EW 10 00 40 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-042
+FullName: Amelia Arthur Smith
+PhysicalAddress: Flat 60, 9402 Victoria Rise Avenue, Oxford, OX1 1AA, United Kingdom
+SensitiveData: EX 10 00 41 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-043
+FullName: Edward Lucy Walker
+PhysicalAddress: Flat 61, 9439 Abbey Vale Avenue, Glasgow, G1 2FF, United Kingdom
+SensitiveData: EY 10 00 42 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-044
+FullName: Lucy Emily Brown
+PhysicalAddress: Flat 62, 9476 Bramble Vale Avenue, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: AB 10 00 43 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-045
+FullName: Henry Grace Hall
+PhysicalAddress: Flat 63, 9513 Cedar Vale Avenue, Manchester, M1 2WD, United Kingdom
+SensitiveData: AC 10 00 44 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-046
+FullName: Evie Ava Davies
+PhysicalAddress: Flat 64, 9550 Church Vale Avenue, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: AE 10 00 45 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-047
+FullName: James Lucy Jackson
+PhysicalAddress: Flat 65, 9587 Crown Vale Avenue, London, SW1A 2AA, United Kingdom
+SensitiveData: AH 10 00 46 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-048
+FullName: Sophie Emily Wright
+PhysicalAddress: Flat 66, 9624 Elm Vale Avenue, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: AJ 10 00 47 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-049
+FullName: William Grace Smith
+PhysicalAddress: Flat 67, 9661 Hawthorn Vale Avenue, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: AK 10 00 48 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-050
+FullName: Emily Ava White
+PhysicalAddress: Flat 68, 9698 Kingfisher Vale Avenue, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: AL 10 00 49 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-051
+FullName: Oscar Lucy Brown
+PhysicalAddress: Flat 69, 9735 Mill Vale Avenue, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: AM 10 00 50 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-052
+FullName: Freya Emily Hall
+PhysicalAddress: Flat 70, 9772 Orchard Vale Avenue, Leeds, LS1 4AP, United Kingdom
+SensitiveData: AP 10 00 51 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-053
+FullName: Thomas Grace Davies
+PhysicalAddress: Flat 71, 9809 Station Vale Avenue, Leicester, LE1 5YP, United Kingdom
+SensitiveData: AR 10 00 52 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-054
+FullName: Lily Ava Wood
+PhysicalAddress: Flat 72, 9846 Victoria Vale Avenue, Birmingham, B1 1BB, United Kingdom
+SensitiveData: AS 10 00 53 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-055
+FullName: Charlie Lucy Wright
+PhysicalAddress: Flat 1, 9883 Abbey View Avenue, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: AT 10 00 54 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-056
+FullName: Grace Emily Smith
+PhysicalAddress: Flat 2, 40 Bramble View Avenue, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: AW 10 00 55 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-057
+FullName: Harry Grace White
+PhysicalAddress: Flat 3, 77 Cedar View Avenue, Bristol, BS1 4ST, United Kingdom
+SensitiveData: AX 10 00 56 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-058
+FullName: Sophia Ava Williams
+PhysicalAddress: Flat 4, 114 Church View Avenue, Oxford, OX1 1AA, United Kingdom
+SensitiveData: AY 10 00 57 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-059
+FullName: Jack Lucy Hall
+PhysicalAddress: Flat 5, 151 Crown View Avenue, Glasgow, G1 2FF, United Kingdom
+SensitiveData: CA 10 00 58 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-060
+FullName: Mia Emily Davies
+PhysicalAddress: Flat 6, 188 Elm View Avenue, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: CE 10 00 59 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-061
+FullName: Arthur Grace Wood
+PhysicalAddress: Flat 7, 225 Hawthorn View Avenue, Manchester, M1 2WD, United Kingdom
+SensitiveData: CH 10 00 60 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-062
+FullName: Ava Charlie Thompson
+PhysicalAddress: Flat 8, 262 Kingfisher View Avenue, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: CJ 10 00 61 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-063
+FullName: George Lucy Smith
+PhysicalAddress: Flat 9, 299 Mill View Avenue, London, SW1A 2AA, United Kingdom
+SensitiveData: CK 10 00 62 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-064
+FullName: Isla Emily White
+PhysicalAddress: Flat 10, 336 Orchard View Avenue, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: CL 10 00 63 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-065
+FullName: Oliver Grace Williams
+PhysicalAddress: Flat 11, 373 Station View Avenue, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: CM 10 00 64 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-066
+FullName: Amelia Ava Thomas
+PhysicalAddress: Flat 12, 410 Victoria View Avenue, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: CP 10 00 65 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-067
+FullName: Edward Henry Davies
+PhysicalAddress: Flat 13, 447 Abbey Wood Avenue, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: CR 10 00 66 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-068
+FullName: Lucy Oscar Wood
+PhysicalAddress: Flat 14, 484 Bramble Wood Avenue, Leeds, LS1 4AP, United Kingdom
+SensitiveData: CS 10 00 67 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-069
+FullName: Henry Harry Thompson
+PhysicalAddress: Flat 15, 521 Cedar Wood Avenue, Leicester, LE1 5YP, United Kingdom
+SensitiveData: CW 10 00 68 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-070
+FullName: Evie George Jones
+PhysicalAddress: Flat 16, 558 Church Wood Avenue, Birmingham, B1 1BB, United Kingdom
+SensitiveData: CX 10 00 69 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-071
+FullName: James Henry White
+PhysicalAddress: Flat 17, 595 Crown Wood Avenue, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: CY 10 00 70 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-072
+FullName: Sophie Oscar Williams
+PhysicalAddress: Flat 18, 632 Elm Wood Avenue, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: EA 10 00 71 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-073
+FullName: William Harry Thomas
+PhysicalAddress: Flat 19, 669 Hawthorn Wood Avenue, Bristol, BS1 4ST, United Kingdom
+SensitiveData: EC 10 00 72 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-074
+FullName: Emily George Patel
+PhysicalAddress: Flat 20, 706 Kingfisher Wood Avenue, Oxford, OX1 1AA, United Kingdom
+SensitiveData: EH 10 00 73 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-075
+FullName: Oscar Henry Wood
+PhysicalAddress: Flat 21, 743 Mill Wood Avenue, Glasgow, G1 2FF, United Kingdom
+SensitiveData: EJ 10 00 74 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-076
+FullName: Freya Oscar Thompson
+PhysicalAddress: Flat 22, 780 Orchard Wood Avenue, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: EK 10 00 75 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-077
+FullName: Thomas Harry Jones
+PhysicalAddress: Flat 23, 817 Station Wood Avenue, Manchester, M1 2WD, United Kingdom
+SensitiveData: EL 10 00 76 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-078
+FullName: Lily George Roberts
+PhysicalAddress: Flat 24, 854 Victoria Wood Avenue, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: EM 10 00 77 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-079
+FullName: Charlie Henry Williams
+PhysicalAddress: Flat 25, 891 Abbey Green Avenue, London, SW1A 2AA, United Kingdom
+SensitiveData: EN 10 00 78 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-080
+FullName: Grace Oscar Thomas
+PhysicalAddress: Flat 26, 928 Bramble Green Avenue, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: EP 10 00 79 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-081
+FullName: Harry Emily Patel
+PhysicalAddress: Flat 27, 965 Cedar Green Avenue, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: ER 10 00 80 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-082
+FullName: Sophia George Harris
+PhysicalAddress: Flat 28, 1002 Church Green Avenue, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: ES 10 00 81 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-083
+FullName: Jack Henry Thompson
+PhysicalAddress: Flat 29, 1039 Crown Green Avenue, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: ET 10 00 82 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-084
+FullName: Mia Oscar Jones
+PhysicalAddress: Flat 30, 1076 Elm Green Avenue, Leeds, LS1 4AP, United Kingdom
+SensitiveData: EW 10 00 83 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-085
+FullName: Arthur Harry Roberts
+PhysicalAddress: Flat 31, 1113 Hawthorn Green Avenue, Leicester, LE1 5YP, United Kingdom
+SensitiveData: EX 10 00 84 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-086
+FullName: Ava George Wilson
+PhysicalAddress: Flat 32, 1150 Kingfisher Green Avenue, Birmingham, B1 1BB, United Kingdom
+SensitiveData: EY 10 00 85 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-087
+FullName: George Henry Thomas
+PhysicalAddress: Flat 33, 1187 Mill Green Avenue, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: AB 10 00 86 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-088
+FullName: Isla Oscar Patel
+PhysicalAddress: Flat 34, 1224 Orchard Green Avenue, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: AC 10 00 87 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-089
+FullName: Oliver Harry Harris
+PhysicalAddress: Flat 35, 1261 Station Green Avenue, Bristol, BS1 4ST, United Kingdom
+SensitiveData: AE 10 00 88 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-090
+FullName: Amelia George Evans
+PhysicalAddress: Flat 36, 1298 Victoria Green Avenue, Oxford, OX1 1AA, United Kingdom
+SensitiveData: AH 10 00 89 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-091
+FullName: Edward Evie Jones
+PhysicalAddress: Flat 37, 1335 Abbey Heath Avenue, Glasgow, G1 2FF, United Kingdom
+SensitiveData: AJ 10 00 90 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-092
+FullName: Lucy Freya Roberts
+PhysicalAddress: Flat 38, 1372 Bramble Heath Avenue, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: AK 10 00 91 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-093
+FullName: Henry Sophia Wilson
+PhysicalAddress: Flat 39, 1409 Cedar Heath Avenue, Manchester, M1 2WD, United Kingdom
+SensitiveData: AL 10 00 92 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-094
+FullName: Evie Isla Clarke
+PhysicalAddress: Flat 40, 1446 Church Heath Avenue, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: AM 10 00 93 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-095
+FullName: James Evie Patel
+PhysicalAddress: Flat 41, 1483 Crown Heath Avenue, London, SW1A 2AA, United Kingdom
+SensitiveData: AP 10 00 94 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-096
+FullName: Sophie Freya Harris
+PhysicalAddress: Flat 42, 1520 Elm Heath Avenue, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: AR 10 00 95 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-097
+FullName: William Sophia Evans
+PhysicalAddress: Flat 43, 1557 Hawthorn Heath Avenue, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: AS 10 00 96 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-098
+FullName: Emily Isla Taylor
+PhysicalAddress: Flat 44, 1594 Kingfisher Heath Avenue, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: AT 10 00 97 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-099
+FullName: Oscar Evie Roberts
+PhysicalAddress: Flat 45, 1631 Mill Heath Avenue, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: AW 10 00 98 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-100
+FullName: Freya Henry Wilson
+PhysicalAddress: Flat 46, 1668 Orchard Heath Avenue, Leeds, LS1 4AP, United Kingdom
+SensitiveData: AX 10 00 99 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-101
+FullName: Thomas Sophia Clarke
+PhysicalAddress: Flat 47, 1705 Station Heath Avenue, Leicester, LE1 5YP, United Kingdom
+SensitiveData: AY 10 01 00 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-102
+FullName: Lily Isla Robinson
+PhysicalAddress: Flat 48, 1742 Victoria Heath Avenue, Birmingham, B1 1BB, United Kingdom
+SensitiveData: CA 10 01 01 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-103
+FullName: Charlie Evie Harris
+PhysicalAddress: Flat 49, 1779 Abbey Cross Avenue, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: CE 10 01 02 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-104
+FullName: Grace Freya Evans
+PhysicalAddress: Flat 50, 1816 Bramble Cross Avenue, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: CH 10 01 03 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-105
+FullName: Harry Sophia Taylor
+PhysicalAddress: Flat 51, 1853 Cedar Cross Avenue, Bristol, BS1 4ST, United Kingdom
+SensitiveData: CJ 10 01 04 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-106
+FullName: Sophia Isla Green
+PhysicalAddress: Flat 52, 1890 Church Cross Avenue, Oxford, OX1 1AA, United Kingdom
+SensitiveData: CK 10 01 05 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-107
+FullName: Jack Evie Wilson
+PhysicalAddress: Flat 53, 1927 Crown Cross Avenue, Glasgow, G1 2FF, United Kingdom
+SensitiveData: CL 10 01 06 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-108
+FullName: Mia Freya Clarke
+PhysicalAddress: Flat 54, 1964 Elm Cross Avenue, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: CM 10 01 07 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-109
+FullName: Arthur Sophia Robinson
+PhysicalAddress: Flat 55, 2001 Hawthorn Cross Avenue, Manchester, M1 2WD, United Kingdom
+SensitiveData: CP 10 01 08 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-110
+FullName: Ava Isla Edwards
+PhysicalAddress: Flat 56, 2038 Kingfisher Cross Avenue, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: CR 10 01 09 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-111
+FullName: George Evie Evans
+PhysicalAddress: Flat 57, 2075 Mill Cross Avenue, London, SW1A 2AA, United Kingdom
+SensitiveData: CS 10 01 10 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-112
+FullName: Isla Freya Taylor
+PhysicalAddress: Flat 58, 2112 Orchard Cross Avenue, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: CW 10 01 11 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-113
+FullName: Oliver Sophia Green
+PhysicalAddress: Flat 59, 2149 Station Cross Avenue, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: CX 10 01 12 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-114
+FullName: Amelia Isla Johnson
+PhysicalAddress: Flat 60, 2186 Victoria Cross Avenue, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: CY 10 01 13 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-115
+FullName: Edward James Clarke
+PhysicalAddress: Flat 61, 2223 Abbey Gate Avenue, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: EA 10 01 14 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-116
+FullName: Lucy Thomas Robinson
+PhysicalAddress: Flat 62, 2260 Bramble Gate Avenue, Leeds, LS1 4AP, United Kingdom
+SensitiveData: EC 10 01 15 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-117
+FullName: Henry Jack Edwards
+PhysicalAddress: Flat 63, 2297 Cedar Gate Avenue, Leicester, LE1 5YP, United Kingdom
+SensitiveData: EH 10 01 16 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-118
+FullName: Evie Oliver Walker
+PhysicalAddress: Flat 64, 2334 Church Gate Avenue, Birmingham, B1 1BB, United Kingdom
+SensitiveData: EJ 10 01 17 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-119
+FullName: James Isla Taylor
+PhysicalAddress: Flat 65, 2371 Crown Gate Avenue, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: EK 10 01 18 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-120
+FullName: Sophie Thomas Green
+PhysicalAddress: Flat 66, 2408 Elm Gate Avenue, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: EL 10 01 19 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-121
+FullName: William Jack Johnson
+PhysicalAddress: Flat 67, 2445 Hawthorn Gate Avenue, Bristol, BS1 4ST, United Kingdom
+SensitiveData: EM 10 01 20 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-122
+FullName: Emily Oliver Jackson
+PhysicalAddress: Flat 68, 2482 Kingfisher Gate Avenue, Oxford, OX1 1AA, United Kingdom
+SensitiveData: EN 10 01 21 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-123
+FullName: Oscar James Robinson
+PhysicalAddress: Flat 69, 2519 Mill Gate Avenue, Glasgow, G1 2FF, United Kingdom
+SensitiveData: EP 10 01 22 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-124
+FullName: Freya Thomas Edwards
+PhysicalAddress: Flat 70, 2556 Orchard Gate Avenue, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: ER 10 01 23 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-125
+FullName: Thomas Jack Walker
+PhysicalAddress: Flat 71, 2593 Station Gate Avenue, Manchester, M1 2WD, United Kingdom
+SensitiveData: ES 10 01 24 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-126
+FullName: Lily Oliver Brown
+PhysicalAddress: Flat 72, 2630 Victoria Gate Avenue, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: ET 10 01 25 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-127
+FullName: Charlie James Green
+PhysicalAddress: Flat 1, 2667 Abbey Close Drive, London, SW1A 2AA, United Kingdom
+SensitiveData: EW 10 01 26 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-128
+FullName: Grace Thomas Johnson
+PhysicalAddress: Flat 2, 2704 Bramble Close Drive, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: EX 10 01 27 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-129
+FullName: Harry Jack Jackson
+PhysicalAddress: Flat 3, 2741 Cedar Close Drive, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: EY 10 01 28 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-130
+FullName: Sophia Oliver Wright
+PhysicalAddress: Flat 4, 2778 Church Close Drive, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: AB 10 01 29 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-131
+FullName: Jack James Edwards
+PhysicalAddress: Flat 5, 2815 Crown Close Drive, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: AC 10 01 30 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-132
+FullName: Mia Thomas Walker
+PhysicalAddress: Flat 6, 2852 Elm Close Drive, Leeds, LS1 4AP, United Kingdom
+SensitiveData: AE 10 01 31 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-133
+FullName: Arthur Jack Brown
+PhysicalAddress: Flat 7, 2889 Hawthorn Close Drive, Leicester, LE1 5YP, United Kingdom
+SensitiveData: AH 10 01 32 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-134
+FullName: Ava Oliver Hall
+PhysicalAddress: Flat 8, 2926 Kingfisher Close Drive, Birmingham, B1 1BB, United Kingdom
+SensitiveData: AJ 10 01 33 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-135
+FullName: George James Johnson
+PhysicalAddress: Flat 9, 2963 Mill Close Drive, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: AK 10 01 34 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-136
+FullName: Isla Thomas Jackson
+PhysicalAddress: Flat 10, 3000 Orchard Close Drive, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: AL 10 01 35 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-137
+FullName: Oliver Jack Wright
+PhysicalAddress: Flat 11, 3037 Station Close Drive, Bristol, BS1 4ST, United Kingdom
+SensitiveData: AM 10 01 36 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-138
+FullName: Amelia Oliver Smith
+PhysicalAddress: Flat 12, 3074 Victoria Close Drive, Oxford, OX1 1AA, United Kingdom
+SensitiveData: AP 10 01 37 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-139
+FullName: Edward Sophie Walker
+PhysicalAddress: Flat 13, 3111 Abbey Grove Drive, Glasgow, G1 2FF, United Kingdom
+SensitiveData: AR 10 01 38 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-140
+FullName: Lucy Lily Brown
+PhysicalAddress: Flat 14, 3148 Bramble Grove Drive, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: AS 10 01 39 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-141
+FullName: Henry Mia Hall
+PhysicalAddress: Flat 15, 3185 Cedar Grove Drive, Manchester, M1 2WD, United Kingdom
+SensitiveData: AT 10 01 40 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-142
+FullName: Evie Amelia Davies
+PhysicalAddress: Flat 16, 3222 Church Grove Drive, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: AW 10 01 41 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-143
+FullName: James Sophie Jackson
+PhysicalAddress: Flat 17, 3259 Crown Grove Drive, London, SW1A 2AA, United Kingdom
+SensitiveData: AX 10 01 42 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-144
+FullName: Sophie Lily Wright
+PhysicalAddress: Flat 18, 3296 Elm Grove Drive, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: AY 10 01 43 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-145
+FullName: William Mia Smith
+PhysicalAddress: Flat 19, 3333 Hawthorn Grove Drive, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: CA 10 01 44 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-146
+FullName: Emily Amelia White
+PhysicalAddress: Flat 20, 3370 Kingfisher Grove Drive, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: CE 10 01 45 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-147
+FullName: Oscar Sophie Brown
+PhysicalAddress: Flat 21, 3407 Mill Grove Drive, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: CH 10 01 46 C
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-148
+FullName: Freya Lily Hall
+PhysicalAddress: Flat 22, 3444 Orchard Grove Drive, Leeds, LS1 4AP, United Kingdom
+SensitiveData: CJ 10 01 47 D
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-149
+FullName: Thomas Mia Davies
+PhysicalAddress: Flat 23, 3481 Station Grove Drive, Leicester, LE1 5YP, United Kingdom
+SensitiveData: CK 10 01 48 A
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-150
+FullName: Lily Amelia Wood
+PhysicalAddress: Flat 24, 3518 Victoria Grove Drive, Birmingham, B1 1BB, United Kingdom
+SensitiveData: CL 10 01 49 B
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE

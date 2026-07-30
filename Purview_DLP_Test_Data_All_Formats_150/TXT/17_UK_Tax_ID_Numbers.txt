@@ -1,0 +1,1203 @@
+PURVIEW DLP TEST DATA - UK Tax Identification Number / Unique Taxpayer Reference (UTR)
+FICTIONAL SYNTHETIC DATA - AUTHORIZED DLP TESTING ONLY
+Records: 150
+
+RecordID: TEST-001
+FullName: Charlie Sophie Wright
+PhysicalAddress: Flat 25, 3555 Abbey Mead Drive, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: 1200000001
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-002
+FullName: Grace Lily Smith
+PhysicalAddress: Flat 26, 3592 Bramble Mead Drive, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: 1200000002
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-003
+FullName: Harry Mia White
+PhysicalAddress: Flat 27, 3629 Cedar Mead Drive, Bristol, BS1 4ST, United Kingdom
+SensitiveData: 1200000003
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-004
+FullName: Sophia Amelia Williams
+PhysicalAddress: Flat 28, 3666 Church Mead Drive, Oxford, OX1 1AA, United Kingdom
+SensitiveData: 1200000004
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-005
+FullName: Jack Sophie Hall
+PhysicalAddress: Flat 29, 3703 Crown Mead Drive, Glasgow, G1 2FF, United Kingdom
+SensitiveData: 1200000005
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-006
+FullName: Mia Lily Davies
+PhysicalAddress: Flat 30, 3740 Elm Mead Drive, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: 1200000006
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-007
+FullName: Arthur Mia Wood
+PhysicalAddress: Flat 31, 3777 Hawthorn Mead Drive, Manchester, M1 2WD, United Kingdom
+SensitiveData: 1200000007
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-008
+FullName: Ava Amelia Thompson
+PhysicalAddress: Flat 32, 3814 Kingfisher Mead Drive, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: 1200000008
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-009
+FullName: George Sophie Smith
+PhysicalAddress: Flat 33, 3851 Mill Mead Drive, London, SW1A 2AA, United Kingdom
+SensitiveData: 1200000009
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-010
+FullName: Isla Lily White
+PhysicalAddress: Flat 34, 3888 Orchard Mead Drive, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: 1200000010
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-011
+FullName: Oliver Mia Williams
+PhysicalAddress: Flat 35, 3925 Station Mead Drive, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: 1200000011
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-012
+FullName: Amelia Jack Thomas
+PhysicalAddress: Flat 36, 3962 Victoria Mead Drive, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: 1200000012
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-013
+FullName: Edward William Davies
+PhysicalAddress: Flat 37, 3999 Abbey Park Drive, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: 1200000013
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-014
+FullName: Lucy Charlie Wood
+PhysicalAddress: Flat 38, 4036 Bramble Park Drive, Leeds, LS1 4AP, United Kingdom
+SensitiveData: 1200000014
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-015
+FullName: Henry Arthur Thompson
+PhysicalAddress: Flat 39, 4073 Cedar Park Drive, Leicester, LE1 5YP, United Kingdom
+SensitiveData: 1200000015
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-016
+FullName: Evie Edward Smith
+PhysicalAddress: Flat 40, 4110 Church Park Drive, Birmingham, B1 1BB, United Kingdom
+SensitiveData: 1200000016
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-017
+FullName: James William White
+PhysicalAddress: Flat 41, 4147 Crown Park Drive, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: 1200000017
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-018
+FullName: Sophie Charlie Williams
+PhysicalAddress: Flat 42, 4184 Elm Park Drive, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: 1200000018
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-019
+FullName: William Arthur Thomas
+PhysicalAddress: Flat 43, 4221 Hawthorn Park Drive, Bristol, BS1 4ST, United Kingdom
+SensitiveData: 1200000019
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-020
+FullName: Emily Edward Davies
+PhysicalAddress: Flat 44, 4258 Kingfisher Park Drive, Oxford, OX1 1AA, United Kingdom
+SensitiveData: 1200000020
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-021
+FullName: Oscar William Wood
+PhysicalAddress: Flat 45, 4295 Mill Park Drive, Glasgow, G1 2FF, United Kingdom
+SensitiveData: 1200000021
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-022
+FullName: Freya Charlie Thompson
+PhysicalAddress: Flat 46, 4332 Orchard Park Drive, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: 1200000022
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-023
+FullName: Thomas Arthur Jones
+PhysicalAddress: Flat 47, 4369 Station Park Drive, Manchester, M1 2WD, United Kingdom
+SensitiveData: 1200000023
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-024
+FullName: Lily Edward White
+PhysicalAddress: Flat 48, 4406 Victoria Park Drive, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: 1200000024
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-025
+FullName: Charlie William Williams
+PhysicalAddress: Flat 49, 4443 Abbey Rise Drive, London, SW1A 2AA, United Kingdom
+SensitiveData: 1200000025
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-026
+FullName: Grace Charlie Thomas
+PhysicalAddress: Flat 50, 4480 Bramble Rise Drive, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: 1200000026
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-027
+FullName: Harry Arthur Patel
+PhysicalAddress: Flat 51, 4517 Cedar Rise Drive, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: 1200000027
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-028
+FullName: Sophia Edward Wood
+PhysicalAddress: Flat 52, 4554 Church Rise Drive, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: 1200000028
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-029
+FullName: Jack William Thompson
+PhysicalAddress: Flat 53, 4591 Crown Rise Drive, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: 1200000029
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-030
+FullName: Mia Charlie Jones
+PhysicalAddress: Flat 54, 4628 Elm Rise Drive, Leeds, LS1 4AP, United Kingdom
+SensitiveData: 1200000030
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-031
+FullName: Arthur Lily Roberts
+PhysicalAddress: Flat 55, 4665 Hawthorn Rise Drive, Leicester, LE1 5YP, United Kingdom
+SensitiveData: 1200000031
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-032
+FullName: Ava Edward Williams
+PhysicalAddress: Flat 56, 4702 Kingfisher Rise Drive, Birmingham, B1 1BB, United Kingdom
+SensitiveData: 1200000032
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-033
+FullName: George William Thomas
+PhysicalAddress: Flat 57, 4739 Mill Rise Drive, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: 1200000033
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-034
+FullName: Isla Charlie Patel
+PhysicalAddress: Flat 58, 4776 Orchard Rise Drive, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: 1200000034
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-035
+FullName: Oliver Arthur Harris
+PhysicalAddress: Flat 59, 4813 Station Rise Drive, Bristol, BS1 4ST, United Kingdom
+SensitiveData: 1200000035
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-036
+FullName: Amelia Edward Thompson
+PhysicalAddress: Flat 60, 4850 Victoria Rise Drive, Oxford, OX1 1AA, United Kingdom
+SensitiveData: 1200000036
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-037
+FullName: Edward Emily Jones
+PhysicalAddress: Flat 61, 4887 Abbey Vale Drive, Glasgow, G1 2FF, United Kingdom
+SensitiveData: 1200000037
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-038
+FullName: Lucy Grace Roberts
+PhysicalAddress: Flat 62, 4924 Bramble Vale Drive, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: 1200000038
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-039
+FullName: Henry Ava Wilson
+PhysicalAddress: Flat 63, 4961 Cedar Vale Drive, Manchester, M1 2WD, United Kingdom
+SensitiveData: 1200000039
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-040
+FullName: Evie Lucy Thomas
+PhysicalAddress: Flat 64, 4998 Church Vale Drive, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: 1200000040
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-041
+FullName: James Emily Patel
+PhysicalAddress: Flat 65, 5035 Crown Vale Drive, London, SW1A 2AA, United Kingdom
+SensitiveData: 1200000041
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-042
+FullName: Sophie Grace Harris
+PhysicalAddress: Flat 66, 5072 Elm Vale Drive, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: 1200000042
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-043
+FullName: William Ava Evans
+PhysicalAddress: Flat 67, 5109 Hawthorn Vale Drive, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: 1200000043
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-044
+FullName: Emily Lucy Jones
+PhysicalAddress: Flat 68, 5146 Kingfisher Vale Drive, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: 1200000044
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-045
+FullName: Oscar Emily Roberts
+PhysicalAddress: Flat 69, 5183 Mill Vale Drive, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: 1200000045
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-046
+FullName: Freya Grace Wilson
+PhysicalAddress: Flat 70, 5220 Orchard Vale Drive, Leeds, LS1 4AP, United Kingdom
+SensitiveData: 1200000046
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-047
+FullName: Thomas Ava Clarke
+PhysicalAddress: Flat 71, 5257 Station Vale Drive, Leicester, LE1 5YP, United Kingdom
+SensitiveData: 1200000047
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-048
+FullName: Lily Lucy Patel
+PhysicalAddress: Flat 72, 5294 Victoria Vale Drive, Birmingham, B1 1BB, United Kingdom
+SensitiveData: 1200000048
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-049
+FullName: Charlie Emily Harris
+PhysicalAddress: Flat 1, 5331 Abbey View Drive, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: 1200000049
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-050
+FullName: Grace William Evans
+PhysicalAddress: Flat 2, 5368 Bramble View Drive, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: 1200000050
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-051
+FullName: Harry Ava Taylor
+PhysicalAddress: Flat 3, 5405 Cedar View Drive, Bristol, BS1 4ST, United Kingdom
+SensitiveData: 1200000051
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-052
+FullName: Sophia Lucy Roberts
+PhysicalAddress: Flat 4, 5442 Church View Drive, Oxford, OX1 1AA, United Kingdom
+SensitiveData: 1200000052
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-053
+FullName: Jack Emily Wilson
+PhysicalAddress: Flat 5, 5479 Crown View Drive, Glasgow, G1 2FF, United Kingdom
+SensitiveData: 1200000053
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-054
+FullName: Mia Grace Clarke
+PhysicalAddress: Flat 6, 5516 Elm View Drive, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: 1200000054
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-055
+FullName: Arthur Ava Robinson
+PhysicalAddress: Flat 7, 5553 Hawthorn View Drive, Manchester, M1 2WD, United Kingdom
+SensitiveData: 1200000055
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-056
+FullName: Ava Lucy Harris
+PhysicalAddress: Flat 8, 5590 Kingfisher View Drive, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: 1200000056
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-057
+FullName: George Emily Evans
+PhysicalAddress: Flat 9, 5627 Mill View Drive, London, SW1A 2AA, United Kingdom
+SensitiveData: 1200000057
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-058
+FullName: Isla Grace Taylor
+PhysicalAddress: Flat 10, 5664 Orchard View Drive, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: 1200000058
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-059
+FullName: Oliver Ava Green
+PhysicalAddress: Flat 11, 5701 Station View Drive, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: 1200000059
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-060
+FullName: Amelia Lucy Wilson
+PhysicalAddress: Flat 12, 5738 Victoria View Drive, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: 1200000060
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-061
+FullName: Edward Oscar Clarke
+PhysicalAddress: Flat 13, 5775 Abbey Wood Drive, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: 1200000061
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-062
+FullName: Lucy Harry Robinson
+PhysicalAddress: Flat 14, 5812 Bramble Wood Drive, Leeds, LS1 4AP, United Kingdom
+SensitiveData: 1200000062
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-063
+FullName: Henry George Edwards
+PhysicalAddress: Flat 15, 5849 Cedar Wood Drive, Leicester, LE1 5YP, United Kingdom
+SensitiveData: 1200000063
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-064
+FullName: Evie Henry Evans
+PhysicalAddress: Flat 16, 5886 Church Wood Drive, Birmingham, B1 1BB, United Kingdom
+SensitiveData: 1200000064
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-065
+FullName: James Oscar Taylor
+PhysicalAddress: Flat 17, 5923 Crown Wood Drive, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: 1200000065
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-066
+FullName: Sophie Harry Green
+PhysicalAddress: Flat 18, 5960 Elm Wood Drive, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: 1200000066
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-067
+FullName: William George Johnson
+PhysicalAddress: Flat 19, 5997 Hawthorn Wood Drive, Bristol, BS1 4ST, United Kingdom
+SensitiveData: 1200000067
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-068
+FullName: Emily Henry Clarke
+PhysicalAddress: Flat 20, 6034 Kingfisher Wood Drive, Oxford, OX1 1AA, United Kingdom
+SensitiveData: 1200000068
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-069
+FullName: Oscar Lucy Robinson
+PhysicalAddress: Flat 21, 6071 Mill Wood Drive, Glasgow, G1 2FF, United Kingdom
+SensitiveData: 1200000069
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-070
+FullName: Freya Harry Edwards
+PhysicalAddress: Flat 22, 6108 Orchard Wood Drive, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: 1200000070
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-071
+FullName: Thomas George Walker
+PhysicalAddress: Flat 23, 6145 Station Wood Drive, Manchester, M1 2WD, United Kingdom
+SensitiveData: 1200000071
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-072
+FullName: Lily Henry Taylor
+PhysicalAddress: Flat 24, 6182 Victoria Wood Drive, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: 1200000072
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-073
+FullName: Charlie Oscar Green
+PhysicalAddress: Flat 25, 6219 Abbey Green Drive, London, SW1A 2AA, United Kingdom
+SensitiveData: 1200000073
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-074
+FullName: Grace Harry Johnson
+PhysicalAddress: Flat 26, 6256 Bramble Green Drive, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: 1200000074
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-075
+FullName: Harry George Jackson
+PhysicalAddress: Flat 27, 6293 Cedar Green Drive, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: 1200000075
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-076
+FullName: Sophia Henry Robinson
+PhysicalAddress: Flat 28, 6330 Church Green Drive, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: 1200000076
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-077
+FullName: Jack Oscar Edwards
+PhysicalAddress: Flat 29, 6367 Crown Green Drive, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: 1200000077
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-078
+FullName: Mia Harry Walker
+PhysicalAddress: Flat 30, 6404 Elm Green Drive, Leeds, LS1 4AP, United Kingdom
+SensitiveData: 1200000078
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-079
+FullName: Arthur George Brown
+PhysicalAddress: Flat 31, 6441 Hawthorn Green Drive, Leicester, LE1 5YP, United Kingdom
+SensitiveData: 1200000079
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-080
+FullName: Ava Henry Green
+PhysicalAddress: Flat 32, 6478 Kingfisher Green Drive, Birmingham, B1 1BB, United Kingdom
+SensitiveData: 1200000080
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-081
+FullName: George Oscar Johnson
+PhysicalAddress: Flat 33, 6515 Mill Green Drive, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: 1200000081
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-082
+FullName: Isla Harry Jackson
+PhysicalAddress: Flat 34, 6552 Orchard Green Drive, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: 1200000082
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-083
+FullName: Oliver George Wright
+PhysicalAddress: Flat 35, 6589 Station Green Drive, Bristol, BS1 4ST, United Kingdom
+SensitiveData: 1200000083
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-084
+FullName: Amelia Henry Edwards
+PhysicalAddress: Flat 36, 6626 Victoria Green Drive, Oxford, OX1 1AA, United Kingdom
+SensitiveData: 1200000084
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-085
+FullName: Edward Freya Walker
+PhysicalAddress: Flat 37, 6663 Abbey Heath Drive, Glasgow, G1 2FF, United Kingdom
+SensitiveData: 1200000085
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-086
+FullName: Lucy Sophia Brown
+PhysicalAddress: Flat 38, 6700 Bramble Heath Drive, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: 1200000086
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-087
+FullName: Henry Isla Hall
+PhysicalAddress: Flat 39, 6737 Cedar Heath Drive, Manchester, M1 2WD, United Kingdom
+SensitiveData: 1200000087
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-088
+FullName: Evie George Johnson
+PhysicalAddress: Flat 40, 6774 Church Heath Drive, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: 1200000088
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-089
+FullName: James Freya Jackson
+PhysicalAddress: Flat 41, 6811 Crown Heath Drive, London, SW1A 2AA, United Kingdom
+SensitiveData: 1200000089
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-090
+FullName: Sophie Sophia Wright
+PhysicalAddress: Flat 42, 6848 Elm Heath Drive, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: 1200000090
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-091
+FullName: William Isla Smith
+PhysicalAddress: Flat 43, 6885 Hawthorn Heath Drive, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: 1200000091
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-092
+FullName: Emily Evie Walker
+PhysicalAddress: Flat 44, 6922 Kingfisher Heath Drive, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: 1200000092
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-093
+FullName: Oscar Freya Brown
+PhysicalAddress: Flat 45, 6959 Mill Heath Drive, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: 1200000093
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-094
+FullName: Freya Sophia Hall
+PhysicalAddress: Flat 46, 6996 Orchard Heath Drive, Leeds, LS1 4AP, United Kingdom
+SensitiveData: 1200000094
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-095
+FullName: Thomas Isla Davies
+PhysicalAddress: Flat 47, 7033 Station Heath Drive, Leicester, LE1 5YP, United Kingdom
+SensitiveData: 1200000095
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-096
+FullName: Lily Evie Jackson
+PhysicalAddress: Flat 48, 7070 Victoria Heath Drive, Birmingham, B1 1BB, United Kingdom
+SensitiveData: 1200000096
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-097
+FullName: Charlie Freya Wright
+PhysicalAddress: Flat 49, 7107 Abbey Cross Drive, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: 1200000097
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-098
+FullName: Grace Sophia Smith
+PhysicalAddress: Flat 50, 7144 Bramble Cross Drive, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: 1200000098
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-099
+FullName: Harry Isla White
+PhysicalAddress: Flat 51, 7181 Cedar Cross Drive, Bristol, BS1 4ST, United Kingdom
+SensitiveData: 1200000099
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-100
+FullName: Sophia Evie Brown
+PhysicalAddress: Flat 52, 7218 Church Cross Drive, Oxford, OX1 1AA, United Kingdom
+SensitiveData: 1200000100
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-101
+FullName: Jack Freya Hall
+PhysicalAddress: Flat 53, 7255 Crown Cross Drive, Glasgow, G1 2FF, United Kingdom
+SensitiveData: 1200000101
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-102
+FullName: Mia Sophia Davies
+PhysicalAddress: Flat 54, 7292 Elm Cross Drive, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: 1200000102
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-103
+FullName: Arthur Isla Wood
+PhysicalAddress: Flat 55, 7329 Hawthorn Cross Drive, Manchester, M1 2WD, United Kingdom
+SensitiveData: 1200000103
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-104
+FullName: Ava Evie Wright
+PhysicalAddress: Flat 56, 7366 Kingfisher Cross Drive, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: 1200000104
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-105
+FullName: George Freya Smith
+PhysicalAddress: Flat 57, 7403 Mill Cross Drive, London, SW1A 2AA, United Kingdom
+SensitiveData: 1200000105
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-106
+FullName: Isla Sophia White
+PhysicalAddress: Flat 58, 7440 Orchard Cross Drive, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: 1200000106
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-107
+FullName: Oliver Isla Williams
+PhysicalAddress: Flat 59, 7477 Station Cross Drive, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: 1200000107
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-108
+FullName: Amelia Evie Hall
+PhysicalAddress: Flat 60, 7514 Victoria Cross Drive, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: 1200000108
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-109
+FullName: Edward Thomas Davies
+PhysicalAddress: Flat 61, 7551 Abbey Gate Drive, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: 1200000109
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-110
+FullName: Lucy Jack Wood
+PhysicalAddress: Flat 62, 7588 Bramble Gate Drive, Leeds, LS1 4AP, United Kingdom
+SensitiveData: 1200000110
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-111
+FullName: Henry Oliver Thompson
+PhysicalAddress: Flat 63, 7625 Cedar Gate Drive, Leicester, LE1 5YP, United Kingdom
+SensitiveData: 1200000111
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-112
+FullName: Evie James Smith
+PhysicalAddress: Flat 64, 7662 Church Gate Drive, Birmingham, B1 1BB, United Kingdom
+SensitiveData: 1200000112
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-113
+FullName: James Thomas White
+PhysicalAddress: Flat 65, 7699 Crown Gate Drive, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: 1200000113
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-114
+FullName: Sophie Jack Williams
+PhysicalAddress: Flat 66, 7736 Elm Gate Drive, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: 1200000114
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-115
+FullName: William Oliver Thomas
+PhysicalAddress: Flat 67, 7773 Hawthorn Gate Drive, Bristol, BS1 4ST, United Kingdom
+SensitiveData: 1200000115
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-116
+FullName: Emily James Davies
+PhysicalAddress: Flat 68, 7810 Kingfisher Gate Drive, Oxford, OX1 1AA, United Kingdom
+SensitiveData: 1200000116
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-117
+FullName: Oscar Thomas Wood
+PhysicalAddress: Flat 69, 7847 Mill Gate Drive, Glasgow, G1 2FF, United Kingdom
+SensitiveData: 1200000117
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-118
+FullName: Freya Jack Thompson
+PhysicalAddress: Flat 70, 7884 Orchard Gate Drive, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: 1200000118
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-119
+FullName: Thomas Oliver Jones
+PhysicalAddress: Flat 71, 7921 Station Gate Drive, Manchester, M1 2WD, United Kingdom
+SensitiveData: 1200000119
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-120
+FullName: Lily James White
+PhysicalAddress: Flat 72, 7958 Victoria Gate Drive, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: 1200000120
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-121
+FullName: Charlie Thomas Williams
+PhysicalAddress: Flat 1, 7995 Abbey Close Way, London, SW1A 2AA, United Kingdom
+SensitiveData: 1200000121
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-122
+FullName: Grace Jack Thomas
+PhysicalAddress: Flat 2, 8032 Bramble Close Way, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: 1200000122
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-123
+FullName: Harry Oliver Patel
+PhysicalAddress: Flat 3, 8069 Cedar Close Way, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: 1200000123
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-124
+FullName: Sophia James Wood
+PhysicalAddress: Flat 4, 8106 Church Close Way, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: 1200000124
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-125
+FullName: Jack Thomas Thompson
+PhysicalAddress: Flat 5, 8143 Crown Close Way, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: 1200000125
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-126
+FullName: Mia Jack Jones
+PhysicalAddress: Flat 6, 8180 Elm Close Way, Leeds, LS1 4AP, United Kingdom
+SensitiveData: 1200000126
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-127
+FullName: Arthur Oliver Roberts
+PhysicalAddress: Flat 7, 8217 Hawthorn Close Way, Leicester, LE1 5YP, United Kingdom
+SensitiveData: 1200000127
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-128
+FullName: Ava James Williams
+PhysicalAddress: Flat 8, 8254 Kingfisher Close Way, Birmingham, B1 1BB, United Kingdom
+SensitiveData: 1200000128
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-129
+FullName: George Thomas Thomas
+PhysicalAddress: Flat 9, 8291 Mill Close Way, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: 1200000129
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-130
+FullName: Isla Jack Patel
+PhysicalAddress: Flat 10, 8328 Orchard Close Way, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: 1200000130
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-131
+FullName: Oliver Sophia Harris
+PhysicalAddress: Flat 11, 8365 Station Close Way, Bristol, BS1 4ST, United Kingdom
+SensitiveData: 1200000131
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-132
+FullName: Amelia James Thompson
+PhysicalAddress: Flat 12, 8402 Victoria Close Way, Oxford, OX1 1AA, United Kingdom
+SensitiveData: 1200000132
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-133
+FullName: Edward Lily Jones
+PhysicalAddress: Flat 13, 8439 Abbey Grove Way, Glasgow, G1 2FF, United Kingdom
+SensitiveData: 1200000133
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-134
+FullName: Lucy Mia Roberts
+PhysicalAddress: Flat 14, 8476 Bramble Grove Way, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: 1200000134
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-135
+FullName: Henry Amelia Wilson
+PhysicalAddress: Flat 15, 8513 Cedar Grove Way, Manchester, M1 2WD, United Kingdom
+SensitiveData: 1200000135
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-136
+FullName: Evie Sophie Thomas
+PhysicalAddress: Flat 16, 8550 Church Grove Way, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: 1200000136
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-137
+FullName: James Lily Patel
+PhysicalAddress: Flat 17, 8587 Crown Grove Way, London, SW1A 2AA, United Kingdom
+SensitiveData: 1200000137
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-138
+FullName: Sophie Mia Harris
+PhysicalAddress: Flat 18, 8624 Elm Grove Way, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: 1200000138
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-139
+FullName: William Amelia Evans
+PhysicalAddress: Flat 19, 8661 Hawthorn Grove Way, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: 1200000139
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-140
+FullName: Emily Sophie Jones
+PhysicalAddress: Flat 20, 8698 Kingfisher Grove Way, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: 1200000140
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-141
+FullName: Oscar Lily Roberts
+PhysicalAddress: Flat 21, 8735 Mill Grove Way, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: 1200000141
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-142
+FullName: Freya Mia Wilson
+PhysicalAddress: Flat 22, 8772 Orchard Grove Way, Leeds, LS1 4AP, United Kingdom
+SensitiveData: 1200000142
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-143
+FullName: Thomas Amelia Clarke
+PhysicalAddress: Flat 23, 8809 Station Grove Way, Leicester, LE1 5YP, United Kingdom
+SensitiveData: 1200000143
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-144
+FullName: Lily Sophie Patel
+PhysicalAddress: Flat 24, 8846 Victoria Grove Way, Birmingham, B1 1BB, United Kingdom
+SensitiveData: 1200000144
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-145
+FullName: Charlie Lily Harris
+PhysicalAddress: Flat 25, 8883 Abbey Mead Way, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: 1200000145
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-146
+FullName: Grace Mia Evans
+PhysicalAddress: Flat 26, 8920 Bramble Mead Way, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: 1200000146
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-147
+FullName: Harry Amelia Taylor
+PhysicalAddress: Flat 27, 8957 Cedar Mead Way, Bristol, BS1 4ST, United Kingdom
+SensitiveData: 1200000147
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-148
+FullName: Sophia Sophie Roberts
+PhysicalAddress: Flat 28, 8994 Church Mead Way, Oxford, OX1 1AA, United Kingdom
+SensitiveData: 1200000148
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-149
+FullName: Jack Lily Wilson
+PhysicalAddress: Flat 29, 9031 Crown Mead Way, Glasgow, G1 2FF, United Kingdom
+SensitiveData: 1200000149
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-150
+FullName: Mia Thomas Clarke
+PhysicalAddress: Flat 30, 9068 Elm Mead Way, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: 1200000150
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE

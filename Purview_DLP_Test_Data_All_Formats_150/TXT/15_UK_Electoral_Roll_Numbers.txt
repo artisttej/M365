@@ -1,0 +1,1203 @@
+PURVIEW DLP TEST DATA - UK Electoral Roll Number
+FICTIONAL SYNTHETIC DATA - AUTHORIZED DLP TESTING ONLY
+Records: 150
+
+RecordID: TEST-001
+FullName: Amelia Thomas Smith
+PhysicalAddress: Flat 13, 2335 Abbey Grove Lane, Glasgow, G1 2FF, United Kingdom
+SensitiveData: AA100
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-002
+FullName: Edward Mia White
+PhysicalAddress: Flat 14, 2372 Bramble Grove Lane, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: AB101
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-003
+FullName: Lucy Amelia Williams
+PhysicalAddress: Flat 15, 2409 Cedar Grove Lane, Manchester, M1 2WD, United Kingdom
+SensitiveData: AC102
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-004
+FullName: Henry Sophie Hall
+PhysicalAddress: Flat 16, 2446 Church Grove Lane, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: AD103
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-005
+FullName: Evie Lily Davies
+PhysicalAddress: Flat 17, 2483 Crown Grove Lane, London, SW1A 2AA, United Kingdom
+SensitiveData: AE104
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-006
+FullName: James Mia Wood
+PhysicalAddress: Flat 18, 2520 Elm Grove Lane, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: AF105
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-007
+FullName: Sophie Amelia Thompson
+PhysicalAddress: Flat 19, 2557 Hawthorn Grove Lane, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: AG106
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-008
+FullName: William Sophie Smith
+PhysicalAddress: Flat 20, 2594 Kingfisher Grove Lane, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: AH107
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-009
+FullName: Emily Lily White
+PhysicalAddress: Flat 21, 2631 Mill Grove Lane, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: AI108
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-010
+FullName: Oscar Mia Williams
+PhysicalAddress: Flat 22, 2668 Orchard Grove Lane, Leeds, LS1 4AP, United Kingdom
+SensitiveData: AJ109
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-011
+FullName: Freya Amelia Thomas
+PhysicalAddress: Flat 23, 2705 Station Grove Lane, Leicester, LE1 5YP, United Kingdom
+SensitiveData: AK110
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-012
+FullName: Thomas Sophie Davies
+PhysicalAddress: Flat 24, 2742 Victoria Grove Lane, Birmingham, B1 1BB, United Kingdom
+SensitiveData: AL111
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-013
+FullName: Lily James Wood
+PhysicalAddress: Flat 25, 2779 Abbey Mead Lane, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: AM112
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-014
+FullName: Charlie Mia Thompson
+PhysicalAddress: Flat 26, 2816 Bramble Mead Lane, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: AN113
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-015
+FullName: Grace Amelia Jones
+PhysicalAddress: Flat 27, 2853 Cedar Mead Lane, Bristol, BS1 4ST, United Kingdom
+SensitiveData: AO114
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-016
+FullName: Harry Sophie White
+PhysicalAddress: Flat 28, 2890 Church Mead Lane, Oxford, OX1 1AA, United Kingdom
+SensitiveData: AP115
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-017
+FullName: Sophia Lily Williams
+PhysicalAddress: Flat 29, 2927 Crown Mead Lane, Glasgow, G1 2FF, United Kingdom
+SensitiveData: AQ116
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-018
+FullName: Jack Mia Thomas
+PhysicalAddress: Flat 30, 2964 Elm Mead Lane, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: AR117
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-019
+FullName: Mia Amelia Patel
+PhysicalAddress: Flat 31, 3001 Hawthorn Mead Lane, Manchester, M1 2WD, United Kingdom
+SensitiveData: AS118
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-020
+FullName: Arthur Sophie Wood
+PhysicalAddress: Flat 32, 3038 Kingfisher Mead Lane, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: AT119
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-021
+FullName: Ava Lily Thompson
+PhysicalAddress: Flat 33, 3075 Mill Mead Lane, London, SW1A 2AA, United Kingdom
+SensitiveData: AU120
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-022
+FullName: George Mia Jones
+PhysicalAddress: Flat 34, 3112 Orchard Mead Lane, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: AV121
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-023
+FullName: Isla Amelia Roberts
+PhysicalAddress: Flat 35, 3149 Station Mead Lane, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: AW122
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-024
+FullName: Oliver Sophie Williams
+PhysicalAddress: Flat 36, 3186 Victoria Mead Lane, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: AX123
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-025
+FullName: Amelia Lily Thomas
+PhysicalAddress: Flat 37, 3223 Abbey Park Lane, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: AY124
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-026
+FullName: Edward Arthur Patel
+PhysicalAddress: Flat 38, 3260 Bramble Park Lane, Leeds, LS1 4AP, United Kingdom
+SensitiveData: AZ125
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-027
+FullName: Lucy Edward Wood
+PhysicalAddress: Flat 39, 3297 Cedar Park Lane, Leicester, LE1 5YP, United Kingdom
+SensitiveData: BA126
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-028
+FullName: Henry William Thompson
+PhysicalAddress: Flat 40, 3334 Church Park Lane, Birmingham, B1 1BB, United Kingdom
+SensitiveData: BB127
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-029
+FullName: Evie Charlie Jones
+PhysicalAddress: Flat 41, 3371 Crown Park Lane, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: BC128
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-030
+FullName: James Arthur Roberts
+PhysicalAddress: Flat 42, 3408 Elm Park Lane, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: BD129
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-031
+FullName: Sophie Edward Williams
+PhysicalAddress: Flat 43, 3445 Hawthorn Park Lane, Bristol, BS1 4ST, United Kingdom
+SensitiveData: BE130
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-032
+FullName: William Amelia Thomas
+PhysicalAddress: Flat 44, 3482 Kingfisher Park Lane, Oxford, OX1 1AA, United Kingdom
+SensitiveData: BF131
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-033
+FullName: Emily Charlie Patel
+PhysicalAddress: Flat 45, 3519 Mill Park Lane, Glasgow, G1 2FF, United Kingdom
+SensitiveData: BG132
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-034
+FullName: Oscar Arthur Harris
+PhysicalAddress: Flat 46, 3556 Orchard Park Lane, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: BH133
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-035
+FullName: Freya Edward Thompson
+PhysicalAddress: Flat 47, 3593 Station Park Lane, Manchester, M1 2WD, United Kingdom
+SensitiveData: BI134
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-036
+FullName: Thomas William Jones
+PhysicalAddress: Flat 48, 3630 Victoria Park Lane, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: BJ135
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-037
+FullName: Lily Charlie Roberts
+PhysicalAddress: Flat 49, 3667 Abbey Rise Lane, London, SW1A 2AA, United Kingdom
+SensitiveData: BK136
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-038
+FullName: Charlie Arthur Wilson
+PhysicalAddress: Flat 50, 3704 Bramble Rise Lane, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: BL137
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-039
+FullName: Grace Edward Thomas
+PhysicalAddress: Flat 51, 3741 Cedar Rise Lane, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: BM138
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-040
+FullName: Harry William Patel
+PhysicalAddress: Flat 52, 3778 Church Rise Lane, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: BN139
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-041
+FullName: Sophia Charlie Harris
+PhysicalAddress: Flat 53, 3815 Crown Rise Lane, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: BO140
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-042
+FullName: Jack Arthur Evans
+PhysicalAddress: Flat 54, 3852 Elm Rise Lane, Leeds, LS1 4AP, United Kingdom
+SensitiveData: BP141
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-043
+FullName: Mia Edward Jones
+PhysicalAddress: Flat 55, 3889 Hawthorn Rise Lane, Leicester, LE1 5YP, United Kingdom
+SensitiveData: BQ142
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-044
+FullName: Arthur William Roberts
+PhysicalAddress: Flat 56, 3926 Kingfisher Rise Lane, Birmingham, B1 1BB, United Kingdom
+SensitiveData: BR143
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-045
+FullName: Ava Charlie Wilson
+PhysicalAddress: Flat 57, 3963 Mill Rise Lane, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: BS144
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-046
+FullName: George Arthur Clarke
+PhysicalAddress: Flat 58, 4000 Orchard Rise Lane, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: BT145
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-047
+FullName: Isla Edward Patel
+PhysicalAddress: Flat 59, 4037 Station Rise Lane, Bristol, BS1 4ST, United Kingdom
+SensitiveData: BU146
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-048
+FullName: Oliver William Harris
+PhysicalAddress: Flat 60, 4074 Victoria Rise Lane, Oxford, OX1 1AA, United Kingdom
+SensitiveData: BV147
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-049
+FullName: Amelia Charlie Evans
+PhysicalAddress: Flat 61, 4111 Abbey Vale Lane, Glasgow, G1 2FF, United Kingdom
+SensitiveData: BW148
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-050
+FullName: Edward Ava Taylor
+PhysicalAddress: Flat 62, 4148 Bramble Vale Lane, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: BX149
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-051
+FullName: Lucy Arthur Roberts
+PhysicalAddress: Flat 63, 4185 Cedar Vale Lane, Manchester, M1 2WD, United Kingdom
+SensitiveData: BY150
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-052
+FullName: Henry Emily Wilson
+PhysicalAddress: Flat 64, 4222 Church Vale Lane, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: BZ151
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-053
+FullName: Evie Grace Clarke
+PhysicalAddress: Flat 65, 4259 Crown Vale Lane, London, SW1A 2AA, United Kingdom
+SensitiveData: CA152
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-054
+FullName: James Ava Robinson
+PhysicalAddress: Flat 66, 4296 Elm Vale Lane, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: CB153
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-055
+FullName: Sophie Lucy Harris
+PhysicalAddress: Flat 67, 4333 Hawthorn Vale Lane, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: CC154
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-056
+FullName: William Emily Evans
+PhysicalAddress: Flat 68, 4370 Kingfisher Vale Lane, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: CD155
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-057
+FullName: Emily Grace Taylor
+PhysicalAddress: Flat 69, 4407 Mill Vale Lane, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: CE156
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-058
+FullName: Oscar Ava Green
+PhysicalAddress: Flat 70, 4444 Orchard Vale Lane, Leeds, LS1 4AP, United Kingdom
+SensitiveData: CF157
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-059
+FullName: Freya Lucy Wilson
+PhysicalAddress: Flat 71, 4481 Station Vale Lane, Leicester, LE1 5YP, United Kingdom
+SensitiveData: CG158
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-060
+FullName: Thomas Emily Clarke
+PhysicalAddress: Flat 72, 4518 Victoria Vale Lane, Birmingham, B1 1BB, United Kingdom
+SensitiveData: CH159
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-061
+FullName: Lily Grace Robinson
+PhysicalAddress: Flat 1, 4555 Abbey View Lane, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: CI160
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-062
+FullName: Charlie Ava Edwards
+PhysicalAddress: Flat 2, 4592 Bramble View Lane, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: CJ161
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-063
+FullName: Grace Lucy Evans
+PhysicalAddress: Flat 3, 4629 Cedar View Lane, Bristol, BS1 4ST, United Kingdom
+SensitiveData: CK162
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-064
+FullName: Harry Emily Taylor
+PhysicalAddress: Flat 4, 4666 Church View Lane, Oxford, OX1 1AA, United Kingdom
+SensitiveData: CL163
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-065
+FullName: Sophia Grace Green
+PhysicalAddress: Flat 5, 4703 Crown View Lane, Glasgow, G1 2FF, United Kingdom
+SensitiveData: CM164
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-066
+FullName: Jack Ava Johnson
+PhysicalAddress: Flat 6, 4740 Elm View Lane, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: CN165
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-067
+FullName: Mia Lucy Clarke
+PhysicalAddress: Flat 7, 4777 Hawthorn View Lane, Manchester, M1 2WD, United Kingdom
+SensitiveData: CO166
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-068
+FullName: Arthur Emily Robinson
+PhysicalAddress: Flat 8, 4814 Kingfisher View Lane, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: CP167
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-069
+FullName: Ava Grace Edwards
+PhysicalAddress: Flat 9, 4851 Mill View Lane, London, SW1A 2AA, United Kingdom
+SensitiveData: CQ168
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-070
+FullName: George Ava Walker
+PhysicalAddress: Flat 10, 4888 Orchard View Lane, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: CR169
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-071
+FullName: Isla Lucy Taylor
+PhysicalAddress: Flat 11, 4925 Station View Lane, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: CS170
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-072
+FullName: Oliver Emily Green
+PhysicalAddress: Flat 12, 4962 Victoria View Lane, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: CT171
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-073
+FullName: Amelia Grace Johnson
+PhysicalAddress: Flat 13, 4999 Abbey Wood Lane, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: CU172
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-074
+FullName: Edward George Jackson
+PhysicalAddress: Flat 14, 5036 Bramble Wood Lane, Leeds, LS1 4AP, United Kingdom
+SensitiveData: CV173
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-075
+FullName: Lucy Henry Robinson
+PhysicalAddress: Flat 15, 5073 Cedar Wood Lane, Leicester, LE1 5YP, United Kingdom
+SensitiveData: CW174
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-076
+FullName: Henry Oscar Edwards
+PhysicalAddress: Flat 16, 5110 Church Wood Lane, Birmingham, B1 1BB, United Kingdom
+SensitiveData: CX175
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-077
+FullName: Evie Harry Walker
+PhysicalAddress: Flat 17, 5147 Crown Wood Lane, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: CY176
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-078
+FullName: James George Brown
+PhysicalAddress: Flat 18, 5184 Elm Wood Lane, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: CZ177
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-079
+FullName: Sophie Henry Green
+PhysicalAddress: Flat 19, 5221 Hawthorn Wood Lane, Bristol, BS1 4ST, United Kingdom
+SensitiveData: DA178
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-080
+FullName: William Oscar Johnson
+PhysicalAddress: Flat 20, 5258 Kingfisher Wood Lane, Oxford, OX1 1AA, United Kingdom
+SensitiveData: DB179
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-081
+FullName: Emily Harry Jackson
+PhysicalAddress: Flat 21, 5295 Mill Wood Lane, Glasgow, G1 2FF, United Kingdom
+SensitiveData: DC180
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-082
+FullName: Oscar George Wright
+PhysicalAddress: Flat 22, 5332 Orchard Wood Lane, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: DD181
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-083
+FullName: Freya Henry Edwards
+PhysicalAddress: Flat 23, 5369 Station Wood Lane, Manchester, M1 2WD, United Kingdom
+SensitiveData: DE182
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-084
+FullName: Thomas Oscar Walker
+PhysicalAddress: Flat 24, 5406 Victoria Wood Lane, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: DF183
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-085
+FullName: Lily Harry Brown
+PhysicalAddress: Flat 25, 5443 Abbey Green Lane, London, SW1A 2AA, United Kingdom
+SensitiveData: DG184
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-086
+FullName: Charlie George Hall
+PhysicalAddress: Flat 26, 5480 Bramble Green Lane, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: DH185
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-087
+FullName: Grace Henry Johnson
+PhysicalAddress: Flat 27, 5517 Cedar Green Lane, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: DI186
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-088
+FullName: Harry Oscar Jackson
+PhysicalAddress: Flat 28, 5554 Church Green Lane, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: DJ187
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-089
+FullName: Sophia Harry Wright
+PhysicalAddress: Flat 29, 5591 Crown Green Lane, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: DK188
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-090
+FullName: Jack George Smith
+PhysicalAddress: Flat 30, 5628 Elm Green Lane, Leeds, LS1 4AP, United Kingdom
+SensitiveData: DL189
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-091
+FullName: Mia Henry Walker
+PhysicalAddress: Flat 31, 5665 Hawthorn Green Lane, Leicester, LE1 5YP, United Kingdom
+SensitiveData: DM190
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-092
+FullName: Arthur Oscar Brown
+PhysicalAddress: Flat 32, 5702 Kingfisher Green Lane, Birmingham, B1 1BB, United Kingdom
+SensitiveData: DN191
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-093
+FullName: Ava Harry Hall
+PhysicalAddress: Flat 33, 5739 Mill Green Lane, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: DO192
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-094
+FullName: George Grace Davies
+PhysicalAddress: Flat 34, 5776 Orchard Green Lane, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: DP193
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-095
+FullName: Isla Henry Jackson
+PhysicalAddress: Flat 35, 5813 Station Green Lane, Bristol, BS1 4ST, United Kingdom
+SensitiveData: DQ194
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-096
+FullName: Oliver Oscar Wright
+PhysicalAddress: Flat 36, 5850 Victoria Green Lane, Oxford, OX1 1AA, United Kingdom
+SensitiveData: DR195
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-097
+FullName: Amelia Harry Smith
+PhysicalAddress: Flat 37, 5887 Abbey Heath Lane, Glasgow, G1 2FF, United Kingdom
+SensitiveData: DS196
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-098
+FullName: Edward Isla White
+PhysicalAddress: Flat 38, 5924 Bramble Heath Lane, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: DT197
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-099
+FullName: Lucy Evie Brown
+PhysicalAddress: Flat 39, 5961 Cedar Heath Lane, Manchester, M1 2WD, United Kingdom
+SensitiveData: DU198
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-100
+FullName: Henry Freya Hall
+PhysicalAddress: Flat 40, 5998 Church Heath Lane, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: DV199
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-101
+FullName: Evie Sophia Davies
+PhysicalAddress: Flat 41, 6035 Crown Heath Lane, London, SW1A 2AA, United Kingdom
+SensitiveData: DW200
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-102
+FullName: James Isla Wood
+PhysicalAddress: Flat 42, 6072 Elm Heath Lane, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: DX201
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-103
+FullName: Sophie Evie Wright
+PhysicalAddress: Flat 43, 6109 Hawthorn Heath Lane, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: DY202
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-104
+FullName: William Freya Smith
+PhysicalAddress: Flat 44, 6146 Kingfisher Heath Lane, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: DZ203
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-105
+FullName: Emily Sophia White
+PhysicalAddress: Flat 45, 6183 Mill Heath Lane, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: EA204
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-106
+FullName: Oscar Isla Williams
+PhysicalAddress: Flat 46, 6220 Orchard Heath Lane, Leeds, LS1 4AP, United Kingdom
+SensitiveData: EB205
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-107
+FullName: Freya Evie Hall
+PhysicalAddress: Flat 47, 6257 Station Heath Lane, Leicester, LE1 5YP, United Kingdom
+SensitiveData: EC206
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-108
+FullName: Thomas Freya Davies
+PhysicalAddress: Flat 48, 6294 Victoria Heath Lane, Birmingham, B1 1BB, United Kingdom
+SensitiveData: ED207
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-109
+FullName: Lily Sophia Wood
+PhysicalAddress: Flat 49, 6331 Abbey Cross Lane, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: EE208
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-110
+FullName: Charlie Isla Thompson
+PhysicalAddress: Flat 50, 6368 Bramble Cross Lane, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: EF209
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-111
+FullName: Grace Evie Smith
+PhysicalAddress: Flat 51, 6405 Cedar Cross Lane, Bristol, BS1 4ST, United Kingdom
+SensitiveData: EG210
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-112
+FullName: Harry Freya White
+PhysicalAddress: Flat 52, 6442 Church Cross Lane, Oxford, OX1 1AA, United Kingdom
+SensitiveData: EH211
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-113
+FullName: Sophia Oscar Williams
+PhysicalAddress: Flat 53, 6479 Crown Cross Lane, Glasgow, G1 2FF, United Kingdom
+SensitiveData: EI212
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-114
+FullName: Jack Isla Thomas
+PhysicalAddress: Flat 54, 6516 Elm Cross Lane, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: EJ213
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-115
+FullName: Mia Evie Davies
+PhysicalAddress: Flat 55, 6553 Hawthorn Cross Lane, Manchester, M1 2WD, United Kingdom
+SensitiveData: EK214
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-116
+FullName: Arthur Freya Wood
+PhysicalAddress: Flat 56, 6590 Kingfisher Cross Lane, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: EL215
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-117
+FullName: Ava Sophia Thompson
+PhysicalAddress: Flat 57, 6627 Mill Cross Lane, London, SW1A 2AA, United Kingdom
+SensitiveData: EM216
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-118
+FullName: George Isla Jones
+PhysicalAddress: Flat 58, 6664 Orchard Cross Lane, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: EN217
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-119
+FullName: Isla Evie White
+PhysicalAddress: Flat 59, 6701 Station Cross Lane, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: EO218
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-120
+FullName: Oliver Freya Williams
+PhysicalAddress: Flat 60, 6738 Victoria Cross Lane, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: EP219
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-121
+FullName: Edward Oliver Patel
+PhysicalAddress: Flat 61, 6775 Abbey Gate Lane, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: EQ220
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-122
+FullName: Lucy James Wood
+PhysicalAddress: Flat 62, 6812 Bramble Gate Lane, Leeds, LS1 4AP, United Kingdom
+SensitiveData: ER221
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-123
+FullName: Henry Thomas Thompson
+PhysicalAddress: Flat 63, 6849 Cedar Gate Lane, Leicester, LE1 5YP, United Kingdom
+SensitiveData: ES222
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-124
+FullName: Evie Jack Jones
+PhysicalAddress: Flat 64, 6886 Church Gate Lane, Birmingham, B1 1BB, United Kingdom
+SensitiveData: ET223
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-125
+FullName: James Oliver Roberts
+PhysicalAddress: Flat 65, 6923 Crown Gate Lane, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: EU224
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-126
+FullName: Sophie James Williams
+PhysicalAddress: Flat 66, 6960 Elm Gate Lane, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: EV225
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-127
+FullName: William Thomas Thomas
+PhysicalAddress: Flat 67, 6997 Hawthorn Gate Lane, Bristol, BS1 4ST, United Kingdom
+SensitiveData: EW226
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-128
+FullName: Emily Jack Patel
+PhysicalAddress: Flat 68, 7034 Kingfisher Gate Lane, Oxford, OX1 1AA, United Kingdom
+SensitiveData: EX227
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-129
+FullName: Oscar Oliver Harris
+PhysicalAddress: Flat 69, 7071 Mill Gate Lane, Glasgow, G1 2FF, United Kingdom
+SensitiveData: EY228
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-130
+FullName: Freya James Thompson
+PhysicalAddress: Flat 70, 7108 Orchard Gate Lane, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: EZ229
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-131
+FullName: Thomas Evie Jones
+PhysicalAddress: Flat 71, 7145 Station Gate Lane, Manchester, M1 2WD, United Kingdom
+SensitiveData: FA230
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-132
+FullName: Lily Jack Roberts
+PhysicalAddress: Flat 72, 7182 Victoria Gate Lane, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: FB231
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-133
+FullName: Charlie Oliver Wilson
+PhysicalAddress: Flat 1, 7219 Abbey Close Avenue, London, SW1A 2AA, United Kingdom
+SensitiveData: FC232
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-134
+FullName: Grace James Thomas
+PhysicalAddress: Flat 2, 7256 Bramble Close Avenue, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: FD233
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-135
+FullName: Harry Thomas Patel
+PhysicalAddress: Flat 3, 7293 Cedar Close Avenue, Cambridge, CB1 1BH, United Kingdom
+SensitiveData: FE234
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-136
+FullName: Sophia Jack Harris
+PhysicalAddress: Flat 4, 7330 Church Close Avenue, Cardiff, CF10 2HE, United Kingdom
+SensitiveData: FF235
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-137
+FullName: Jack Oliver Evans
+PhysicalAddress: Flat 5, 7367 Crown Close Avenue, Sheffield, S1 2BJ, United Kingdom
+SensitiveData: FG236
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-138
+FullName: Mia James Jones
+PhysicalAddress: Flat 6, 7404 Elm Close Avenue, Leeds, LS1 4AP, United Kingdom
+SensitiveData: FH237
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-139
+FullName: Arthur Thomas Roberts
+PhysicalAddress: Flat 7, 7441 Hawthorn Close Avenue, Leicester, LE1 5YP, United Kingdom
+SensitiveData: FI238
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-140
+FullName: Ava Jack Wilson
+PhysicalAddress: Flat 8, 7478 Kingfisher Close Avenue, Birmingham, B1 1BB, United Kingdom
+SensitiveData: FJ239
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-141
+FullName: George Oliver Clarke
+PhysicalAddress: Flat 9, 7515 Mill Close Avenue, Liverpool, L1 8JQ, United Kingdom
+SensitiveData: FK240
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-142
+FullName: Isla James Patel
+PhysicalAddress: Flat 10, 7552 Orchard Close Avenue, Aberdeen, AB10 1AN, United Kingdom
+SensitiveData: FL241
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-143
+FullName: Oliver Thomas Harris
+PhysicalAddress: Flat 11, 7589 Station Close Avenue, Bristol, BS1 4ST, United Kingdom
+SensitiveData: FM242
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-144
+FullName: Amelia Jack Evans
+PhysicalAddress: Flat 12, 7626 Victoria Close Avenue, Oxford, OX1 1AA, United Kingdom
+SensitiveData: FN243
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-145
+FullName: Edward Amelia Taylor
+PhysicalAddress: Flat 13, 7663 Abbey Grove Avenue, Glasgow, G1 2FF, United Kingdom
+SensitiveData: FO244
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-146
+FullName: Lucy Sophie Roberts
+PhysicalAddress: Flat 14, 7700 Bramble Grove Avenue, Newcastle, NE1 4LP, United Kingdom
+SensitiveData: FP245
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-147
+FullName: Henry Lily Wilson
+PhysicalAddress: Flat 15, 7737 Cedar Grove Avenue, Manchester, M1 2WD, United Kingdom
+SensitiveData: FQ246
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-148
+FullName: Evie Mia Clarke
+PhysicalAddress: Flat 16, 7774 Church Grove Avenue, Nottingham, NG1 2AS, United Kingdom
+SensitiveData: FR247
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-149
+FullName: James Amelia Robinson
+PhysicalAddress: Flat 17, 7811 Crown Grove Avenue, London, SW1A 2AA, United Kingdom
+SensitiveData: FS248
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-150
+FullName: Sophie Oliver Harris
+PhysicalAddress: Flat 18, 7848 Elm Grove Avenue, Edinburgh, EH1 1YZ, United Kingdom
+SensitiveData: FT249
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE

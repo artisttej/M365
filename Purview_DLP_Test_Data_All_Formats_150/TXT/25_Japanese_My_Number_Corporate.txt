@@ -1,0 +1,1203 @@
+PURVIEW DLP TEST DATA - Japanese Corporate My Number / 法人番号
+FICTIONAL SYNTHETIC DATA - AUTHORIZED DLP TESTING ONLY
+Records: 150
+
+RecordID: TEST-001
+FullName: Ren Akari Sasaki
+PhysicalAddress: 1-1-972 Aoba-Chuo-dori, Chiyoda-ku, Tokyo 100-0001, Japan
+SensitiveData: 3012345600000
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-002
+FullName: Yui Sakura Takahashi
+PhysicalAddress: 2-1-1009 Asahi-Chuo-dori, Naka-ku, Nagoya 460-0001, Japan
+SensitiveData: 2012345600001
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-003
+FullName: Haruto Kaori Inoue
+PhysicalAddress: 3-1-1046 Fuji-Chuo-dori, Naka-ku, Yokohama 231-0001, Japan
+SensitiveData: 1012345600002
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-004
+FullName: Kaori Shota Ito
+PhysicalAddress: 4-1-1083 Hikari-Chuo-dori, Naka-ku, Hiroshima 730-0001, Japan
+SensitiveData: 9012345600003
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-005
+FullName: Hiroshi Riku Yamazaki
+PhysicalAddress: 5-1-1120 Kaede-Chuo-dori, Chuo-ku, Sapporo 060-0001, Japan
+SensitiveData: 8012345600004
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-006
+FullName: Aya Yuto Kato
+PhysicalAddress: 6-1-1157 Midori-Chuo-dori, Chuo-ku, Chiba 260-0001, Japan
+SensitiveData: 7012345600005
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-007
+FullName: Naoki Hiroshi Ikeda
+PhysicalAddress: 7-1-1194 Nishi-Chuo-dori, Nakagyo-ku, Kyoto 604-8001, Japan
+SensitiveData: 6012345600006
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-008
+FullName: Emi Shota Sasaki
+PhysicalAddress: 8-1-1231 Sakura-Chuo-dori, Kita-ku, Osaka 530-0001, Japan
+SensitiveData: 5012345600007
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-009
+FullName: Kenji Riku Takahashi
+PhysicalAddress: 9-1-1268 Shin-Chuo-dori, Chuo-ku, Kobe 650-0001, Japan
+SensitiveData: 4012345600008
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-010
+FullName: Yuna Yuto Kimura
+PhysicalAddress: 1-2-1305 Takara-Chuo-dori, Hakata-ku, Fukuoka 812-0011, Japan
+SensitiveData: 3012345600009
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-011
+FullName: Shota Hiroshi Ito
+PhysicalAddress: 2-2-1342 Ume-Chuo-dori, Aoba-ku, Yokohama 225-0001, Japan
+SensitiveData: 1012345600010
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-012
+FullName: Mio Shota Yamazaki
+PhysicalAddress: 3-2-1379 Yamato-Chuo-dori, Aoba-ku, Sendai 980-0001, Japan
+SensitiveData: 9012345600011
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-013
+FullName: Takumi Riku Kato
+PhysicalAddress: 4-2-1416 Aoba-Higashi-dori, Chiyoda-ku, Tokyo 100-0001, Japan
+SensitiveData: 8012345600012
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-014
+FullName: Rin Yuto Hashimoto
+PhysicalAddress: 5-2-1453 Asahi-Higashi-dori, Naka-ku, Nagoya 460-0001, Japan
+SensitiveData: 7012345600013
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-015
+FullName: Daiki Hiroshi Sasaki
+PhysicalAddress: 6-2-1490 Fuji-Higashi-dori, Naka-ku, Yokohama 231-0001, Japan
+SensitiveData: 6012345600014
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-016
+FullName: Akari Shota Takahashi
+PhysicalAddress: 7-2-1527 Hikari-Higashi-dori, Naka-ku, Hiroshima 730-0001, Japan
+SensitiveData: 5012345600015
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-017
+FullName: Riku Yuna Kimura
+PhysicalAddress: 8-2-1564 Kaede-Higashi-dori, Chuo-ku, Sapporo 060-0001, Japan
+SensitiveData: 4012345600016
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-018
+FullName: Mei Yuto Yamamoto
+PhysicalAddress: 9-2-1601 Midori-Higashi-dori, Chuo-ku, Chiba 260-0001, Japan
+SensitiveData: 3012345600017
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-019
+FullName: Kaito Hiroshi Yamazaki
+PhysicalAddress: 1-3-1638 Nishi-Higashi-dori, Nakagyo-ku, Kyoto 604-8001, Japan
+SensitiveData: 2012345600018
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-020
+FullName: Hina Shota Kato
+PhysicalAddress: 2-3-1675 Sakura-Higashi-dori, Kita-ku, Osaka 530-0001, Japan
+SensitiveData: 1012345600019
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-021
+FullName: Sota Riku Hashimoto
+PhysicalAddress: 3-3-1712 Shin-Higashi-dori, Chuo-ku, Kobe 650-0001, Japan
+SensitiveData: 8012345600020
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-022
+FullName: Sakura Yuto Yamaguchi
+PhysicalAddress: 4-3-1749 Takara-Higashi-dori, Hakata-ku, Fukuoka 812-0011, Japan
+SensitiveData: 7012345600021
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-023
+FullName: Yuto Hiroshi Takahashi
+PhysicalAddress: 5-3-1786 Ume-Higashi-dori, Aoba-ku, Yokohama 225-0001, Japan
+SensitiveData: 6012345600022
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-024
+FullName: Aoi Shota Kimura
+PhysicalAddress: 6-3-1823 Yamato-Higashi-dori, Aoba-ku, Sendai 980-0001, Japan
+SensitiveData: 5012345600023
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-025
+FullName: Ren Riku Yamamoto
+PhysicalAddress: 7-3-1860 Aoba-Kita-dori, Chiyoda-ku, Tokyo 100-0001, Japan
+SensitiveData: 4012345600024
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-026
+FullName: Yui Yuto Mori
+PhysicalAddress: 8-3-1897 Asahi-Kita-dori, Naka-ku, Nagoya 460-0001, Japan
+SensitiveData: 3012345600025
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-027
+FullName: Haruto Hiroshi Kato
+PhysicalAddress: 9-3-1934 Fuji-Kita-dori, Naka-ku, Yokohama 231-0001, Japan
+SensitiveData: 2012345600026
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-028
+FullName: Kaori Mio Hashimoto
+PhysicalAddress: 1-4-1971 Hikari-Kita-dori, Naka-ku, Hiroshima 730-0001, Japan
+SensitiveData: 1012345600027
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-029
+FullName: Hiroshi Mei Yamaguchi
+PhysicalAddress: 2-4-2008 Kaede-Kita-dori, Chuo-ku, Sapporo 060-0001, Japan
+SensitiveData: 9012345600028
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-030
+FullName: Aya Aoi Tanaka
+PhysicalAddress: 3-4-2045 Midori-Kita-dori, Chuo-ku, Chiba 260-0001, Japan
+SensitiveData: 8012345600029
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-031
+FullName: Naoki Aya Kimura
+PhysicalAddress: 4-4-2082 Nishi-Kita-dori, Nakagyo-ku, Kyoto 604-8001, Japan
+SensitiveData: 6012345600030
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-032
+FullName: Emi Mio Yamamoto
+PhysicalAddress: 5-4-2119 Sakura-Kita-dori, Kita-ku, Osaka 530-0001, Japan
+SensitiveData: 5012345600031
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-033
+FullName: Kenji Mei Mori
+PhysicalAddress: 6-4-2156 Shin-Kita-dori, Chuo-ku, Kobe 650-0001, Japan
+SensitiveData: 4012345600032
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-034
+FullName: Yuna Aoi Yoshida
+PhysicalAddress: 7-4-2193 Takara-Kita-dori, Hakata-ku, Fukuoka 812-0011, Japan
+SensitiveData: 3012345600033
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-035
+FullName: Shota Aya Hashimoto
+PhysicalAddress: 8-4-2230 Ume-Kita-dori, Aoba-ku, Yokohama 225-0001, Japan
+SensitiveData: 2012345600034
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-036
+FullName: Mio Hiroshi Yamaguchi
+PhysicalAddress: 9-4-2267 Yamato-Kita-dori, Aoba-ku, Sendai 980-0001, Japan
+SensitiveData: 1012345600035
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-037
+FullName: Takumi Mei Tanaka
+PhysicalAddress: 1-5-2304 Aoba-Minami-dori, Chiyoda-ku, Tokyo 100-0001, Japan
+SensitiveData: 9012345600036
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-038
+FullName: Rin Aoi Hayashi
+PhysicalAddress: 2-5-2341 Asahi-Minami-dori, Naka-ku, Nagoya 460-0001, Japan
+SensitiveData: 8012345600037
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-039
+FullName: Daiki Aya Yamamoto
+PhysicalAddress: 3-5-2378 Fuji-Minami-dori, Naka-ku, Yokohama 231-0001, Japan
+SensitiveData: 7012345600038
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-040
+FullName: Akari Mio Mori
+PhysicalAddress: 4-5-2415 Hikari-Minami-dori, Naka-ku, Hiroshima 730-0001, Japan
+SensitiveData: 6012345600039
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-041
+FullName: Riku Mei Yoshida
+PhysicalAddress: 5-5-2452 Kaede-Minami-dori, Chuo-ku, Sapporo 060-0001, Japan
+SensitiveData: 4012345600040
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-042
+FullName: Mei Aoi Sato
+PhysicalAddress: 6-5-2489 Midori-Minami-dori, Chuo-ku, Chiba 260-0001, Japan
+SensitiveData: 3012345600041
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-043
+FullName: Kaito Aya Yamaguchi
+PhysicalAddress: 7-5-2526 Nishi-Minami-dori, Nakagyo-ku, Kyoto 604-8001, Japan
+SensitiveData: 2012345600042
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-044
+FullName: Hina Mio Tanaka
+PhysicalAddress: 8-5-2563 Sakura-Minami-dori, Kita-ku, Osaka 530-0001, Japan
+SensitiveData: 1012345600043
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-045
+FullName: Sota Mei Hayashi
+PhysicalAddress: 9-5-2600 Shin-Minami-dori, Chuo-ku, Kobe 650-0001, Japan
+SensitiveData: 9012345600044
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-046
+FullName: Sakura Aoi Nakamura
+PhysicalAddress: 1-6-2637 Takara-Minami-dori, Hakata-ku, Fukuoka 812-0011, Japan
+SensitiveData: 8012345600045
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-047
+FullName: Yuto Aya Mori
+PhysicalAddress: 2-6-2674 Ume-Minami-dori, Aoba-ku, Yokohama 225-0001, Japan
+SensitiveData: 7012345600046
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-048
+FullName: Aoi Mio Yoshida
+PhysicalAddress: 3-6-2711 Yamato-Minami-dori, Aoba-ku, Sendai 980-0001, Japan
+SensitiveData: 6012345600047
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-049
+FullName: Ren Mei Sato
+PhysicalAddress: 4-6-2748 Aoba-Mori-dori, Chiyoda-ku, Tokyo 100-0001, Japan
+SensitiveData: 5012345600048
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-050
+FullName: Yui Aoi Matsumoto
+PhysicalAddress: 5-6-2785 Asahi-Mori-dori, Naka-ku, Nagoya 460-0001, Japan
+SensitiveData: 4012345600049
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-051
+FullName: Haruto Aya Tanaka
+PhysicalAddress: 6-6-2822 Fuji-Mori-dori, Naka-ku, Yokohama 231-0001, Japan
+SensitiveData: 2012345600050
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-052
+FullName: Kaori Takumi Hayashi
+PhysicalAddress: 7-6-2859 Hikari-Mori-dori, Naka-ku, Hiroshima 730-0001, Japan
+SensitiveData: 1012345600051
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-053
+FullName: Hiroshi Kaito Nakamura
+PhysicalAddress: 8-6-2896 Kaede-Mori-dori, Chuo-ku, Sapporo 060-0001, Japan
+SensitiveData: 9012345600052
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-054
+FullName: Aya Ren Abe
+PhysicalAddress: 9-6-2933 Midori-Mori-dori, Chuo-ku, Chiba 260-0001, Japan
+SensitiveData: 8012345600053
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-055
+FullName: Naoki Aoi Yoshida
+PhysicalAddress: 1-7-2970 Nishi-Mori-dori, Nakagyo-ku, Kyoto 604-8001, Japan
+SensitiveData: 7012345600054
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-056
+FullName: Emi Takumi Sato
+PhysicalAddress: 2-7-3007 Sakura-Mori-dori, Kita-ku, Osaka 530-0001, Japan
+SensitiveData: 6012345600055
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-057
+FullName: Kenji Kaito Matsumoto
+PhysicalAddress: 3-7-3044 Shin-Mori-dori, Chuo-ku, Kobe 650-0001, Japan
+SensitiveData: 5012345600056
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-058
+FullName: Yuna Ren Watanabe
+PhysicalAddress: 4-7-3081 Takara-Mori-dori, Hakata-ku, Fukuoka 812-0011, Japan
+SensitiveData: 4012345600057
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-059
+FullName: Shota Naoki Hayashi
+PhysicalAddress: 5-7-3118 Ume-Mori-dori, Aoba-ku, Yokohama 225-0001, Japan
+SensitiveData: 3012345600058
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-060
+FullName: Mio Takumi Nakamura
+PhysicalAddress: 6-7-3155 Yamato-Mori-dori, Aoba-ku, Sendai 980-0001, Japan
+SensitiveData: 2012345600059
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-061
+FullName: Takumi Kaito Abe
+PhysicalAddress: 7-7-3192 Aoba-Sakae-dori, Chiyoda-ku, Tokyo 100-0001, Japan
+SensitiveData: 9012345600060
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-062
+FullName: Rin Ren Yamada
+PhysicalAddress: 8-7-3229 Asahi-Sakae-dori, Naka-ku, Nagoya 460-0001, Japan
+SensitiveData: 8012345600061
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-063
+FullName: Daiki Naoki Sato
+PhysicalAddress: 9-7-3266 Fuji-Sakae-dori, Naka-ku, Yokohama 231-0001, Japan
+SensitiveData: 7012345600062
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-064
+FullName: Akari Takumi Matsumoto
+PhysicalAddress: 1-8-3303 Hikari-Sakae-dori, Naka-ku, Hiroshima 730-0001, Japan
+SensitiveData: 6012345600063
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-065
+FullName: Riku Kaito Watanabe
+PhysicalAddress: 2-8-3340 Kaede-Sakae-dori, Chuo-ku, Sapporo 060-0001, Japan
+SensitiveData: 5012345600064
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-066
+FullName: Mei Ren Shimizu
+PhysicalAddress: 3-8-3377 Midori-Sakae-dori, Chuo-ku, Chiba 260-0001, Japan
+SensitiveData: 4012345600065
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-067
+FullName: Kaito Naoki Nakamura
+PhysicalAddress: 4-8-3414 Nishi-Sakae-dori, Nakagyo-ku, Kyoto 604-8001, Japan
+SensitiveData: 3012345600066
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-068
+FullName: Hina Takumi Abe
+PhysicalAddress: 5-8-3451 Sakura-Sakae-dori, Kita-ku, Osaka 530-0001, Japan
+SensitiveData: 2012345600067
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-069
+FullName: Sota Kaito Yamada
+PhysicalAddress: 6-8-3488 Shin-Sakae-dori, Chuo-ku, Kobe 650-0001, Japan
+SensitiveData: 1012345600068
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-070
+FullName: Sakura Ren Suzuki
+PhysicalAddress: 7-8-3525 Takara-Sakae-dori, Hakata-ku, Fukuoka 812-0011, Japan
+SensitiveData: 9012345600069
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-071
+FullName: Yuto Naoki Matsumoto
+PhysicalAddress: 8-8-3562 Ume-Sakae-dori, Aoba-ku, Yokohama 225-0001, Japan
+SensitiveData: 7012345600070
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-072
+FullName: Aoi Takumi Watanabe
+PhysicalAddress: 9-8-3599 Yamato-Sakae-dori, Aoba-ku, Sendai 980-0001, Japan
+SensitiveData: 6012345600071
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-073
+FullName: Ren Kaito Shimizu
+PhysicalAddress: 1-9-3636 Aoba-Shiro-dori, Chiyoda-ku, Tokyo 100-0001, Japan
+SensitiveData: 5012345600072
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-074
+FullName: Yui Ren Kobayashi
+PhysicalAddress: 2-9-3673 Asahi-Shiro-dori, Naka-ku, Nagoya 460-0001, Japan
+SensitiveData: 4012345600073
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-075
+FullName: Haruto Naoki Abe
+PhysicalAddress: 3-9-3710 Fuji-Shiro-dori, Naka-ku, Yokohama 231-0001, Japan
+SensitiveData: 3012345600074
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-076
+FullName: Kaori Rin Yamada
+PhysicalAddress: 4-9-3747 Hikari-Shiro-dori, Naka-ku, Hiroshima 730-0001, Japan
+SensitiveData: 2012345600075
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-077
+FullName: Hiroshi Hina Suzuki
+PhysicalAddress: 5-9-3784 Kaede-Shiro-dori, Chuo-ku, Sapporo 060-0001, Japan
+SensitiveData: 1012345600076
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-078
+FullName: Aya Yui Inoue
+PhysicalAddress: 6-9-3821 Midori-Shiro-dori, Chuo-ku, Chiba 260-0001, Japan
+SensitiveData: 9012345600077
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-079
+FullName: Naoki Emi Watanabe
+PhysicalAddress: 7-9-3858 Nishi-Shiro-dori, Nakagyo-ku, Kyoto 604-8001, Japan
+SensitiveData: 8012345600078
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-080
+FullName: Emi Rin Shimizu
+PhysicalAddress: 8-9-3895 Sakura-Shiro-dori, Kita-ku, Osaka 530-0001, Japan
+SensitiveData: 7012345600079
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-081
+FullName: Kenji Hina Kobayashi
+PhysicalAddress: 9-9-3932 Shin-Shiro-dori, Chuo-ku, Kobe 650-0001, Japan
+SensitiveData: 5012345600080
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-082
+FullName: Yuna Yui Ikeda
+PhysicalAddress: 1-1-3969 Takara-Shiro-dori, Hakata-ku, Fukuoka 812-0011, Japan
+SensitiveData: 4012345600081
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-083
+FullName: Shota Emi Yamada
+PhysicalAddress: 2-1-4006 Ume-Shiro-dori, Aoba-ku, Yokohama 225-0001, Japan
+SensitiveData: 3012345600082
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-084
+FullName: Mio Rin Suzuki
+PhysicalAddress: 3-1-4043 Yamato-Shiro-dori, Aoba-ku, Sendai 980-0001, Japan
+SensitiveData: 2012345600083
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-085
+FullName: Takumi Hina Inoue
+PhysicalAddress: 4-1-4080 Aoba-Tani-dori, Chiyoda-ku, Tokyo 100-0001, Japan
+SensitiveData: 1012345600084
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-086
+FullName: Rin Yui Ito
+PhysicalAddress: 5-1-4117 Asahi-Tani-dori, Naka-ku, Nagoya 460-0001, Japan
+SensitiveData: 9012345600085
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-087
+FullName: Daiki Emi Shimizu
+PhysicalAddress: 6-1-4154 Fuji-Tani-dori, Naka-ku, Yokohama 231-0001, Japan
+SensitiveData: 8012345600086
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-088
+FullName: Akari Rin Kobayashi
+PhysicalAddress: 7-1-4191 Hikari-Tani-dori, Naka-ku, Hiroshima 730-0001, Japan
+SensitiveData: 7012345600087
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-089
+FullName: Riku Hina Ikeda
+PhysicalAddress: 8-1-4228 Kaede-Tani-dori, Chuo-ku, Sapporo 060-0001, Japan
+SensitiveData: 6012345600088
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-090
+FullName: Mei Yui Sasaki
+PhysicalAddress: 9-1-4265 Midori-Tani-dori, Chuo-ku, Chiba 260-0001, Japan
+SensitiveData: 5012345600089
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-091
+FullName: Kaito Emi Suzuki
+PhysicalAddress: 1-2-4302 Nishi-Tani-dori, Nakagyo-ku, Kyoto 604-8001, Japan
+SensitiveData: 3012345600090
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-092
+FullName: Hina Rin Inoue
+PhysicalAddress: 2-2-4339 Sakura-Tani-dori, Kita-ku, Osaka 530-0001, Japan
+SensitiveData: 2012345600091
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-093
+FullName: Sota Hina Ito
+PhysicalAddress: 3-2-4376 Shin-Tani-dori, Chuo-ku, Kobe 650-0001, Japan
+SensitiveData: 1012345600092
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-094
+FullName: Sakura Yui Yamazaki
+PhysicalAddress: 4-2-4413 Takara-Tani-dori, Hakata-ku, Fukuoka 812-0011, Japan
+SensitiveData: 9012345600093
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-095
+FullName: Yuto Emi Kobayashi
+PhysicalAddress: 5-2-4450 Ume-Tani-dori, Aoba-ku, Yokohama 225-0001, Japan
+SensitiveData: 8012345600094
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-096
+FullName: Aoi Rin Ikeda
+PhysicalAddress: 6-2-4487 Yamato-Tani-dori, Aoba-ku, Sendai 980-0001, Japan
+SensitiveData: 7012345600095
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-097
+FullName: Ren Hina Sasaki
+PhysicalAddress: 7-2-4524 Aoba-Yama-dori, Chiyoda-ku, Tokyo 100-0001, Japan
+SensitiveData: 6012345600096
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-098
+FullName: Yui Kaito Takahashi
+PhysicalAddress: 8-2-4561 Asahi-Yama-dori, Naka-ku, Nagoya 460-0001, Japan
+SensitiveData: 5012345600097
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-099
+FullName: Haruto Emi Inoue
+PhysicalAddress: 9-2-4598 Fuji-Yama-dori, Naka-ku, Yokohama 231-0001, Japan
+SensitiveData: 4012345600098
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-100
+FullName: Kaori Daiki Ito
+PhysicalAddress: 1-3-4635 Hikari-Yama-dori, Naka-ku, Hiroshima 730-0001, Japan
+SensitiveData: 3012345600099
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-101
+FullName: Hiroshi Sota Yamazaki
+PhysicalAddress: 2-3-4672 Kaede-Yama-dori, Chuo-ku, Sapporo 060-0001, Japan
+SensitiveData: 2012345600100
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-102
+FullName: Aya Haruto Kato
+PhysicalAddress: 3-3-4709 Midori-Yama-dori, Chuo-ku, Chiba 260-0001, Japan
+SensitiveData: 1012345600101
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-103
+FullName: Naoki Kenji Ikeda
+PhysicalAddress: 4-3-4746 Nishi-Yama-dori, Nakagyo-ku, Kyoto 604-8001, Japan
+SensitiveData: 9012345600102
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-104
+FullName: Emi Daiki Sasaki
+PhysicalAddress: 5-3-4783 Sakura-Yama-dori, Kita-ku, Osaka 530-0001, Japan
+SensitiveData: 8012345600103
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-105
+FullName: Kenji Sota Takahashi
+PhysicalAddress: 6-3-4820 Shin-Yama-dori, Chuo-ku, Kobe 650-0001, Japan
+SensitiveData: 7012345600104
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-106
+FullName: Yuna Haruto Kimura
+PhysicalAddress: 7-3-4857 Takara-Yama-dori, Hakata-ku, Fukuoka 812-0011, Japan
+SensitiveData: 6012345600105
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-107
+FullName: Shota Kenji Ito
+PhysicalAddress: 8-3-4894 Ume-Yama-dori, Aoba-ku, Yokohama 225-0001, Japan
+SensitiveData: 5012345600106
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-108
+FullName: Mio Daiki Yamazaki
+PhysicalAddress: 9-3-4931 Yamato-Yama-dori, Aoba-ku, Sendai 980-0001, Japan
+SensitiveData: 4012345600107
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-109
+FullName: Takumi Sota Kato
+PhysicalAddress: 1-4-4968 Aoba-Hana-dori, Chiyoda-ku, Tokyo 100-0001, Japan
+SensitiveData: 3012345600108
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-110
+FullName: Rin Haruto Hashimoto
+PhysicalAddress: 2-4-5005 Asahi-Hana-dori, Naka-ku, Nagoya 460-0001, Japan
+SensitiveData: 2012345600109
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-111
+FullName: Daiki Kenji Sasaki
+PhysicalAddress: 3-4-5042 Fuji-Hana-dori, Naka-ku, Yokohama 231-0001, Japan
+SensitiveData: 9012345600110
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-112
+FullName: Akari Daiki Takahashi
+PhysicalAddress: 4-4-5079 Hikari-Hana-dori, Naka-ku, Hiroshima 730-0001, Japan
+SensitiveData: 8012345600111
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-113
+FullName: Riku Sota Kimura
+PhysicalAddress: 5-4-5116 Kaede-Hana-dori, Chuo-ku, Sapporo 060-0001, Japan
+SensitiveData: 7012345600112
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-114
+FullName: Mei Haruto Yamamoto
+PhysicalAddress: 6-4-5153 Midori-Hana-dori, Chuo-ku, Chiba 260-0001, Japan
+SensitiveData: 6012345600113
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-115
+FullName: Kaito Kenji Yamazaki
+PhysicalAddress: 7-4-5190 Nishi-Hana-dori, Nakagyo-ku, Kyoto 604-8001, Japan
+SensitiveData: 5012345600114
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-116
+FullName: Hina Daiki Kato
+PhysicalAddress: 8-4-5227 Sakura-Hana-dori, Kita-ku, Osaka 530-0001, Japan
+SensitiveData: 4012345600115
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-117
+FullName: Sota Rin Hashimoto
+PhysicalAddress: 9-4-5264 Shin-Hana-dori, Chuo-ku, Kobe 650-0001, Japan
+SensitiveData: 3012345600116
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-118
+FullName: Sakura Haruto Yamaguchi
+PhysicalAddress: 1-5-5301 Takara-Hana-dori, Hakata-ku, Fukuoka 812-0011, Japan
+SensitiveData: 2012345600117
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-119
+FullName: Yuto Kenji Takahashi
+PhysicalAddress: 2-5-5338 Ume-Hana-dori, Aoba-ku, Yokohama 225-0001, Japan
+SensitiveData: 1012345600118
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-120
+FullName: Aoi Daiki Kimura
+PhysicalAddress: 3-5-5375 Yamato-Hana-dori, Aoba-ku, Sendai 980-0001, Japan
+SensitiveData: 9012345600119
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-121
+FullName: Ren Sota Yamamoto
+PhysicalAddress: 4-5-5412 Aoba-Kawa-dori, Chiyoda-ku, Tokyo 100-0001, Japan
+SensitiveData: 7012345600120
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-122
+FullName: Yui Haruto Mori
+PhysicalAddress: 5-5-5449 Asahi-Kawa-dori, Naka-ku, Nagoya 460-0001, Japan
+SensitiveData: 6012345600121
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-123
+FullName: Haruto Kenji Kato
+PhysicalAddress: 6-5-5486 Fuji-Kawa-dori, Naka-ku, Yokohama 231-0001, Japan
+SensitiveData: 5012345600122
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-124
+FullName: Kaori Akari Hashimoto
+PhysicalAddress: 7-5-5523 Hikari-Kawa-dori, Naka-ku, Hiroshima 730-0001, Japan
+SensitiveData: 4012345600123
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-125
+FullName: Hiroshi Sakura Yamaguchi
+PhysicalAddress: 8-5-5560 Kaede-Kawa-dori, Chuo-ku, Sapporo 060-0001, Japan
+SensitiveData: 3012345600124
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-126
+FullName: Aya Kaori Takahashi
+PhysicalAddress: 9-5-5597 Midori-Kawa-dori, Chuo-ku, Chiba 260-0001, Japan
+SensitiveData: 2012345600125
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-127
+FullName: Naoki Yuna Kimura
+PhysicalAddress: 1-6-5634 Nishi-Kawa-dori, Nakagyo-ku, Kyoto 604-8001, Japan
+SensitiveData: 1012345600126
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-128
+FullName: Emi Akari Yamamoto
+PhysicalAddress: 2-6-5671 Sakura-Kawa-dori, Kita-ku, Osaka 530-0001, Japan
+SensitiveData: 9012345600127
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-129
+FullName: Kenji Sakura Mori
+PhysicalAddress: 3-6-5708 Shin-Kawa-dori, Chuo-ku, Kobe 650-0001, Japan
+SensitiveData: 8012345600128
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-130
+FullName: Yuna Kaori Kato
+PhysicalAddress: 4-6-5745 Takara-Kawa-dori, Hakata-ku, Fukuoka 812-0011, Japan
+SensitiveData: 7012345600129
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-131
+FullName: Shota Yuna Hashimoto
+PhysicalAddress: 5-6-5782 Ume-Kawa-dori, Aoba-ku, Yokohama 225-0001, Japan
+SensitiveData: 5012345600130
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-132
+FullName: Mio Akari Yamaguchi
+PhysicalAddress: 6-6-5819 Yamato-Kawa-dori, Aoba-ku, Sendai 980-0001, Japan
+SensitiveData: 4012345600131
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-133
+FullName: Takumi Sakura Tanaka
+PhysicalAddress: 7-6-5856 Aoba-Machi-dori, Chiyoda-ku, Tokyo 100-0001, Japan
+SensitiveData: 3012345600132
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-134
+FullName: Rin Kaori Kimura
+PhysicalAddress: 8-6-5893 Asahi-Machi-dori, Naka-ku, Nagoya 460-0001, Japan
+SensitiveData: 2012345600133
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-135
+FullName: Daiki Yuna Yamamoto
+PhysicalAddress: 9-6-5930 Fuji-Machi-dori, Naka-ku, Yokohama 231-0001, Japan
+SensitiveData: 1012345600134
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-136
+FullName: Akari Kenji Mori
+PhysicalAddress: 1-7-5967 Hikari-Machi-dori, Naka-ku, Hiroshima 730-0001, Japan
+SensitiveData: 9012345600135
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-137
+FullName: Riku Sakura Yoshida
+PhysicalAddress: 2-7-6004 Kaede-Machi-dori, Chuo-ku, Sapporo 060-0001, Japan
+SensitiveData: 8012345600136
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-138
+FullName: Mei Kaori Hashimoto
+PhysicalAddress: 3-7-6041 Midori-Machi-dori, Chuo-ku, Chiba 260-0001, Japan
+SensitiveData: 7012345600137
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-139
+FullName: Kaito Yuna Yamaguchi
+PhysicalAddress: 4-7-6078 Nishi-Machi-dori, Nakagyo-ku, Kyoto 604-8001, Japan
+SensitiveData: 6012345600138
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-140
+FullName: Hina Akari Tanaka
+PhysicalAddress: 5-7-6115 Sakura-Machi-dori, Kita-ku, Osaka 530-0001, Japan
+SensitiveData: 5012345600139
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-141
+FullName: Sota Sakura Hayashi
+PhysicalAddress: 6-7-6152 Shin-Machi-dori, Chuo-ku, Kobe 650-0001, Japan
+SensitiveData: 3012345600140
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-142
+FullName: Sakura Kaori Yamamoto
+PhysicalAddress: 7-7-6189 Takara-Machi-dori, Hakata-ku, Fukuoka 812-0011, Japan
+SensitiveData: 2012345600141
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-143
+FullName: Yuto Yuna Mori
+PhysicalAddress: 8-7-6226 Ume-Machi-dori, Aoba-ku, Yokohama 225-0001, Japan
+SensitiveData: 1012345600142
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-144
+FullName: Aoi Akari Yoshida
+PhysicalAddress: 9-7-6263 Yamato-Machi-dori, Aoba-ku, Sendai 980-0001, Japan
+SensitiveData: 9012345600143
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-145
+FullName: Ren Sakura Sato
+PhysicalAddress: 1-8-6300 Aoba-Chuo-michi, Chiyoda-ku, Tokyo 100-0001, Japan
+SensitiveData: 8012345600144
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-146
+FullName: Yui Kaori Yamaguchi
+PhysicalAddress: 2-8-6337 Asahi-Chuo-michi, Naka-ku, Nagoya 460-0001, Japan
+SensitiveData: 7012345600145
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-147
+FullName: Haruto Yuna Tanaka
+PhysicalAddress: 3-8-6374 Fuji-Chuo-michi, Naka-ku, Yokohama 231-0001, Japan
+SensitiveData: 6012345600146
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-148
+FullName: Kaori Riku Hayashi
+PhysicalAddress: 4-8-6411 Hikari-Chuo-michi, Naka-ku, Hiroshima 730-0001, Japan
+SensitiveData: 5012345600147
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-149
+FullName: Hiroshi Yuto Nakamura
+PhysicalAddress: 5-8-6448 Kaede-Chuo-michi, Chuo-ku, Sapporo 060-0001, Japan
+SensitiveData: 4012345600148
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
+
+RecordID: TEST-150
+FullName: Aya Hiroshi Mori
+PhysicalAddress: 6-8-6485 Midori-Chuo-michi, Chuo-ku, Chiba 260-0001, Japan
+SensitiveData: 3012345600149
+DataOrigin: Locally generated synthetic row; identifier checksum/format validated
+SourceURL: https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate
+SyntheticNotice: FICTIONAL SYNTHETIC DLP TEST DATA - NOT FOR REAL-WORLD USE
