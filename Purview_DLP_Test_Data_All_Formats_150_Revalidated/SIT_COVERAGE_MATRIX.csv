@@ -1,0 +1,27 @@
+﻿Case,TestCase,SITKeyword,BuiltInSIT,TargetConfidence,MicrosoftDefinition,Rows,LocalValidation
+01,Credit Card Numbers,Credit Card Number,Credit card number,85 (high),https://learn.microsoft.com/en-us/purview/sit-defn-credit-card-number,150,PASS
+02,US Social Security Numbers,Social Security Number,U.S. social security number (SSN),85 (high),https://learn.microsoft.com/en-us/purview/sit-defn-us-social-security-number,150,PASS
+03,New York Driver's License Numbers,New York Driver's License,U.S. driver's license number,75 (medium),https://learn.microsoft.com/en-us/purview/sit-defn-us-drivers-license-number,150,PASS
+04,US Adoption Taxpayer ID Numbers,Adoption Taxpayer Identification Number (ATIN),No built-in SIT - custom SIT required,N/A,https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions,150,PASS
+05,US Preparer Taxpayer ID Numbers,Preparer Tax Identification Number (PTIN),No built-in SIT - custom SIT required,N/A,https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions,150,PASS
+06,US Individual Taxpayer ID Numbers,Individual Taxpayer Identification Number (ITIN),U.S. individual taxpayer identification number (ITIN),85 (high),https://learn.microsoft.com/en-us/purview/sit-defn-us-individual-taxpayer-identification-number,150,PASS
+07,UK Bank Sort Code and Account Number Combinations,UK bank sort code and account number,No built-in combined SIT - custom SIT required,N/A,https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-entity-definitions,150,PASS
+08,Spanish National ID,Documento Nacional de Identidad (DNI),Spain DNI,85 (high),https://learn.microsoft.com/en-us/purview/sit-defn-spain-dni,150,PASS
+09,Italian Fiscal Codes,Codice Fiscale,Italy fiscal code,85 (high),https://learn.microsoft.com/en-us/purview/sit-defn-italy-fiscal-code,150,PASS
+10,Italian IBAN Codes,Italian International Bank Account Number (IBAN),International banking account number (IBAN),85 (high),https://learn.microsoft.com/en-us/purview/sit-defn-international-banking-account-number,150,PASS
+11,Pakistan IBAN Codes,Pakistan International Bank Account Number (IBAN),International banking account number (IBAN),85 (high),https://learn.microsoft.com/en-us/purview/sit-defn-international-banking-account-number,150,PASS
+12,Singapore National ID Numbers,National Registration Identity Card (NRIC),Singapore national registration identity card (NRIC) number,85 (high),https://learn.microsoft.com/en-us/purview/sit-defn-singapore-national-registration-identity-card-number,150,PASS
+13,UAE IBAN Codes,UAE International Bank Account Number (IBAN),International banking account number (IBAN),85 (high),https://learn.microsoft.com/en-us/purview/sit-defn-international-banking-account-number,150,PASS
+14,UK Drivers License Numbers,UK Driving Licence Number,U.K. driver's license number,75 (medium),https://learn.microsoft.com/en-us/purview/sit-defn-uk-drivers-license-number,150,PASS
+15,UK Electoral Roll Numbers,UK Electoral Roll Number,U.K. electoral roll number,75 (medium),https://learn.microsoft.com/en-us/purview/sit-defn-uk-electoral-roll-number,150,PASS
+16,UK National Insurance Numbers,National Insurance Number (NINO),U.K. national insurance number (NINO),85 (high),https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-insurance-number,150,PASS
+17,UK Tax ID Numbers,Unique Taxpayer Reference (UTR),U.K. Unique Taxpayer Reference Number,85 (high),https://learn.microsoft.com/en-us/purview/sit-defn-uk-unique-taxpayer-reference-number,150,PASS
+18,UK NHS Numbers,National Health Service (NHS) Number,U.K. national health service number,85 (high),https://learn.microsoft.com/en-us/purview/sit-defn-uk-national-health-service-number,150,PASS
+19,Hong Kong National ID Numbers,Hong Kong Identity Card (HKID) Number,Hong Kong identity card (HKID) number,75 (medium),https://learn.microsoft.com/en-us/purview/sit-defn-hong-kong-identity-card-number,150,PASS
+20,Indian Aadhaar Card Numbers,Aadhaar Number,India unique identification (Aadhaar) number,85 (high),https://learn.microsoft.com/en-us/purview/sit-defn-india-unique-identification-number,150,PASS
+21,Indian PAN Card Numbers,Permanent Account Number (PAN),India permanent account number (PAN),85 (high),https://learn.microsoft.com/en-us/purview/sit-defn-india-permanent-account-number,150,PASS
+22,ABA Routing Numbers,ABA Routing Number,ABA Routing Number,75 (medium),https://learn.microsoft.com/en-us/purview/sit-defn-aba-routing,150,PASS
+23,Burgerservicenummer,Burgerservicenummer (BSN),Netherlands citizen's service (BSN) number,85 (high),https://learn.microsoft.com/en-us/purview/sit-defn-netherlands-citizens-service-number,150,PASS
+24,French Social Security Numbers,Numéro de sécurité sociale (INSEE),France social security number (INSEE),85 (high),https://learn.microsoft.com/en-us/purview/sit-defn-france-social-security-number,150,PASS
+25,Japanese My Number Corporate,Corporate Number / 法人番号,Japanese My Number Corporate,85 (high),https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-corporate,150,PASS
+26,Japanese My Number Personal,My Number / 個人番号,Japanese My Number Personal,85 (high),https://learn.microsoft.com/en-us/purview/sit-defn-japan-my-number-personal,150,PASS
