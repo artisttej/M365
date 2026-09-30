@@ -479,19 +479,25 @@ if ($ModulePath) {
 # Only load what this mode needs:
 #   -ExportOnly  -> ExchangeOnlineManagement only (safe for locked-down client machines)
 #   -FromExport  -> ImportExcel only (no connection to Purview)
+#   -SkipConnect -> ExchangeOnlineManagement is not touched at all; the existing IPPS session is used
 $neededModules = @()
-if (-not $FromExport) { $neededModules += 'ExchangeOnlineManagement' }
+if (-not $FromExport -and -not $SkipConnect) { $neededModules += 'ExchangeOnlineManagement' }
 if (-not $ExportOnly) { $neededModules += 'ImportExcel' }
 
-Write-Step "Checking modules ($($neededModules -join ', '))"
+if ($neededModules.Count) { Write-Step "Checking modules ($($neededModules -join ', '))" }
 foreach ($m in $neededModules) {
+    # Already loaded in this session (e.g. imported manually from C:\temp) -> use it as-is
+    if (Get-Module -Name $m) { Write-Host "  $m already loaded - using it" -ForegroundColor DarkGray; continue }
     if (-not (Get-Module -ListAvailable -Name $m)) {
-        if ($SkipModuleInstall) { throw "Module '$m' is not installed. Install-Module $m -Scope CurrentUser" }
+        if ($SkipModuleInstall) {
+            throw "Module '$m' is not loaded or installed. Import it first (Import-Module <path>\$m\$m.psd1) or use -ModulePath."
+        }
         Write-Host "  Installing $m (CurrentUser scope)..." -ForegroundColor Yellow
         Install-Module -Name $m -Scope CurrentUser -Force -AllowClobber
     }
     Import-Module $m -ErrorAction Stop
 }
+if ($SkipConnect -and -not $FromExport) { Write-Host '  Using existing Security & Compliance session (no module import, no sign-in)' -ForegroundColor DarkGray }
 
 if (-not $FromExport) {
 if (-not $SkipConnect) {
