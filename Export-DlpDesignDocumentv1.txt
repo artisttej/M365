@@ -1,0 +1,1983 @@
+#Requires -Version 5.1
+<#
+.SYNOPSIS
+    Exports Microsoft Purview DLP policies and rules and generates an Excel design document.
+
+.DESCRIPTION
+    Connects to Security & Compliance PowerShell, retrieves every DLP policy, every DLP rule and
+    the sensitive information type (SIT) catalogue, and produces:
+
+      <OutputFolder>\Policies\<priority> - <policy name>.xlsx   (one design document per policy)
+      <OutputFolder>\DLP-Design-Document (All Policies).xlsx   (only with -IncludeCombinedWorkbook)
+      <OutputFolder>\Raw\DlpPolicies.xml / DlpRules.xml   (full-fidelity CLIXML backup)
+      <OutputFolder>\Raw\DlpPolicies.json / DlpRules.json
+
+    Per-policy workbook (form-style design document):
+      Policy_Config           CR Ref, priority, name & description, mode, admin units, locations
+                              (included / excluded per workload), rule list
+      Rule_Config             Per rule: details, numbered condition blocks (1.1, 1.2 ...) with
+                              Is Group / Condition / Properties & Values and AND/OR operators between
+                              them, exceptions, actions, user notifications, overrides, incident
+                              reports / alerts, additional options
+      SIT_Config              Per rule: one block per SIT / classifier / label with confidence
+                              level, instance count, group logic, built-in vs custom
+      Additional Information  Export details, distribution, SIT summary, every raw property
+      Lists                   Drop-down values (predicates, Is Group, operators, modes...) and the
+                              Purview predicate -> PowerShell parameter mapping
+
+    Combined workbook (-IncludeCombinedWorkbook) is tabular: Summary, Policies, Coverage Matrix,
+    Scoping, Rules, SIT Conditions, SIT Inventory, Notifications, Alerts & Incidents,
+    Endpoint Restrictions, Raw Policy Properties, Raw Rule Properties
+
+    Both "simple" rules (ContentContainsSensitiveInformation) and "advanced" rules built with the
+    condition builder (AdvancedRule JSON) are parsed, including nested AND/OR/NOT groups.
+
+.PARAMETER UserPrincipalName
+    Admin UPN for interactive sign-in.
+
+.PARAMETER AppId / CertificateThumbprint / Organization
+    App-only (certificate) authentication for unattended runs.
+
+.PARAMETER ExportOnly
+    Client-side step. Connects, reads the policies / rules / referenced SITs and saves a snapshot to
+    <OutputFolder>\Raw, then stops. Needs ONLY ExchangeOnlineManagement - ImportExcel is not loaded.
+
+.PARAMETER FromExport
+    Offline step. Path to a snapshot folder produced by -ExportOnly (the export folder or its Raw
+    subfolder). Builds the design documents without connecting to Purview. Needs ONLY ImportExcel.
+    -PolicyName can be used to build documents for a subset of the snapshot.
+
+.PARAMETER ModulePath
+    Folder containing manually copied modules (e.g. C:\temp, holding C:\temp\ImportExcel). Added to
+    the module search path for this session only.
+
+.PARAMETER SkipConnect
+    Use an existing Connect-IPPSSession session.
+
+.PARAMETER OutputFolder
+    Where to write the output. Defaults to .\DLP-Export-<timestamp>.
+
+.PARAMETER PolicyName
+    One or more exact policy names (or GUIDs) to export. When set, the script runs in targeted mode:
+    it only calls Purview for those policies, their rules, and the individual SITs they reference -
+    no tenant-wide policy, rule or SIT enumeration. Omit it to export every policy.
+
+.PARAMETER IncludeDistributionDetail
+    Also pull per-policy distribution results (slower - one extra call per policy).
+
+.PARAMETER IncludeCombinedWorkbook
+    Also produce a single estate-wide workbook (adds Policies and Coverage Matrix sheets).
+
+.PARAMETER CRRef
+    Change request reference written into the CR Ref field of every workbook (blank if omitted).
+
+.PARAMETER SkipModuleInstall
+    Don't auto-install missing modules; fail instead.
+
+.EXAMPLE
+    # Two-step (locked-down client). 1) On the client - Exchange module only:
+    .\Export-DlpDesignDocument.ps1 -UserPrincipalName admin@client.com -PolicyName 'UK PII' -ExportOnly -SkipModuleInstall
+    # 2) On your machine - copy the export folder across, then:
+    .\Export-DlpDesignDocument.ps1 -FromExport 'C:\Exports\DLP-Export-20260930-143000' -CRRef 'CHG0012345'
+
+.EXAMPLE
+    .\Export-DlpDesignDocument.ps1 -UserPrincipalName admin@contoso.onmicrosoft.com
+
+.EXAMPLE
+    .\Export-DlpDesignDocument.ps1 -AppId 00000000-0000-0000-0000-000000000000 `
+        -CertificateThumbprint ABCDEF1234567890 -Organization contoso.onmicrosoft.com
+
+.EXAMPLE
+    .\Export-DlpDesignDocument.ps1 -SkipConnect -PolicyName 'UK PII','PCI DSS' -IncludeDistributionDetail
+
+.NOTES
+    Modules : ExchangeOnlineManagement (v3+), ImportExcel. Excel itself is NOT required.
+    Roles   : Compliance Administrator, Compliance Data Administrator, or any role group with
+              "View-Only DLP Compliance Management" (read-only is sufficient).
+#>
+[CmdletBinding(DefaultParameterSetName = 'Interactive')]
+param(
+    [Parameter(ParameterSetName = 'Interactive')]
+    [string]$UserPrincipalName,
+
+    [Parameter(ParameterSetName = 'App', Mandatory)]
+    [string]$AppId,
+    [Parameter(ParameterSetName = 'App', Mandatory)]
+    [string]$CertificateThumbprint,
+    [Parameter(ParameterSetName = 'App', Mandatory)]
+    [string]$Organization,
+
+    [Parameter(ParameterSetName = 'NoConnect', Mandatory)]
+    [switch]$SkipConnect,
+
+    [Parameter(ParameterSetName = 'Offline', Mandatory)]
+    [string]$FromExport,
+
+    [switch]$ExportOnly,
+    [string]$ModulePath,
+
+    [string]$OutputFolder = (Join-Path -Path (Get-Location).Path -ChildPath ("DLP-Export-{0:yyyyMMdd-HHmmss}" -f (Get-Date))),
+    [string[]]$PolicyName,
+    [switch]$IncludeDistributionDetail,
+    [switch]$IncludeCombinedWorkbook,
+    [string]$CRRef = '',
+    [switch]$SkipModuleInstall
+)
+
+$ErrorActionPreference = 'Stop'
+$ScriptVersion = '1.5.0'
+Write-Host "Export-DlpDesignDocument v$ScriptVersion" -ForegroundColor White
+$script:MaxCell = 32000   # Excel hard limit is 32,767 chars per cell
+
+#region ---------------------------------------------------------------- Helpers
+
+function Write-Step([string]$Message) {
+    Write-Host ("[{0:HH:mm:ss}] {1}" -f (Get-Date), $Message) -ForegroundColor Cyan
+}
+
+# Case-insensitive property / key lookup that works on hashtables, PSObjects and JSON objects.
+function Get-Val {
+    param($Obj, [string]$Key)
+    if ($null -eq $Obj -or $Obj -is [string] -or $Obj -is [ValueType]) { return $null }
+    if ($Obj -is [System.Collections.IDictionary]) {
+        foreach ($k in $Obj.Keys) { if ([string]$k -ieq $Key) { return $Obj[$k] } }
+        return $null
+    }
+    $p = $Obj.PSObject.Properties[$Key]
+    if ($p) { return $p.Value }
+    return $null
+}
+
+function Test-Empty {
+    param($Value)
+    if ($null -eq $Value) { return $true }
+    if ($Value -is [string]) { return [string]::IsNullOrWhiteSpace($Value) }
+    if ($Value -is [bool]) { return -not $Value }
+    if ($Value -is [System.Collections.IDictionary]) { return $Value.Count -eq 0 }
+    if ($Value -is [System.Collections.IEnumerable]) {
+        foreach ($i in $Value) { if (-not (Test-Empty $i)) { return $false } }
+        return $true
+    }
+    return $false
+}
+
+# Turns any value (arrays, hashtables, location objects, JSON objects) into readable cell text.
+function ConvertTo-CellText {
+    param($Value, [string]$Separator = '; ')
+    if (Test-Empty $Value) { return '' }
+
+    if ($Value -is [string]) {
+        $text = $Value
+    }
+    elseif ($Value -is [System.Collections.IDictionary]) {
+        $text = @($Value.Keys | Sort-Object | ForEach-Object {
+                '{0}={1}' -f $_, (ConvertTo-CellText $Value[$_] ', ')
+            }) -join $Separator
+    }
+    elseif ($Value -is [System.Collections.IEnumerable]) {
+        $text = @($Value | ForEach-Object { ConvertTo-CellText $_ ', ' } | Where-Object { $_ }) -join $Separator
+    }
+    elseif ($Value -is [ValueType]) {
+        $text = [string]$Value
+    }
+    elseif ($Value.PSObject.TypeNames[0] -eq 'System.Management.Automation.PSCustomObject') {
+        # Plain object (e.g. from ConvertFrom-Json)
+        $text = $Value | ConvertTo-Json -Compress -Depth 10
+    }
+    else {
+        # Location / recipient objects etc.
+        $dn = Get-Val $Value 'DisplayName'
+        if (-not $dn) { $dn = Get-Val $Value 'Name' }
+        $text = if ($dn) { [string]$dn } else { [string]$Value }
+    }
+
+    if ($text.Length -gt $script:MaxCell) { $text = $text.Substring(0, $script:MaxCell) + ' ...[truncated]' }
+    return $text
+}
+
+function Get-Text { param($Obj, [string]$Key) ConvertTo-CellText (Get-Val $Obj $Key) }
+
+function Get-YesNo { param($Value) if (Test-Empty $Value) { 'No' } else { 'Yes' } }
+
+# Readable timestamp. Prefers the UTC property (WhenCreatedUTC / WhenChangedUTC) when present.
+function Format-When {
+    param($Obj, [string]$Base)
+    $v = Get-Val $Obj "${Base}UTC"
+    $utc = -not (Test-Empty $v)
+    if (-not $utc) { $v = Get-Val $Obj $Base }
+    if (Test-Empty $v) { return '' }
+    $dt = $null
+    if ($v -is [datetime]) { $dt = $v }
+    else {
+        $parsed = [datetime]::MinValue
+        if ([datetime]::TryParse([string]$v, [System.Globalization.CultureInfo]::InvariantCulture, [System.Globalization.DateTimeStyles]::None, [ref]$parsed)) { $dt = $parsed }
+    }
+    if (-not $dt) { return [string]$v }
+    if ($utc -or $dt.Kind -eq [DateTimeKind]::Utc) { return $dt.ToString('dd MMM yyyy HH:mm') + ' UTC' }
+    return $dt.ToString('dd MMM yyyy HH:mm')
+}
+
+#endregion
+
+#region ---------------------------------------------------------------- SIT parsing
+
+# Looks up a SIT in the cache. In targeted mode (-PolicyName) the catalogue is not bulk-loaded, so
+# SITs are fetched one at a time, only when a selected policy references them, and cached (hits and misses).
+function Resolve-Sit([string]$Id, [string]$Name) {
+    foreach ($key in @($Id, $Name)) {
+        if (-not $key) { continue }
+        $k = $key.ToLower()
+        if ($script:SitById.ContainsKey($k)) { return $script:SitById[$k] }
+        if ($script:SitByName.ContainsKey($k)) { return $script:SitByName[$k] }
+    }
+    if (-not $script:SitLazy) { return $null }
+    foreach ($key in @($Id, $Name)) {
+        if (-not $key -or $script:SitMiss.ContainsKey($key.ToLower())) { continue }
+        $s = $null
+        try { $s = Get-DlpSensitiveInformationType -Identity $key -ErrorAction Stop | Select-Object -First 1 } catch { }
+        $script:SitLookups++
+        if ($s) {
+            if ($s.Id) { $script:SitById["$($s.Id)".ToLower()] = $s }
+            if ($s.Name) { $script:SitByName["$($s.Name)".ToLower()] = $s }
+            $script:SitById[$key.ToLower()] = $s
+            return $s
+        }
+        $script:SitMiss[$key.ToLower()] = $true
+    }
+    return $null
+}
+
+function New-SitRow {
+    param($Entry, [string]$Kind, [string]$Policy, [string]$Rule, [string]$Context, [string]$Source,
+        [string]$GroupName, [string]$GroupOperator, [string]$OuterOperator)
+
+    $name = [string](Get-Val $Entry 'name')
+    $id = [string](Get-Val $Entry 'id')
+
+    $sit = if ($Kind -eq 'Sensitivity label') { $null } else { Resolve-Sit -Id $id -Name $name }
+    if (-not $name -and $sit) { $name = [string]$sit.Name }
+
+    $classifier = [string](Get-Val $Entry 'classifiertype')
+    if ($Kind -eq 'SIT' -and $classifier -match 'MLModel') { $Kind = 'Trainable classifier' }
+
+    $min = Get-Val $Entry 'mincount'
+    $max = Get-Val $Entry 'maxcount'
+    $minText = ''
+    $maxText = ''
+    if ($Kind -ne 'Sensitivity label') {
+        $minText = if ($null -ne $min -and "$min" -ne '') { "$min" } else { '' }
+        $maxText = if ($null -eq $max -or "$max" -eq '' -or "$max" -eq '-1') { 'Any' } else { "$max" }
+    }
+
+    $publisher = if ($sit) { [string](Get-Val $sit 'Publisher') } else { '' }
+    $sitType = if ($sit) { [string](Get-Val $sit 'Type') } else { '' }
+    $origin = if (-not $publisher) { '' } elseif ($publisher -match '^Microsoft') { 'Built-in' } else { 'Custom' }
+
+    [pscustomobject]@{
+        'Policy'                 = $Policy
+        'Rule'                   = $Rule
+        'Condition / Exception'  = $Context
+        'Rule Type'              = $Source
+        'Outer Group Operator'   = $OuterOperator
+        'Group Name'             = $GroupName
+        'Group Operator'         = $GroupOperator
+        'Classifier Kind'        = $Kind
+        'Name'                   = $name
+        'Id'                     = $id
+        'Built-in / Custom'      = $origin
+        'Publisher'              = $publisher
+        'SIT Type'               = $sitType
+        'Min Instance Count'     = $minText
+        'Max Instance Count'     = $maxText
+        'Confidence Level'       = [string](Get-Val $Entry 'confidencelevel')
+        'Min Confidence'         = [string](Get-Val $Entry 'minconfidence')
+        'Max Confidence'         = [string](Get-Val $Entry 'maxconfidence')
+    }
+}
+
+# Handles both flat SIT lists and grouped (groups -> sensitivetypes / labels) structures.
+function Get-SitRows {
+    param($Items, [string]$Policy, [string]$Rule, [string]$Context, [string]$Source)
+
+    foreach ($item in @($Items)) {
+        if (Test-Empty $item) { continue }
+
+        if ($item -is [string]) {
+            $parsed = $null
+            try { $parsed = $item | ConvertFrom-Json -ErrorAction Stop } catch { }
+            if ($parsed) { Get-SitRows -Items $parsed -Policy $Policy -Rule $Rule -Context $Context -Source $Source }
+            else { New-SitRow -Entry @{ name = $item } -Kind 'SIT' -Policy $Policy -Rule $Rule -Context $Context -Source $Source }
+            continue
+        }
+
+        $groups = Get-Val $item 'groups'
+        if (-not (Test-Empty $groups)) {
+            $outer = [string](Get-Val $item 'operator')
+            foreach ($g in @($groups)) {
+                if (Test-Empty $g) { continue }
+                $gName = [string](Get-Val $g 'name')
+                $gOp = [string](Get-Val $g 'operator')
+                foreach ($st in @(Get-Val $g 'sensitivetypes')) {
+                    if (-not (Test-Empty $st)) {
+                        New-SitRow -Entry $st -Kind 'SIT' -Policy $Policy -Rule $Rule -Context $Context -Source $Source `
+                            -GroupName $gName -GroupOperator $gOp -OuterOperator $outer
+                    }
+                }
+                foreach ($lb in @(Get-Val $g 'labels')) {
+                    if (-not (Test-Empty $lb)) {
+                        New-SitRow -Entry $lb -Kind 'Sensitivity label' -Policy $Policy -Rule $Rule -Context $Context -Source $Source `
+                            -GroupName $gName -GroupOperator $gOp -OuterOperator $outer
+                    }
+                }
+            }
+        }
+        else {
+            New-SitRow -Entry $item -Kind 'SIT' -Policy $Policy -Rule $Rule -Context $Context -Source $Source
+        }
+    }
+}
+
+function Format-SitSummary {
+    param([object[]]$Rows)
+    if (-not $Rows -or $Rows.Count -eq 0) { return '' }
+
+    $lines = foreach ($grp in ($Rows | Group-Object -Property 'Group Name')) {
+        $first = $grp.Group[0]
+        $items = foreach ($row in $grp.Group) {
+            $detail = @()
+            if ($row.'Min Instance Count') {
+                if ($row.'Max Instance Count' -eq 'Any') { $detail += "$($row.'Min Instance Count')+ instances" }
+                else { $detail += "$($row.'Min Instance Count')-$($row.'Max Instance Count') instances" }
+            }
+            if ($row.'Confidence Level') { $detail += "$($row.'Confidence Level') confidence" }
+            elseif ($row.'Min Confidence') { $detail += "confidence $($row.'Min Confidence')-$($row.'Max Confidence')" }
+            if ($row.'Classifier Kind' -ne 'SIT') { $detail += $row.'Classifier Kind' }
+            if ($detail.Count) { "$($row.Name) ($($detail -join ', '))" } else { $row.Name }
+        }
+        $prefix = if ($grp.Name) { "[$($grp.Name) - $($first.'Group Operator')] " } else { '' }
+        $prefix + ($items -join '; ')
+    }
+
+    $outer = [string]$Rows[0].'Outer Group Operator'
+    $sep = if ($outer) { "`n$($outer.ToUpper())`n" } else { "`n" }
+    return (@($lines) -join $sep)
+}
+
+# Walks the AdvancedRule JSON tree (condition builder), returning readable logic and collecting SIT rows.
+function ConvertFrom-AdvancedCondition {
+    param($Node, [bool]$Negated, [string]$Policy, [string]$Rule,
+        [System.Collections.Generic.List[object]]$SitSink)
+
+    if (Test-Empty $Node) { return '' }
+
+    $op = [string](Get-Val $Node 'Operator')
+    $sub = Get-Val $Node 'SubConditions'
+
+    if (-not (Test-Empty $sub)) {
+        $neg = $Negated -xor ($op -eq 'Not')
+        $parts = @(@(foreach ($s in @($sub)) {
+                    ConvertFrom-AdvancedCondition -Node $s -Negated $neg -Policy $Policy -Rule $Rule -SitSink $SitSink
+                }) | Where-Object { $_ })
+        if ($op -eq 'Not') { return 'NOT (' + ($parts -join ' AND ') + ')' }
+        if ($parts.Count -le 1) { return ($parts -join '') }
+        $joiner = if ($op) { "`n$($op.ToUpper())`n" } else { "`nAND`n" }
+        return '(' + ($parts -join $joiner) + ')'
+    }
+
+    $cn = [string](Get-Val $Node 'ConditionName')
+    $val = Get-Val $Node 'Value'
+
+    if ($cn -match 'ContentContainsSensitiveInformation') {
+        $ctx = if ($Negated) { 'Exception' } else { 'Condition' }
+        $rows = @(Get-SitRows -Items $val -Policy $Policy -Rule $Rule -Context $ctx -Source 'Advanced')
+        foreach ($row in $rows) { $SitSink.Add($row) }
+        return 'Content contains: ' + (Format-SitSummary $rows)
+    }
+
+    return "${cn}: $(ConvertTo-CellText $val)"
+}
+
+#endregion
+
+#region ---------------------------------------------------------------- Rule property classification
+
+$RuleMetaProps = @(
+    'Name', 'Identity', 'Guid', 'Id', 'ImmutableId', 'ParentPolicyName', 'Policy', 'Priority', 'Disabled', 'Mode',
+    'Comment', 'CreatedBy', 'LastModifiedBy', 'WhenCreated', 'WhenChanged', 'WhenCreatedUTC', 'WhenChangedUTC',
+    'DistinguishedName', 'ObjectCategory', 'ObjectClass', 'ExchangeVersion', 'OrganizationId', 'OriginatingServer',
+    'IsValid', 'ObjectState', 'PSComputerName', 'RunspaceId', 'PSShowComputerName', 'ExchangeObjectId',
+    'AdminDisplayName', 'Workload', 'IsAdvancedRule', 'AdvancedRule', 'RuleErrorAction', 'StopPolicyProcessing',
+    'LogicalWorkload', 'PolicyRBACScopes', 'ReadOnly', 'Enabled', 'Version', 'ObjectVersion', 'ContentMatchQuery',
+    'EnforcementPlanes', 'ExtendedProperties', 'ReportSeverityLevel'
+)
+
+$RuleActionProps = @(
+    'BlockAccess', 'BlockAccessScope', 'EncryptRMSTemplate', 'RemoveRMSTemplate', 'SetHeader', 'RemoveHeader',
+    'RedirectMessageTo', 'AddRecipients', 'ModifySubject', 'PrependSubject', 'ApplyHtmlDisclaimer',
+    'ApplyBrandingTemplate', 'Quarantine', 'RestrictAccess', 'RestrictBrowserAccess', 'NonBifurcatingAccessScope',
+    'MipRestrictAccess', 'BlockAccessProtectionScope', 'Encrypt'
+)
+
+function Get-RulePropertyCategory([string]$Name) {
+    if ($RuleMetaProps -contains $Name) { return 'Meta' }
+    if ($Name -like 'ExceptIf*') { return 'Exception' }
+    if ($Name -like 'Notify*') { return 'Notification' }
+    if ($Name -in 'GenerateAlert', 'AlertProperties' -or $Name -like 'Alert*') { return 'Alert' }
+    if ($Name -like '*IncidentReport*') { return 'Incident' }
+    if ($RuleActionProps -contains $Name -or $Name -like '*Restrictions') { return 'Action' }
+    return 'Condition'
+}
+
+$WorkloadMap = [ordered]@{
+    OnPremisesScanner = 'On-premises repositories'
+    ThirdPartyApp     = 'Defender for Cloud Apps'
+    EndpointDlp       = 'Devices (Endpoint)'
+    Exchange          = 'Exchange email'
+    SharePoint        = 'SharePoint sites'
+    OneDrive          = 'OneDrive accounts'
+    Teams             = 'Teams chat & channel'
+    PowerBI           = 'Power BI workspaces'
+}
+
+function Get-WorkloadFromProperty([string]$Name) {
+    foreach ($k in $WorkloadMap.Keys) { if ($Name -like "$k*") { return $WorkloadMap[$k] } }
+    return 'Other'
+}
+
+function Format-ScopeList([object[]]$Rows) {
+    $items = @($Rows | ForEach-Object {
+            if ($_.'Scope Type' -eq 'Location') { $_.Value } else { "$($_.'Scope Type'): $($_.Value)" }
+        })
+    if ($items.Count -gt 5) { (($items[0..4]) -join ', ') + " (+$($items.Count - 5) more)" }
+    else { $items -join ', ' }
+}
+
+function Get-CoverageText([object[]]$Rows) {
+    if (-not $Rows -or $Rows.Count -eq 0) { return '' }
+    $inc = @($Rows | Where-Object { $_.'Include / Exclude' -eq 'Include' })
+    $exc = @($Rows | Where-Object { $_.'Include / Exclude' -eq 'Exclude' })
+    $parts = @()
+    if ($inc.Count) {
+        $nonAll = @($inc | Where-Object { $_.Value -ne 'All' })
+        if (@($inc.Value) -contains 'All') {
+            $parts += if ($nonAll.Count) { "Included: All (scoped to $(Format-ScopeList $nonAll))" } else { 'Included: All' }
+        }
+        else { $parts += "Included: $(Format-ScopeList $inc)" }
+    }
+    if ($exc.Count) { $parts += "Excluded: $(Format-ScopeList $exc)" }
+    return ($parts -join "`n")
+}
+
+#endregion
+
+#region ---------------------------------------------------------------- Modules & connection
+
+if ($ExportOnly -and $FromExport) { throw '-ExportOnly and -FromExport cannot be used together.' }
+if ($ModulePath) {
+    # Let the script find modules copied to a local folder (e.g. C:\temp) - session only
+    $env:PSModulePath = "$ModulePath$([System.IO.Path]::PathSeparator)$env:PSModulePath"
+}
+
+# Is a Security & Compliance (IPPS) session already connected in this PowerShell session?
+# If so, the ExchangeOnlineManagement module is never looked up, imported or installed.
+$alreadyConnected = [bool](Get-Command Get-DlpCompliancePolicy -ErrorAction SilentlyContinue)
+$useExistingSession = -not $FromExport -and ($SkipConnect -or $alreadyConnected)
+
+# Only load what this mode needs:
+#   existing IPPS session -> nothing Exchange-related is touched
+#   -ExportOnly           -> ImportExcel is not needed
+#   -FromExport           -> ImportExcel only (no connection to Purview)
+$neededModules = @()
+if (-not $FromExport -and -not $useExistingSession) { $neededModules += 'ExchangeOnlineManagement' }
+if (-not $ExportOnly) { $neededModules += 'ImportExcel' }
+
+if ($neededModules.Count) { Write-Step "Checking modules ($($neededModules -join ', '))" }
+foreach ($m in $neededModules) {
+    # Already loaded in this session (e.g. imported manually from C:\temp) -> use it as-is
+    if (Get-Module -Name $m) { Write-Host "  $m already loaded - using it" -ForegroundColor DarkGray; continue }
+    if (-not (Get-Module -ListAvailable -Name $m)) {
+        if ($SkipModuleInstall) {
+            throw "Module '$m' is not loaded or installed. Import it first (Import-Module <path>\$m\$m.psd1) or use -ModulePath."
+        }
+        Write-Host "  Installing $m (CurrentUser scope)..." -ForegroundColor Yellow
+        Install-Module -Name $m -Scope CurrentUser -Force -AllowClobber
+    }
+    Import-Module $m -ErrorAction Stop
+}
+
+if (-not $FromExport) {
+    if ($useExistingSession) {
+        if (-not $alreadyConnected) {
+            throw ('-SkipConnect was used but no Security & Compliance session was found in this PowerShell window ' +
+                '(Get-DlpCompliancePolicy is not available). Run Connect-IPPSSession in the SAME window you run ' +
+                'the script from - a new window or "Run with PowerShell" starts a fresh session.')
+        }
+        Write-Step 'Using existing Security & Compliance session (no module import, no sign-in)'
+    }
+    else {
+        Write-Step 'Connecting to Security & Compliance PowerShell'
+        if ($PSCmdlet.ParameterSetName -eq 'App') {
+            Connect-IPPSSession -AppId $AppId -CertificateThumbprint $CertificateThumbprint -Organization $Organization
+        }
+        elseif ($UserPrincipalName) {
+            Connect-IPPSSession -UserPrincipalName $UserPrincipalName
+        }
+        else {
+            Connect-IPPSSession
+        }
+        if (-not (Get-Command Get-DlpCompliancePolicy -ErrorAction SilentlyContinue)) {
+            throw 'DLP cmdlets not available after connecting. Check the account has a Purview DLP role.'
+        }
+    }
+
+$tenant = $Organization
+$exportedBy = $UserPrincipalName
+try {
+    if (-not (Get-Command Get-ConnectionInformation -ErrorAction SilentlyContinue)) { throw 'n/a' }
+    $conns = @(Get-ConnectionInformation -ErrorAction Stop)
+    $ci = $conns | Where-Object { "$($_.ConnectionUri)" -match 'compliance' } | Select-Object -First 1
+    if (-not $ci) { $ci = $conns | Select-Object -First 1 }
+    if ($ci) {
+        if (-not $tenant) { $tenant = [string]$ci.TenantID }
+        if (-not $exportedBy) { $exportedBy = [string]$ci.UserPrincipalName }
+    }
+}
+catch { }
+}
+
+#endregion
+
+#region ---------------------------------------------------------------- Retrieve data
+
+$script:SitById = @{}
+$script:SitByName = @{}
+$script:SitMiss = @{}
+$script:SitLookups = 0
+$script:SitLazy = [bool]$PolicyName -and -not $FromExport
+
+if ($FromExport) {
+    # ------------------------------------------------ Offline: load a saved snapshot
+    $snapDir = $FromExport
+    if (-not (Test-Path (Join-Path $snapDir 'DlpPolicies.xml')) -and (Test-Path (Join-Path $snapDir 'Raw\DlpPolicies.xml'))) {
+        $snapDir = Join-Path $snapDir 'Raw'
+    }
+    foreach ($f in 'DlpPolicies.xml', 'DlpRules.xml') {
+        if (-not (Test-Path (Join-Path $snapDir $f))) { throw "Snapshot file '$f' not found in '$FromExport'. Point -FromExport at the folder created by -ExportOnly." }
+    }
+    Write-Step "Loading snapshot from $snapDir"
+    $policies = @(Import-Clixml (Join-Path $snapDir 'DlpPolicies.xml'))
+    $rules = @(Import-Clixml (Join-Path $snapDir 'DlpRules.xml'))
+    $distribution = @{}
+    $tenant = ''; $exportedBy = ''; $exportDate = ''
+    $infoFile = Join-Path $snapDir 'ExportInfo.xml'
+    if (Test-Path $infoFile) {
+        $info = Import-Clixml $infoFile
+        $tenant = [string]$info.Tenant
+        $exportedBy = [string]$info.ExportedBy
+        $exportDate = [string]$info.ExportDate
+        if ($info.Distribution) { foreach ($k in $info.Distribution.Keys) { $distribution[$k] = $info.Distribution[$k] } }
+    }
+    $sitFile = Join-Path $snapDir 'DlpSits.xml'
+    if (Test-Path $sitFile) {
+        foreach ($sx in @(Import-Clixml $sitFile)) {
+            if ($sx.Id) { $script:SitById["$($sx.Id)".ToLower()] = $sx }
+            if ($sx.Name) { $script:SitByName["$($sx.Name)".ToLower()] = $sx }
+        }
+    }
+    else { Write-Warning 'No DlpSits.xml in the snapshot - built-in / custom and publisher details will be blank.' }
+
+    if ($PolicyName) {
+        $policies = @($policies | Where-Object { $PolicyName -contains $_.Name -or $PolicyName -contains "$($_.Guid)" })
+        $missing = $PolicyName | Where-Object { $n = $_; -not ($policies | Where-Object { $_.Name -eq $n -or "$($_.Guid)" -eq $n }) }
+        if ($missing) { Write-Warning "Not in snapshot: $($missing -join ', ')" }
+    }
+    $pn_ = @($policies.Name)
+    $rules = @($rules | Where-Object { $pn_ -contains $_.ParentPolicyName })
+    if ($policies.Count -eq 0) { throw 'No matching policies in the snapshot.' }
+    Write-Host "  $($policies.Count) policies, $($rules.Count) rules, $($script:SitById.Count) SIT entries (exported $exportDate)"
+}
+else {
+$exportDate = Get-Date -Format 'yyyy-MM-dd HH:mm'
+
+if ($PolicyName) {
+    # Targeted mode: one call per named policy - nothing else is read from Purview.
+    Write-Step "Retrieving $(@($PolicyName).Count) named DLP policy/policies"
+    $policies = @(foreach ($n in ($PolicyName | Select-Object -Unique)) {
+            try { Get-DlpCompliancePolicy -Identity $n -ErrorAction Stop }
+            catch { Write-Warning "Policy not found or not accessible: '$n'" }
+        }) | Where-Object { $_ }
+    $policies = @($policies)
+}
+else {
+    Write-Step 'Retrieving all DLP policies'
+    $policies = @(Get-DlpCompliancePolicy)
+}
+if ($policies.Count -eq 0) { throw 'No DLP policies found (check permissions / -PolicyName).' }
+Write-Host "  $($policies.Count) policies"
+
+$distribution = @{}
+if ($IncludeDistributionDetail) {
+    Write-Step 'Retrieving distribution detail (per policy)'
+    foreach ($p in $policies) {
+        $pid_ = if ($p.Guid) { "$($p.Guid)" } else { $p.Name }
+        try {
+            $d = Get-DlpCompliancePolicy -Identity $pid_ -DistributionDetail
+            $distribution[$p.Name] = ConvertTo-CellText (Get-Val $d 'DistributionResults') "`n"
+        }
+        catch { $distribution[$p.Name] = "Error: $($_.Exception.Message)" }
+    }
+}
+
+Write-Step 'Retrieving DLP rules'
+if ($PolicyName) {
+    # Only the rules of the selected policies
+    $rules = @(foreach ($p in $policies) {
+            $pid_ = if ($p.Guid) { "$($p.Guid)" } else { $p.Name }
+            Get-DlpComplianceRule -Policy $pid_
+        })
+}
+else {
+    $policyNames = @($policies.Name)
+    $rules = @(Get-DlpComplianceRule | Where-Object { $policyNames -contains $_.ParentPolicyName })
+}
+Write-Host "  $($rules.Count) rules"
+
+if ($PolicyName) {
+    Write-Host '  SIT details will be looked up individually, only for SITs these policies reference' -ForegroundColor DarkGray
+}
+else {
+    Write-Step 'Retrieving sensitive information type catalogue'
+    try {
+        $sits = @(Get-DlpSensitiveInformationType)
+        foreach ($s in $sits) {
+            if ($s.Id) { $script:SitById["$($s.Id)".ToLower()] = $s }
+            if ($s.Name) { $script:SitByName["$($s.Name)".ToLower()] = $s }
+        }
+        Write-Host "  $($sits.Count) SITs in tenant"
+    }
+    catch {
+        Write-Warning "Could not read SIT catalogue - SIT names/publisher will come from rules only. $($_.Exception.Message)"
+    }
+}
+
+}   # end live retrieval
+
+#endregion
+
+#region ---------------------------------------------------------------- Build rows
+
+Write-Step 'Building design document data'
+
+$policyRows = [System.Collections.Generic.List[object]]::new()
+$scopeRows = [System.Collections.Generic.List[object]]::new()
+$coverageRows = [System.Collections.Generic.List[object]]::new()
+$ruleRows = [System.Collections.Generic.List[object]]::new()
+$sitRows = [System.Collections.Generic.List[object]]::new()
+$notifyRows = [System.Collections.Generic.List[object]]::new()
+$alertRows = [System.Collections.Generic.List[object]]::new()
+$restrictRows = [System.Collections.Generic.List[object]]::new()
+$rawPolicyRows = [System.Collections.Generic.List[object]]::new()
+$rawRuleRows = [System.Collections.Generic.List[object]]::new()
+
+$policyIndex = @{}
+$policies = @($policies | Sort-Object { [int](Get-Val $_ 'Priority') }, Name)
+
+# ---- Policies, scoping, coverage
+foreach ($p in $policies) {
+    $policyIndex[$p.Name] = $p
+    $pRules = @($rules | Where-Object { $_.ParentPolicyName -eq $p.Name })
+    $mode = Get-Text $p 'Mode'
+
+    # Raw
+    foreach ($prop in $p.PSObject.Properties) {
+        if (Test-Empty $prop.Value) { continue }
+        $rawPolicyRows.Add([pscustomobject]@{ Policy = $p.Name; Property = $prop.Name; Value = ConvertTo-CellText $prop.Value "`n" })
+    }
+
+    # Scoping (generic: any Location / AdaptiveScopes / Sender / SharedBy / MemberOf / AU property)
+    $scopeProps = $p.PSObject.Properties | Where-Object {
+        ($_.Name -match 'Location|AdaptiveScopes|Sender|SharedBy|MemberOf|PolicyRBACScopes') -and
+        ($_.Name -notmatch '^(ExchangeVersion|ExchangeObjectId)$')
+    }
+    foreach ($sp in $scopeProps) {
+        if (Test-Empty $sp.Value) { continue }
+        $wl = if ($sp.Name -eq 'PolicyRBACScopes') { 'Administrative units' } else { Get-WorkloadFromProperty $sp.Name }
+        $incExc = if ($sp.Name -match 'Exception') { 'Exclude' } else { 'Include' }
+        $type = switch -Regex ($sp.Name) {
+            'PolicyRBACScopes' { 'Administrative unit'; break }
+            'AdaptiveScopes' { 'Adaptive scope'; break }
+            'MemberOf' { 'Group'; break }
+            'Sender|SharedBy' { 'User'; break }
+            default { 'Location' }
+        }
+        foreach ($v in @($sp.Value)) {
+            $txt = ConvertTo-CellText $v
+            if (-not $txt) { continue }
+            $scopeRows.Add([pscustomobject]@{
+                    'Policy'            = $p.Name
+                    'Policy Mode'       = $mode
+                    'Workload'          = $wl
+                    'Include / Exclude' = $incExc
+                    'Scope Type'        = $type
+                    'Value'             = $txt
+                    'Source Property'   = $sp.Name
+                })
+        }
+    }
+
+    $cov = [ordered]@{ 'Policy' = $p.Name; 'Mode' = $mode }
+    $myScopes = @($scopeRows | Where-Object { $_.Policy -eq $p.Name })
+    foreach ($wl in @($WorkloadMap.Values) + 'Administrative units' + 'Other') {
+        $cov[$wl] = Get-CoverageText @($myScopes | Where-Object { $_.Workload -eq $wl })
+    }
+    $coverageRows.Add([pscustomobject]$cov)
+
+    $policyRows.Add([pscustomobject]@{
+            'Priority'             = Get-Val $p 'Priority'
+            'Policy Name'          = $p.Name
+            'Mode'                 = $mode
+            'Workloads'            = Get-Text $p 'Workload'
+            'Rules'                = $pRules.Count
+            'Enabled Rules'        = @($pRules | Where-Object { -not $_.Disabled }).Count
+            'Description'          = Get-Text $p 'Comment'
+            'Policy Template'      = Get-Text $p 'PolicyTemplateInfo'
+            'Distribution Status'  = Get-Text $p 'DistributionStatus'
+            'Distribution Results' = if ($distribution.ContainsKey($p.Name)) { $distribution[$p.Name] } else { '' }
+            'Created By'           = Get-Text $p 'CreatedBy'
+            'Created'              = Format-When $p 'WhenCreated'
+            'Last Modified By'     = Get-Text $p 'LastModifiedBy'
+            'Last Modified'        = Format-When $p 'WhenChanged'
+            'Guid'                 = Get-Text $p 'Guid'
+        })
+}
+
+# ---- Rules
+$knownNotify = @('NotifyUser', 'NotifyUserType', 'NotifyEmailCustomSubject', 'NotifyEmailCustomText',
+    'NotifyPolicyTipCustomText', 'NotifyPolicyTipCustomTextTranslations', 'NotifyAllowOverride',
+    'NotifyOverrideRequirements', 'NotifyEndpointUser')
+
+$sortedRules = $rules | Sort-Object { [int](Get-Val $policyIndex[$_.ParentPolicyName] 'Priority') }, { [int](Get-Val $_ 'Priority') }
+
+foreach ($r in $sortedRules) {
+    $polName = [string]$r.ParentPolicyName
+    $polMode = Get-Text $policyIndex[$polName] 'Mode'
+    $ruleName = [string]$r.Name
+    $advJson = Get-Val $r 'AdvancedRule'
+    $isAdv = [bool](Get-Val $r 'IsAdvancedRule') -or -not (Test-Empty $advJson)
+    $blockAccess = [bool](Get-Val $r 'BlockAccess')
+
+    $buckets = @{}
+    foreach ($c in 'Condition', 'Exception', 'Action', 'Notification', 'Alert', 'Incident') {
+        $buckets[$c] = [System.Collections.Generic.List[string]]::new()
+    }
+    $ruleSits = [System.Collections.Generic.List[object]]::new()
+
+    foreach ($prop in $r.PSObject.Properties) {
+        $name = $prop.Name
+        $val = $prop.Value
+        if (Test-Empty $val) { continue }
+
+        $rawRuleRows.Add([pscustomobject]@{ Policy = $polName; Rule = $ruleName; Property = $name; Value = ConvertTo-CellText $val "`n" })
+
+        $cat = Get-RulePropertyCategory $name
+        if ($cat -eq 'Meta') { continue }
+
+        if ($name -eq 'ContentContainsSensitiveInformation' -or $name -eq 'ExceptIfContentContainsSensitiveInformation') {
+            $ctx = if ($name -like 'ExceptIf*') { 'Exception' } else { 'Condition' }
+            $rows = @(Get-SitRows -Items $val -Policy $polName -Rule $ruleName -Context $ctx -Source 'Simple')
+            foreach ($row in $rows) { $ruleSits.Add($row) }
+            $buckets[$cat].Add('Content contains: ' + (Format-SitSummary $rows))
+            continue
+        }
+
+        if ($name -eq 'BlockAccessScope' -and -not $blockAccess) { continue }   # default value, meaningless without BlockAccess
+
+        $text = ConvertTo-CellText $val
+        if ($text -in 'None', 'NotSet') { continue }
+        $buckets[$cat].Add("${name}: $text")
+
+        if ($name -like '*Restrictions') {
+            foreach ($item in @($val)) {
+                if (Test-Empty $item) { continue }
+                $restrictRows.Add([pscustomobject]@{
+                        'Policy'      = $polName
+                        'Policy Mode' = $polMode
+                        'Rule'        = $ruleName
+                        'Restriction' = $name
+                        'Setting'     = Get-Text $item 'Setting'
+                        'Value'       = Get-Text $item 'Value'
+                        'Details'     = ConvertTo-CellText $item
+                    })
+            }
+        }
+    }
+
+    # Advanced (condition builder) rules
+    $advText = ''
+    if ($isAdv -and -not (Test-Empty $advJson)) {
+        try {
+            $adv = $advJson | ConvertFrom-Json -ErrorAction Stop
+            $node = Get-Val $adv 'Condition'
+            if (-not $node) { $node = $adv }
+            $advText = ConvertFrom-AdvancedCondition -Node $node -Negated $false -Policy $polName -Rule $ruleName -SitSink $ruleSits
+        }
+        catch { $advText = "Could not parse AdvancedRule JSON: $($_.Exception.Message)" }
+    }
+
+    foreach ($row in $ruleSits) { $sitRows.Add($row) }
+
+    $conditions = @(@($advText) + @($buckets['Condition']) | Where-Object { $_ }) -join "`n`n"
+    $sitNames = @($ruleSits | Where-Object { $_.'Condition / Exception' -eq 'Condition' } | ForEach-Object { $_.Name } | Sort-Object -Unique)
+
+    $restrictText = ConvertTo-CellText (@($r.PSObject.Properties | Where-Object { $_.Name -like '*Restrictions' } | ForEach-Object { $_.Value }))
+    $blocks = if ($blockAccess) { "Yes ($(Get-Text $r 'BlockAccessScope'))" }
+    elseif ($restrictText -match 'Block') { 'Endpoint / app restriction' }
+    else { 'No' }
+
+    $ruleRows.Add([pscustomobject]@{
+            'Policy'                    = $polName
+            'Policy Mode'               = $polMode
+            'Rule'                      = $ruleName
+            'Priority'                  = Get-Val $r 'Priority'
+            'Enabled'                   = if ([bool](Get-Val $r 'Disabled')) { 'No' } else { 'Yes' }
+            'Rule Type'                 = if ($isAdv) { 'Advanced (condition builder)' } else { 'Simple' }
+            'Conditions'                = $conditions
+            'Exceptions'                = @($buckets['Exception']) -join "`n`n"
+            'SITs / Classifiers'        = $sitNames -join "`n"
+            'SIT Count'                 = $sitNames.Count
+            'Actions'                   = @($buckets['Action']) -join "`n"
+            'Blocks Access'             = $blocks
+            'User Notification'         = Get-YesNo (Get-Val $r 'NotifyUser')
+            'Override Allowed'          = Get-Text $r 'NotifyAllowOverride'
+            'Alert'                     = Get-YesNo (Get-Val $r 'GenerateAlert')
+            'Severity'                  = Get-Text $r 'ReportSeverityLevel'
+            'Incident Report'           = Get-YesNo (Get-Val $r 'GenerateIncidentReport')
+            'Stop Processing More Rules'= if ([bool](Get-Val $r 'StopPolicyProcessing')) { 'Yes' } else { 'No' }
+            'Rule Error Action'         = Get-Text $r 'RuleErrorAction'
+            'Comment'                   = Get-Text $r 'Comment'
+            'Last Modified'             = Format-When $r 'WhenChanged'
+        })
+
+    $otherNotify = @($r.PSObject.Properties | Where-Object {
+            $_.Name -like 'Notify*' -and $knownNotify -notcontains $_.Name -and -not (Test-Empty $_.Value)
+        } | ForEach-Object { "$($_.Name): $(ConvertTo-CellText $_.Value)" }) -join "`n"
+
+    $notifyRows.Add([pscustomobject]@{
+            'Policy'                  = $polName
+            'Policy Mode'             = $polMode
+            'Rule'                    = $ruleName
+            'Notify Users'            = Get-Text $r 'NotifyUser'
+            'Notification Type'       = Get-Text $r 'NotifyUserType'
+            'Email Subject'           = Get-Text $r 'NotifyEmailCustomSubject'
+            'Email Body'              = Get-Text $r 'NotifyEmailCustomText'
+            'Policy Tip Text'         = Get-Text $r 'NotifyPolicyTipCustomText'
+            'Policy Tip Translations' = Get-Text $r 'NotifyPolicyTipCustomTextTranslations'
+            'Allow Override'          = Get-Text $r 'NotifyAllowOverride'
+            'Override Requirements'   = Get-Text $r 'NotifyOverrideRequirements'
+            'Endpoint Notification'   = Get-Text $r 'NotifyEndpointUser'
+            'Other Notify Settings'   = $otherNotify
+        })
+
+    $ap = Get-Val $r 'AlertProperties'
+    $otherAlert = @($r.PSObject.Properties | Where-Object {
+            $_.Name -like 'Alert*' -and $_.Name -ne 'AlertProperties' -and -not (Test-Empty $_.Value)
+        } | ForEach-Object { "$($_.Name): $(ConvertTo-CellText $_.Value)" }) -join "`n"
+
+    $alertRows.Add([pscustomobject]@{
+            'Policy'                      = $polName
+            'Policy Mode'                 = $polMode
+            'Rule'                        = $ruleName
+            'Severity'                    = Get-Text $r 'ReportSeverityLevel'
+            'Alert Recipients'            = Get-Text $r 'GenerateAlert'
+            'Aggregation Type'            = Get-Text $ap 'AggregationType'
+            'Threshold (matches)'         = Get-Text $ap 'Threshold'
+            'Volume Threshold (MB)'       = Get-Text $ap 'VolumeThreshold'
+            'Time Window (mins)'          = Get-Text $ap 'Window'
+            'All Alert Properties'        = ConvertTo-CellText $ap "`n"
+            'Other Alert Settings'        = $otherAlert
+            'Incident Report Recipients'  = Get-Text $r 'GenerateIncidentReport'
+            'Incident Report Content'     = Get-Text $r 'IncidentReportContent'
+        })
+}
+
+# ---- SIT inventory
+function Get-SitInventory([object[]]$Rows) {
+  if (-not $Rows -or $Rows.Count -eq 0) { return @() }
+  @($Rows | Group-Object { '{0}|{1}' -f $_.'Classifier Kind', $(if ($_.Id) { $_.Id } else { $_.Name }) } | ForEach-Object {
+        $f = $_.Group[0]
+        $thresholds = @($_.Group | Where-Object { $_.'Min Instance Count' } | ForEach-Object {
+                if ($_.'Max Instance Count' -eq 'Any') { "$($_.'Min Instance Count') or more" } else { "$($_.'Min Instance Count')-$($_.'Max Instance Count')" }
+            } | Sort-Object -Unique)
+        [pscustomobject]@{
+            'Name'                      = $f.Name
+            'Classifier Kind'           = $f.'Classifier Kind'
+            'Built-in / Custom'         = $f.'Built-in / Custom'
+            'Publisher'                 = $f.Publisher
+            'SIT Type'                  = $f.'SIT Type'
+            'Id'                        = $f.Id
+            'Policies'                  = (@($_.Group.Policy | Sort-Object -Unique) -join "`n")
+            'Rule Count'                = @($_.Group | ForEach-Object { "$($_.Policy)|$($_.Rule)" } | Sort-Object -Unique).Count
+            'Instance Count Thresholds' = $thresholds -join ', '
+            'Confidence Levels'         = (@($_.Group.'Confidence Level' | Where-Object { $_ } | Sort-Object -Unique) -join ', ')
+            'Used As'                   = (@($_.Group.'Condition / Exception' | Sort-Object -Unique) -join ', ')
+        }
+    } | Sort-Object Name)
+}
+$sitInventory = Get-SitInventory @($sitRows)
+
+#endregion
+
+#region ---------------------------------------------------------------- Write output
+
+New-Item -ItemType Directory -Path $OutputFolder -Force | Out-Null
+$rawDir = Join-Path $OutputFolder 'Raw'
+New-Item -ItemType Directory -Path $rawDir -Force | Out-Null
+
+Write-Step 'Writing raw exports'
+$policies | Export-Clixml -Path (Join-Path $rawDir 'DlpPolicies.xml') -Depth 10
+$rules | Export-Clixml -Path (Join-Path $rawDir 'DlpRules.xml') -Depth 10
+try {
+    $policies | ConvertTo-Json -Depth 8 -WarningAction SilentlyContinue | Set-Content -Path (Join-Path $rawDir 'DlpPolicies.json') -Encoding UTF8
+    $rules | ConvertTo-Json -Depth 8 -WarningAction SilentlyContinue | Set-Content -Path (Join-Path $rawDir 'DlpRules.json') -Encoding UTF8
+}
+catch { Write-Warning "JSON export failed (CLIXML export is still complete): $($_.Exception.Message)" }
+
+# SIT details needed to build the documents offline (targeted mode: only the SITs these policies use)
+$sitSnapshot = @(@($script:SitById.Values) + @($script:SitByName.Values) |
+    Where-Object { $_ } | Group-Object { "$($_.Id)|$($_.Name)" } | ForEach-Object { $_.Group[0] })
+$sitSnapshot | Export-Clixml -Path (Join-Path $rawDir 'DlpSits.xml') -Depth 5
+[pscustomobject]@{
+    Tenant       = $tenant
+    ExportedBy   = $exportedBy
+    ExportDate   = $exportDate
+    PolicyName   = @($PolicyName)
+    Distribution = $distribution
+    Policies     = @($policies.Name)
+} | Export-Clixml -Path (Join-Path $rawDir 'ExportInfo.xml') -Depth 5
+
+if ($ExportOnly) {
+    Write-Step 'Export complete (no design documents built - -ExportOnly)'
+    if ($PolicyName) { Write-Host "  Individual SIT lookups: $script:SitLookups" -ForegroundColor DarkGray }
+    Write-Host ''
+    Write-Host "  Snapshot folder : $rawDir" -ForegroundColor Green
+    Write-Host "  Policies: $($policies.Count)  Rules: $($rules.Count)  SITs saved: $($sitSnapshot.Count)"
+    Write-Host ''
+    Write-Host '  Copy the folder to your own machine and build the design documents with:' -ForegroundColor Yellow
+    Write-Host "    .\Export-DlpDesignDocument.ps1 -FromExport '<path to copied folder>'" -ForegroundColor Yellow
+    return
+}
+
+#region ---------------------------------------------------------------- Design document renderer (form layout)
+
+function New-Color([string]$Hex) {
+    $h = $Hex.TrimStart('#')
+    [System.Drawing.Color]::FromArgb([Convert]::ToInt32($h.Substring(0, 2), 16), [Convert]::ToInt32($h.Substring(2, 2), 16), [Convert]::ToInt32($h.Substring(4, 2), 16))
+}
+
+$script:Theme = @{
+    Header    = New-Color 'D9D9D9'
+    Label     = New-Color 'EDEDED'
+    Value     = New-Color 'F7F7F7'
+    Yellow    = New-Color 'F2E6C4'
+    Green     = New-Color 'D8E4D0'
+    Red       = New-Color 'F4D6D6'
+    Border    = New-Color '8C8C8C'
+    Dotted    = New-Color 'A6A6A6'
+    LabelText = New-Color '595959'
+    Brown     = New-Color '7A4E1D'
+    OpText    = New-Color '2E6B3A'
+    Note      = New-Color 'B0203A'
+    Banner    = New-Color '3A3A3A'
+    White     = New-Color 'FFFFFF'
+}
+$script:FontName = 'Segoe UI'
+$script:Bullet = [string][char]0x2022
+$script:GroupCounter = 0
+$script:ListRef = @{}
+
+$PredicateMap = [ordered]@{
+    ContentContainsSensitiveInformation  = 'Content contains'
+    AccessScope                          = 'Content is shared from Microsoft 365'
+    FromScope                            = 'Content is received from'
+    From                                 = 'Sender is'
+    FromMemberOf                         = 'Sender is a member of'
+    SenderDomainIs                       = 'Sender domain is'
+    SenderIPRanges                       = 'Sender IP address is'
+    FromAddressContainsWords             = 'Sender address contains words'
+    FromAddressMatchesPatterns           = 'Sender address matches patterns'
+    SenderADAttributeContainsWords       = 'Sender AD attribute contains words or phrases'
+    SenderADAttributeMatchesPatterns     = 'Sender AD attribute matches patterns'
+    SentTo                               = 'Recipient is'
+    SentToMemberOf                       = 'Recipient is a member of'
+    RecipientDomainIs                    = 'Recipient domain is'
+    AnyOfRecipientAddressContainsWords   = 'Recipient address contains words'
+    AnyOfRecipientAddressMatchesPatterns = 'Recipient address matches patterns'
+    RecipientADAttributeContainsWords    = 'Recipient AD attribute contains words or phrases'
+    RecipientADAttributeMatchesPatterns  = 'Recipient AD attribute matches patterns'
+    SubjectContainsWords                 = 'Subject contains words or phrases'
+    SubjectMatchesPatterns               = 'Subject matches patterns'
+    SubjectOrBodyContainsWords           = 'Subject or body contains words or phrases'
+    SubjectOrBodyMatchesPatterns         = 'Subject or body matches patterns'
+    HeaderContainsWords                  = 'Header contains words or phrases'
+    HeaderMatchesPatterns                = 'Header matches patterns'
+    ContentCharacterSetContainsWords     = 'Content character set contains words'
+    ContentExtensionMatchesWords         = 'File extension is'
+    ContentFileTypeMatches               = 'File type is'
+    ContentPropertyContainsWords         = 'Document property is'
+    DocumentNameMatchesWords             = 'Document name contains words or phrases'
+    DocumentNameMatchesPatterns          = 'Document name matches patterns'
+    DocumentContainsWords                = 'Document contains words'
+    DocumentMatchesPatterns              = 'Document matches patterns'
+    DocumentCreatedBy                    = 'Document created by'
+    DocumentCreatedByMemberOf            = 'Document created by member of'
+    DocumentSizeOver                     = 'Document size equals or is greater than'
+    DocumentIsUnsupported                = "Document couldn't be scanned"
+    DocumentIsPasswordProtected          = 'Document is password protected'
+    ProcessingLimitExceeded              = "Content processing couldn't complete"
+    MessageSizeOver                      = 'Message size equals or is greater than'
+    MessageTypeMatches                   = 'Message type is'
+    WithImportance                       = 'Message importance is'
+    HasSenderOverride                    = 'Has sender override'
+    SharedByIRMUserRisk                  = 'Insider risk level for Adaptive Protection is'
+    UnscannableDocumentExtensions        = 'File extension is unscannable'
+}
+
+$ModeMap = [ordered]@{
+    Enable                   = 'Turn the policy on immediately'
+    TestWithNotifications    = 'Run the policy in simulation mode (show policy tips)'
+    TestWithoutNotifications = 'Run the policy in simulation mode'
+    Disable                  = 'Leave the policy turned off'
+}
+
+$script:ListDefs = [ordered]@{
+    'Predicates'   = @($PredicateMap.Values | Sort-Object -Unique)
+    'Is Group'     = @('No', 'Yes', 'Yes - Continuation [Compound]')
+    'Operators'    = @('AND', 'OR', 'NOT')
+    'Policy Modes' = @($ModeMap.Values)
+    'Confidence'   = @('Low', 'Medium', 'High')
+    'Severity'     = @('Low', 'Medium', 'High')
+    'Yes No'       = @('Yes', 'No')
+}
+
+$AllLocationLabel = @{
+    'Exchange email'           = 'All groups'
+    'SharePoint sites'         = 'All sites'
+    'OneDrive accounts'        = 'All users & groups'
+    'Teams chat & channel'     = 'All users & groups'
+    'Devices (Endpoint)'       = 'All users & groups'
+    'On-premises repositories' = 'All repositories'
+    'Defender for Cloud Apps'  = 'All instances'
+    'Power BI workspaces'      = 'All workspaces'
+}
+
+$RestrictionLabel = @{
+    EndpointDlpRestrictions          = 'Device restrictions (Endpoint DLP)'
+    EndpointDlpBrowserRestrictions   = 'Browser restrictions'
+    OnPremisesScannerDlpRestrictions = 'On-premises scanner restrictions'
+    ThirdPartyAppDlpRestrictions     = 'Defender for Cloud Apps restrictions'
+}
+
+function Split-Camel([string]$Name) { $Name -creplace '([a-z0-9])([A-Z])', '$1 $2' }
+
+function Get-PredicateName([string]$Param) {
+    $p = $Param -replace '^ExceptIf', ''
+    if ($PredicateMap.Contains($p)) { return $PredicateMap[$p] }
+    return (Split-Camel $p)
+}
+
+function Get-FriendlyConditionValue([string]$Param, $Value) {
+    $p = $Param -replace '^ExceptIf', ''
+    $t = ConvertTo-CellText $Value "`n"
+    if ($p -eq 'AccessScope') {
+        if ($t -eq 'NotInOrganization') { return 'with people outside my organization' }
+        if ($t -eq 'InOrganization') { return 'only with people inside my organization' }
+    }
+    if ($p -eq 'FromScope') {
+        if ($t -eq 'NotInOrganization') { return 'People outside my organization' }
+        if ($t -eq 'InOrganization') { return 'People inside my organization' }
+    }
+    if ($Value -is [bool] -or $t -eq 'True') { return 'Yes' }
+    return $t
+}
+
+function Format-SitValueText([object[]]$Rows) {
+    if (-not $Rows -or $Rows.Count -eq 0) { return '' }
+    $blocks = foreach ($grp in ($Rows | Group-Object -Property 'Group Name')) {
+        $f = $grp.Group[0]
+        $mode = switch ([string]$f.'Group Operator') { 'And' { 'all of these' } 'Or' { 'any of these' } default { '' } }
+        $head = if ($grp.Name) { "Group: $($grp.Name)" } else { 'Sensitive info types' }
+        if ($mode) { $head += " ($mode)" }
+        $lines = foreach ($row in $grp.Group) {
+            $bits = @()
+            if ($row.'Classifier Kind' -ne 'SIT') { $bits += $row.'Classifier Kind' }
+            if ($row.'Confidence Level') { $bits += "$($row.'Confidence Level') confidence" }
+            elseif ($row.'Min Confidence') { $bits += "confidence $($row.'Min Confidence') to $($row.'Max Confidence')" }
+            if ($row.'Min Instance Count') { $bits += "instance count $($row.'Min Instance Count') to $($row.'Max Instance Count')" }
+            $line = "   $($script:Bullet) $($row.Name)"
+            if ($bits.Count) { $line += "  -  " + ($bits -join ', ') }
+            $line
+        }
+        (@($head) + @($lines)) -join "`n"
+    }
+    $outer = [string]$Rows[0].'Outer Group Operator'
+    $sep = if ($outer) { "`n$($outer.ToUpper())`n" } else { "`n" }
+    return (@($blocks) -join $sep)
+}
+
+# ---------- low-level cell helpers
+
+function Set-Fill($Range, $Color) {
+    $Range.Style.Fill.PatternType = [OfficeOpenXml.Style.ExcelFillStyle]::Solid
+    $Range.Style.Fill.BackgroundColor.SetColor($Color)
+}
+
+function Set-Font($Range, [double]$Size = 10, [switch]$Bold, [switch]$Italic, $Color) {
+    $Range.Style.Font.Name = $script:FontName
+    $Range.Style.Font.Size = $Size
+    $Range.Style.Font.Bold = [bool]$Bold
+    $Range.Style.Font.Italic = [bool]$Italic
+    if ($Color) { $Range.Style.Font.Color.SetColor($Color) }
+}
+
+function Get-RowHeight([string]$Text, [double]$ColWidth = 95, [double]$Min = 21) {
+    if (-not $Text) { return $Min }
+    $perLine = [math]::Max(10, [int]($ColWidth * 1.1))
+    $lines = 0
+    foreach ($l in ($Text -split "`n")) { $lines += [math]::Max(1, [math]::Ceiling($l.Length / $perLine)) }
+    return [math]::Min(409, [math]::Max($Min, $lines * 15 + 8))
+}
+
+function New-FormSheet($Package, [string]$Name, [string]$Title) {
+    $ws = $Package.Workbook.Worksheets.Add($Name)
+    $ws.View.ShowGridLines = $false
+    $ws.Column(1).Width = 3
+    $ws.Column(2).Width = 30
+    $ws.Column(3).Width = 95
+    $ws.Column(4).Width = 55
+    $ws.PrinterSettings.FitToPage = $true
+    $ws.PrinterSettings.FitToWidth = 1
+    $ws.PrinterSettings.FitToHeight = 0
+    $ws.Cells[1, 2].Value = $Title
+    Set-Font $ws.Cells[1, 2] 16 -Bold
+    $ws.Row(1).Height = 32
+    [pscustomobject]@{ Ws = $ws; Row = 3; SectionStart = 0 }
+}
+
+function Add-Banner($S, [string]$Text) {
+    $ws = $S.Ws; $r = $S.Row
+    $rng = $ws.Cells[$r, 2, $r, 3]
+    $rng.Merge = $true
+    $ws.Cells[$r, 2].Value = $Text
+    Set-Fill $rng $Theme.Banner
+    Set-Font $rng 13 -Bold -Color $Theme.White
+    $rng.Style.VerticalAlignment = [OfficeOpenXml.Style.ExcelVerticalAlignment]::Center
+    $rng.Style.Indent = 1
+    $ws.Row($r).Height = 30
+    $S.Row += 2
+}
+
+function Add-Section($S, [string]$Title, [string]$Number) {
+    $ws = $S.Ws; $r = $S.Row
+    $S.SectionStart = $r
+    $rng = $ws.Cells[$r, 2, $r, 3]
+    Set-Fill $rng $Theme.Header
+    if ($Number) {
+        $ws.Cells[$r, 2].Value = $Title
+        $ws.Cells[$r, 3].Value = $Number
+        Set-Font $ws.Cells[$r, 2] 13 -Bold -Color $Theme.Brown
+        Set-Font $ws.Cells[$r, 3] 13 -Bold
+    }
+    else {
+        $rng.Merge = $true
+        $ws.Cells[$r, 2].Value = $Title
+        Set-Font $rng 13 -Bold
+    }
+    $rng.Style.VerticalAlignment = [OfficeOpenXml.Style.ExcelVerticalAlignment]::Center
+    $rng.Style.Indent = 1
+    $rng.Style.Border.Bottom.Style = [OfficeOpenXml.Style.ExcelBorderStyle]::Thin
+    $rng.Style.Border.Bottom.Color.SetColor($Theme.Border)
+    $ws.Row($r).Height = 27
+    $S.Row++
+}
+
+function Add-Field {
+    param($S, [string]$Label, $Value, [string]$Highlight, [string]$Note, [switch]$GreyNote,
+        [double]$MinHeight = 21, [switch]$Italic, [switch]$Bold, $FontColor, [string]$ListName, [string]$Prompt)
+
+    $ws = $S.Ws; $r = $S.Row
+    $lc = $ws.Cells[$r, 2]
+    $vc = $ws.Cells[$r, 3]
+
+    $lc.Value = "${Label}:"
+    Set-Font $lc 10.5 -Italic -Color $Theme.LabelText
+    Set-Fill $lc $Theme.Label
+    $lc.Style.HorizontalAlignment = [OfficeOpenXml.Style.ExcelHorizontalAlignment]::Right
+    $lc.Style.VerticalAlignment = [OfficeOpenXml.Style.ExcelVerticalAlignment]::Center
+    $lc.Style.WrapText = $true
+    $lc.Style.Indent = 1
+    $lc.Style.Border.Right.Style = [OfficeOpenXml.Style.ExcelBorderStyle]::Thin
+    $lc.Style.Border.Right.Color.SetColor($Theme.Border)
+
+    if ($Value -is [ValueType] -and $Value -isnot [bool]) { $vc.Value = $Value; $text = [string]$Value }
+    else {
+        $text = if ($null -eq $Value) { '' } elseif ($Value -is [bool]) { if ($Value) { 'Yes' } else { 'No' } }
+        elseif ($Value -is [string]) { $Value } else { ConvertTo-CellText $Value "`n" }
+        $vc.Value = $text
+    }
+    Set-Font $vc 10.5 -Bold:$Bold -Italic:$Italic -Color $FontColor
+    $fill = switch ($Highlight) { 'Yellow' { $Theme.Yellow } 'Green' { $Theme.Green } 'Red' { $Theme.Red } default { $Theme.Value } }
+    Set-Fill $vc $fill
+    $vc.Style.WrapText = $true
+    $vc.Style.VerticalAlignment = [OfficeOpenXml.Style.ExcelVerticalAlignment]::Center
+    $vc.Style.HorizontalAlignment = [OfficeOpenXml.Style.ExcelHorizontalAlignment]::Left
+    $vc.Style.Indent = 1
+
+    $rowRng = $ws.Cells[$r, 2, $r, 3]
+    $rowRng.Style.Border.Top.Style = [OfficeOpenXml.Style.ExcelBorderStyle]::Dotted
+    $rowRng.Style.Border.Top.Color.SetColor($Theme.Dotted)
+
+    if ($Note) {
+        $nc = $ws.Cells[$r, 4]
+        $nc.Value = $Note
+        if ($GreyNote) { Set-Font $nc 9 -Italic -Color $Theme.LabelText } else { Set-Font $nc 10.5 -Bold -Italic -Color $Theme.Note }
+        $nc.Style.WrapText = $true
+        $nc.Style.VerticalAlignment = [OfficeOpenXml.Style.ExcelVerticalAlignment]::Center
+        $nc.Style.Indent = 1
+    }
+
+    if ($ListName -and $script:ListRef.ContainsKey($ListName)) {
+        $dv = $ws.DataValidations.AddListValidation($vc.Address)
+        $dv.Formula.ExcelFormula = $script:ListRef[$ListName]
+        $dv.ShowErrorMessage = $false
+        if ($Prompt) {
+            $dv.ShowInputMessage = $true
+            $dv.PromptTitle = ($Prompt -split '\|')[0]
+            $dv.Prompt = ($Prompt -split '\|')[1]
+        }
+    }
+
+    $ws.Row($r).Height = Get-RowHeight $text 95 $MinHeight
+    $S.Row++
+}
+
+function Close-Section($S, [int]$Gap = 2) {
+    if ($S.Row -le $S.SectionStart) { return }
+    $rng = $S.Ws.Cells[$S.SectionStart, 2, ($S.Row - 1), 3]
+    $rng.Style.Border.BorderAround([OfficeOpenXml.Style.ExcelBorderStyle]::Thin, $Theme.Border)
+    $S.Row += $Gap
+}
+
+function Add-OperatorRow($S, [string]$Op) {
+    $ws = $S.Ws; $r = $S.Row
+    $lc = $ws.Cells[$r, 2]; $vc = $ws.Cells[$r, 3]
+    $lc.Value = 'Operator:'
+    Set-Font $lc 10.5 -Italic -Color $Theme.LabelText
+    Set-Fill $lc $Theme.Label
+    $lc.Style.HorizontalAlignment = [OfficeOpenXml.Style.ExcelHorizontalAlignment]::Right
+    $lc.Style.Indent = 1
+    $lc.Style.Border.Right.Style = [OfficeOpenXml.Style.ExcelBorderStyle]::Thin
+    $lc.Style.Border.Right.Color.SetColor($Theme.Border)
+    $vc.Value = $Op
+    Set-Font $vc 11 -Bold -Color $Theme.OpText
+    Set-Fill $vc $Theme.Value
+    $vc.Style.Indent = 1
+    $rng = $ws.Cells[$r, 2, $r, 3]
+    $rng.Style.VerticalAlignment = [OfficeOpenXml.Style.ExcelVerticalAlignment]::Center
+    $rng.Style.Border.BorderAround([OfficeOpenXml.Style.ExcelBorderStyle]::Thin, $Theme.Border)
+    if ($script:ListRef.ContainsKey('Operators')) {
+        $dv = $ws.DataValidations.AddListValidation($vc.Address)
+        $dv.Formula.ExcelFormula = $script:ListRef['Operators']
+        $dv.ShowErrorMessage = $false
+    }
+    $ws.Row($r).Height = 25
+    $S.Row += 3
+}
+
+# ---------- condition flattening
+
+function New-CondItem([string]$Param, [string]$Values, [int]$GroupId, [bool]$Negated) {
+    [pscustomobject]@{
+        Kind = 'Cond'; Param = $Param; Condition = (Get-PredicateName $Param); Values = $Values
+        GroupId = $GroupId; Negated = $Negated; IsGroup = 'No'; GroupLabel = ''
+    }
+}
+
+function New-OpItem([string]$Op) { [pscustomobject]@{ Kind = 'Op'; Op = $Op } }
+
+function Get-SimpleItems($Rule, [string]$Category) {
+    $out = [System.Collections.Generic.List[object]]::new()
+    foreach ($prop in $Rule.PSObject.Properties) {
+        if (Test-Empty $prop.Value) { continue }
+        if ((Get-RulePropertyCategory $prop.Name) -ne $Category) { continue }
+        $text = ConvertTo-CellText $prop.Value
+        if ($text -in 'None', 'NotSet') { continue }
+
+        if ($prop.Name -match 'ContentContainsSensitiveInformation$') {
+            $rows = @(Get-SitRows -Items $prop.Value -Policy '' -Rule '' -Context $Category -Source 'Simple')
+            $groups = @($rows | Group-Object -Property 'Group Name')
+            $outer = if ($rows.Count) { [string]$rows[0].'Outer Group Operator' } else { '' }
+            $gid = 0
+            if ($groups.Count -gt 1) { $script:GroupCounter++; $gid = $script:GroupCounter }
+            $g = 0
+            foreach ($grp in $groups) {
+                if ($out.Count) {
+                    $op = if ($g -gt 0 -and $outer) { $outer.ToUpper() } else { 'AND' }
+                    $out.Add((New-OpItem $op))
+                }
+                $out.Add((New-CondItem -Param $prop.Name -Values (Format-SitValueText @($grp.Group)) -GroupId $gid -Negated $false))
+                $g++
+            }
+            continue
+        }
+
+        if ($out.Count) { $out.Add((New-OpItem 'AND')) }
+        $out.Add((New-CondItem -Param $prop.Name -Values (Get-FriendlyConditionValue $prop.Name $prop.Value) -GroupId 0 -Negated $false))
+    }
+    return , $out
+}
+
+function Add-AdvancedItems($Node, [int]$Level, [bool]$Negated, [int]$GroupId, $Out) {
+    if (Test-Empty $Node) { return }
+    $sub = Get-Val $Node 'SubConditions'
+    if (-not (Test-Empty $sub)) {
+        $op = [string](Get-Val $Node 'Operator')
+        if (-not $op) { $op = 'And' }
+        $isNot = $op -eq 'Not'
+        $childNeg = $Negated -xor $isNot
+        if ($Level -eq 0) { $gid = 0 }
+        elseif ($GroupId -gt 0) { $gid = $GroupId }
+        else { $script:GroupCounter++; $gid = $script:GroupCounter }
+        $joinOp = if ($isNot) { 'AND' } else { $op.ToUpper() }
+        $first = $true
+        foreach ($c in @($sub)) {
+            if (Test-Empty $c) { continue }
+            if (-not $first) { $Out.Add((New-OpItem $joinOp)) }
+            Add-AdvancedItems -Node $c -Level ($Level + 1) -Negated $childNeg -GroupId $gid -Out $Out
+            $first = $false
+        }
+        return
+    }
+    $cn = [string](Get-Val $Node 'ConditionName')
+    $val = Get-Val $Node 'Value'
+    if ($cn -match 'ContentContainsSensitiveInformation') {
+        $values = Format-SitValueText @(Get-SitRows -Items $val -Policy '' -Rule '' -Context 'Condition' -Source 'Advanced')
+    }
+    else { $values = Get-FriendlyConditionValue $cn $val }
+    $Out.Add((New-CondItem -Param $cn -Values $values -GroupId $GroupId -Negated $Negated))
+}
+
+function Get-RuleConditionItems($Rule) {
+    $script:GroupCounter = 0
+    $advJson = Get-Val $Rule 'AdvancedRule'
+    if (-not (Test-Empty $advJson)) {
+        $conds = [System.Collections.Generic.List[object]]::new()
+        try {
+            $adv = $advJson | ConvertFrom-Json -ErrorAction Stop
+            $node = Get-Val $adv 'Condition'
+            if (-not $node) { $node = $adv }
+            Add-AdvancedItems -Node $node -Level 0 -Negated $false -GroupId 0 -Out $conds
+        }
+        catch {
+            $conds.Add((New-CondItem -Param 'AdvancedRule' -Values "Could not parse the advanced rule JSON: $($_.Exception.Message)" -GroupId 0 -Negated $false))
+        }
+    }
+    else { $conds = Get-SimpleItems $Rule 'Condition' }
+    $excs = Get-SimpleItems $Rule 'Exception'
+    @{ Conditions = $conds; Exceptions = $excs }
+}
+
+function Set-GroupLabels($Items) {
+    $counts = @{}
+    foreach ($i in $Items) { if ($i.Kind -eq 'Cond' -and $i.GroupId) { $counts[$i.GroupId] = 1 + [int]$counts[$i.GroupId] } }
+    $groupNo = @{}
+    $n = 0
+    foreach ($i in $Items) {
+        if ($i.Kind -ne 'Cond') { continue }
+        if (-not $i.GroupId -or $counts[$i.GroupId] -lt 2) { $i.IsGroup = 'No'; continue }
+        if (-not $groupNo.ContainsKey($i.GroupId)) {
+            $n++; $groupNo[$i.GroupId] = $n
+            $i.IsGroup = 'Yes'
+            $i.GroupLabel = "Compound group ${n}: first condition of the group"
+        }
+        else {
+            $i.IsGroup = 'Yes - Continuation [Compound]'
+            $i.GroupLabel = "Compound group $($groupNo[$i.GroupId]): builds on the previous condition in the group"
+        }
+    }
+}
+
+# ---------- sheets
+
+function Add-ListsSheet($Package) {
+    $ws = $Package.Workbook.Worksheets.Add('Lists')
+    $ws.View.ShowGridLines = $false
+    $ws.Cells[1, 2].Value = 'Reference Lists'
+    Set-Font $ws.Cells[1, 2] 16 -Bold
+    $ws.Cells[2, 2].Value = 'Values behind the drop-downs in this workbook, plus the Purview predicate to PowerShell parameter mapping.'
+    Set-Font $ws.Cells[2, 2] 10 -Italic -Color $Theme.LabelText
+    $ws.Column(1).Width = 3
+
+    $col = 2
+    foreach ($k in $script:ListDefs.Keys) {
+        $vals = @($script:ListDefs[$k])
+        $h = $ws.Cells[4, $col]
+        $h.Value = $k
+        Set-Font $h 10.5 -Bold
+        Set-Fill $h $Theme.Header
+        for ($i = 0; $i -lt $vals.Count; $i++) { $c = $ws.Cells[(5 + $i), $col]; $c.Value = $vals[$i]; Set-Font $c 10 }
+        $rng = $ws.Cells[4, $col, (4 + $vals.Count), $col]
+        $rng.Style.Border.BorderAround([OfficeOpenXml.Style.ExcelBorderStyle]::Thin, $Theme.Border)
+        $name = 'lst' + ($k -replace '[^A-Za-z0-9]', '')
+        [void]$Package.Workbook.Names.Add($name, $ws.Cells[5, $col, (4 + $vals.Count), $col])
+        $script:ListRef[$k] = $name
+        $ws.Column($col).Width = [math]::Max(14, ((@($vals) + $k) | ForEach-Object { "$_".Length } | Measure-Object -Maximum).Maximum + 3)
+        $ws.Column($col + 1).Width = 3
+        $col += 2
+    }
+
+    $ws.Cells[4, $col].Value = 'Purview predicate'
+    $ws.Cells[4, ($col + 1)].Value = 'PowerShell parameter (exception form uses the ExceptIf prefix)'
+    Set-Font $ws.Cells[4, $col, 4, ($col + 1)] 10.5 -Bold
+    Set-Fill $ws.Cells[4, $col, 4, ($col + 1)] $Theme.Header
+    $r = 5
+    foreach ($k in $PredicateMap.Keys) {
+        $ws.Cells[$r, $col].Value = $PredicateMap[$k]
+        $ws.Cells[$r, ($col + 1)].Value = $k
+        Set-Font $ws.Cells[$r, $col, $r, ($col + 1)] 10
+        $r++
+    }
+    $ws.Cells[4, $col, ($r - 1), ($col + 1)].Style.Border.BorderAround([OfficeOpenXml.Style.ExcelBorderStyle]::Thin, $Theme.Border)
+    $ws.Column($col).Width = 45
+    $ws.Column($col + 1).Width = 45
+}
+
+function Get-LocationText([object[]]$Rows, [string]$Workload, [string]$IncludeExclude) {
+    $sel = @($Rows | Where-Object { $_.'Include / Exclude' -eq $IncludeExclude })
+    if (-not $sel.Count) { return '' }
+    $specific = @($sel | Where-Object { $_.Value -ne 'All' })
+    if (-not $specific.Count) {
+        if ($AllLocationLabel.ContainsKey($Workload)) { return $AllLocationLabel[$Workload] } else { return 'All' }
+    }
+    $typeLabel = @{ 'Location' = 'Specific locations'; 'Group' = 'Specific groups'; 'User' = 'Specific users'; 'Adaptive scope' = 'Adaptive scopes' }
+    $blocks = foreach ($g in ($specific | Group-Object -Property 'Scope Type')) {
+        $hdr = if ($typeLabel.ContainsKey($g.Name)) { $typeLabel[$g.Name] } else { $g.Name }
+        (@("${hdr}:") + @($g.Group | ForEach-Object { "   $($script:Bullet) $($_.Value)" })) -join "`n"
+    }
+    return (@($blocks) -join "`n")
+}
+
+function Add-PolicyConfigSheet($Package, $Policy, $PolicyRow, [object[]]$PolicyRules) {
+    $S = New-FormSheet $Package 'Policy_Config' "DLP Policy Design  |  $($Policy.Name)"
+
+    Add-Section $S 'Change Reference'
+    Add-Field $S 'CR Ref' $CRRef -Highlight Yellow
+    Close-Section $S
+
+    $prio = [int](Get-Val $Policy 'Priority')
+    Add-Section $S 'Policy Priority'
+    Add-Field $S 'Position' ($prio + 1) -Italic -Note "PowerShell priority value: $prio (0 = processed first)" -GreyNote
+    Close-Section $S
+
+    Add-Section $S 'Policy Name & Description'
+    Add-Field $S 'Name' $Policy.Name -Bold
+    $desc = Get-Text $Policy 'Comment'
+    Add-Field $S 'Description' $(if ($desc) { $desc } else { 'Not set' }) -MinHeight 70
+    Close-Section $S
+
+    $modeRaw = Get-Text $Policy 'Mode'
+    $modeText = if ($ModeMap.Contains($modeRaw)) { $ModeMap[$modeRaw] } else { $modeRaw }
+    $modeFill = switch -Wildcard ($modeRaw) { 'Enable' { 'Green' } 'Test*' { 'Yellow' } 'Disable' { 'Red' } default { '' } }
+    Add-Section $S 'Created & Last Modified'
+    Add-Field $S 'Created by' $(if ($PolicyRow.'Created By') { $PolicyRow.'Created By' } else { 'Not recorded' })
+    Add-Field $S 'Created on' $(if ($PolicyRow.Created) { $PolicyRow.Created } else { 'Not recorded' })
+    Add-Field $S 'Last modified by' $(if ($PolicyRow.'Last Modified By') { $PolicyRow.'Last Modified By' } else { 'Not recorded' })
+    Add-Field $S 'Last modified on' $(if ($PolicyRow.'Last Modified') { $PolicyRow.'Last Modified' } else { 'Not recorded' }) -Highlight Yellow
+    Close-Section $S
+
+    Add-Section $S 'Policy Mode'
+    Add-Field $S 'Mode' $modeText -Highlight $modeFill -Bold -ListName 'Policy Modes' -Note "PowerShell value: $modeRaw" -GreyNote
+    $ds = Get-Text $Policy 'DistributionStatus'
+    if ($ds) { Add-Field $S 'Distribution status' $ds }
+    Close-Section $S
+
+    $myScopes = @($scopeRows | Where-Object { $_.Policy -eq $Policy.Name })
+    $au = @($myScopes | Where-Object { $_.Workload -eq 'Administrative units' })
+    Add-Section $S 'Admin Units'
+    if ($au.Count) {
+        Add-Field $S 'Scope' 'Administrative units' -Highlight Yellow -Italic
+        Add-Field $S 'Admin units' (($au | ForEach-Object { "$($script:Bullet) $($_.Value)" }) -join "`n")
+        Add-Field $S 'Users' 'As defined by the administrative unit(s)'
+        Add-Field $S 'Groups' 'As defined by the administrative unit(s)'
+    }
+    else {
+        Add-Field $S 'Scope' 'Global' -Highlight Yellow -Italic
+        Add-Field $S 'Users' 'Not Required'
+        Add-Field $S 'Groups' 'Not Required'
+    }
+    Close-Section $S
+
+    $order = @($WorkloadMap.Values) + 'Other'
+    $wls = @($order | Where-Object { $w = $_; @($myScopes | Where-Object { $_.Workload -eq $w }).Count })
+    if (-not $wls.Count) {
+        Add-Section $S 'Locations'
+        Add-Field $S 'Location' 'No locations configured' -Highlight Red
+        Close-Section $S
+    }
+    $i = 0
+    foreach ($wl in $wls) {
+        $i++
+        $rows = @($myScopes | Where-Object { $_.Workload -eq $wl })
+        $title = if ($wls.Count -gt 1) { "Locations ($i of $($wls.Count))" } else { 'Locations' }
+        Add-Section $S $title
+        Add-Field $S 'Location' $wl -Highlight Green
+        $inc = Get-LocationText $rows $wl 'Include'
+        $note = if ($wl -eq 'Exchange email') { 'N.B: For Email locations, only "All Groups" should be selected' } else { '' }
+        Add-Field $S 'Scope' $(if ($inc) { $inc } else { 'Not included' }) -Highlight Green -Note $note
+        $exc = Get-LocationText $rows $wl 'Exclude'
+        Add-Field $S 'Excluded' $(if ($exc) { $exc } else { 'None' })
+        Close-Section $S
+    }
+
+    Add-Section $S 'Rules'
+    if (-not $PolicyRules.Count) { Add-Field $S 'Rules' 'This policy has no rules' -Highlight Red }
+    $n = 0
+    foreach ($r in $PolicyRules) {
+        $n++
+        $state = if ([bool](Get-Val $r 'Disabled')) { 'Disabled' } else { 'Enabled' }
+        $sev = Get-Text $r 'ReportSeverityLevel'
+        $type = if (-not (Test-Empty (Get-Val $r 'AdvancedRule'))) { 'Advanced (condition builder)' } else { 'Simple' }
+        Add-Field $S "Rule $n" ("{0}`n{1}  |  Severity: {2}  |  {3}" -f $r.Name, $state, $(if ($sev) { $sev } else { 'n/a' }), $type) -Note 'Detailed on the Rule_Config sheet' -GreyNote
+    }
+    Close-Section $S
+}
+
+function Add-ConditionBlocks($S, $Items, [int]$RuleNo, [string]$Kind) {
+    Set-GroupLabels $Items
+    $conds = @($Items | Where-Object { $_.Kind -eq 'Cond' })
+    if (-not $conds.Count) {
+        if ($Kind -eq 'Condition') {
+            Add-Section $S 'Conditions'
+            Add-Field $S 'Conditions' 'No conditions - the rule matches all content in scope' -Italic
+            Close-Section $S
+        }
+        return
+    }
+    $n = 0
+    foreach ($i in $Items) {
+        if ($i.Kind -eq 'Op') { Add-OperatorRow $S $i.Op; continue }
+        $n++
+        $num = if ($Kind -eq 'Exception') { "E$RuleNo.$n" } else { "$RuleNo.$n" }
+        Add-Section $S "${Kind}:" $num
+        Add-Field $S 'Position' $num -Italic
+        $desc = @()
+        if ($Kind -eq 'Exception') { $desc += 'Exception - content matching this is excluded from the rule' }
+        if ($i.GroupLabel) { $desc += $i.GroupLabel } elseif ($Kind -ne 'Exception') { $desc += 'Standalone condition' }
+        if ($i.Negated) { $desc += 'NOT - content matching this condition is excluded' }
+        Add-Field $S 'Description' ($desc -join '. ') -Italic
+        Add-Field $S 'Is Group' $i.IsGroup -Highlight Green -Bold -ListName 'Is Group'
+        Add-Field $S 'Condition' $i.Condition -Highlight Green -Bold -ListName 'Predicates' -Prompt 'Predicate|Choose a supported Purview DLP predicate.'
+        if ($i.Negated) { Add-Field $S 'Negated (NOT)' 'Yes' -Highlight Red -Bold }
+        Add-Field $S 'Condition Properties & Values' $i.Values -Bold -MinHeight 75 -Note "PowerShell: $($i.Param)" -GreyNote
+        Close-Section $S
+    }
+}
+
+function Add-RuleActionSections($S, $Rule) {
+    # Actions
+    Add-Section $S 'Actions'
+    $any = $false
+    if ([bool](Get-Val $Rule 'BlockAccess')) {
+        $scope = Get-Text $Rule 'BlockAccessScope'
+        $scopeText = switch ($scope) {
+            'All' { 'Block everyone' }
+            'PerUser' { 'Block only people outside your organization' }
+            'PerAnonymousUser' { "Block only people who were given access through the 'Anyone with the link' option" }
+            default { $scope }
+        }
+        Add-Field $S 'Restrict access' $scopeText -Highlight Red -Bold
+        $any = $true
+    }
+    foreach ($prop in $Rule.PSObject.Properties) {
+        if ($prop.Name -in 'BlockAccess', 'BlockAccessScope' -or $prop.Name -like '*Restrictions') { continue }
+        if ((Get-RulePropertyCategory $prop.Name) -ne 'Action' -or (Test-Empty $prop.Value)) { continue }
+        $t = ConvertTo-CellText $prop.Value "`n"
+        if ($t -in 'None', 'NotSet') { continue }
+        Add-Field $S (Split-Camel $prop.Name) $t
+        $any = $true
+    }
+    foreach ($prop in @($Rule.PSObject.Properties | Where-Object { $_.Name -like '*Restrictions' -and -not (Test-Empty $_.Value) })) {
+        $lines = foreach ($it in @($prop.Value)) {
+            if (Test-Empty $it) { continue }
+            $set = Get-Text $it 'Setting'
+            if ($set) { "$set : $(Get-Text $it 'Value')" } else { ConvertTo-CellText $it }
+        }
+        $label = if ($RestrictionLabel.ContainsKey($prop.Name)) { $RestrictionLabel[$prop.Name] } else { Split-Camel $prop.Name }
+        Add-Field $S $label (@($lines) -join "`n") -Highlight Yellow
+        $any = $true
+    }
+    if (-not $any) { Add-Field $S 'Actions' 'No restrictive actions (audit / notify only)' -Italic }
+    Close-Section $S
+
+    # User notifications
+    $recipientMap = @{
+        Owner        = 'Owner (user who sent, shared or last modified the content)'
+        SiteAdmin    = 'Owner of the SharePoint site or OneDrive account'
+        LastModifier = 'Person who last modified the item'
+    }
+    $nu = Get-Val $Rule 'NotifyUser'
+    Add-Section $S 'User Notifications'
+    if (Test-Empty $nu) {
+        Add-Field $S 'User notifications' 'Off' -Highlight Yellow -ListName 'Yes No'
+    }
+    else {
+        Add-Field $S 'User notifications' 'On' -Highlight Green
+        $who = @($nu) | ForEach-Object { $k = [string]$_; if ($recipientMap.ContainsKey($k)) { "$($script:Bullet) $($recipientMap[$k])" } else { "$($script:Bullet) $k" } }
+        Add-Field $S 'Notify' (@($who) -join "`n")
+        $t = Get-Text $Rule 'NotifyUserType'; if ($t) { Add-Field $S 'Notification type' $t }
+        $subj = Get-Text $Rule 'NotifyEmailCustomSubject'
+        Add-Field $S 'Email subject' $(if ($subj) { $subj } else { 'Default' })
+        $body = Get-Text $Rule 'NotifyEmailCustomText'
+        Add-Field $S 'Email body' $(if ($body) { $body } else { 'Default' }) -MinHeight 40
+        $tip = Get-Text $Rule 'NotifyPolicyTipCustomText'
+        Add-Field $S 'Policy tip' $(if ($tip) { $tip } else { 'Default' }) -MinHeight 30
+        $tr = Get-Text $Rule 'NotifyPolicyTipCustomTextTranslations'; if ($tr) { Add-Field $S 'Policy tip translations' $tr }
+        $ep = Get-Text $Rule 'NotifyEndpointUser'; if ($ep) { Add-Field $S 'Endpoint notification' $ep }
+    }
+    Close-Section $S
+
+    # User overrides
+    $ovMap = @{
+        WithoutJustification = 'Allow override without a justification'
+        WithJustification    = 'Require a business justification to override'
+        FalsePositive        = 'Allow the user to report a false positive'
+        WithAcknowledgement  = 'Require the user to acknowledge the override'
+    }
+    $ov = Get-Val $Rule 'NotifyAllowOverride'
+    Add-Section $S 'User Overrides'
+    if (Test-Empty $ov) { Add-Field $S 'Allow overrides' 'No' -ListName 'Yes No' }
+    else {
+        Add-Field $S 'Allow overrides' 'Yes' -Highlight Yellow -ListName 'Yes No'
+        $opts = @($ov) | ForEach-Object { $k = [string]$_; if ($ovMap.ContainsKey($k)) { "$($script:Bullet) $($ovMap[$k])" } else { "$($script:Bullet) $k" } }
+        Add-Field $S 'Override options' (@($opts) -join "`n")
+        $req = Get-Text $Rule 'NotifyOverrideRequirements'; if ($req) { Add-Field $S 'Override requirements' $req }
+    }
+    Close-Section $S
+
+    # Incident reports / alerts
+    Add-Section $S 'Incident Reports'
+    $sev = Get-Text $Rule 'ReportSeverityLevel'
+    Add-Field $S 'Severity' $(if ($sev) { $sev } else { 'Not set' }) -Highlight Yellow -ListName 'Severity'
+    $ga = Get-Val $Rule 'GenerateAlert'
+    if (Test-Empty $ga) { Add-Field $S 'Send alert to admins' 'No' -ListName 'Yes No' }
+    else {
+        Add-Field $S 'Send alert to admins' 'Yes' -Highlight Green -ListName 'Yes No'
+        Add-Field $S 'Alert recipients' ((@($ga) | ForEach-Object { "$($script:Bullet) $_" }) -join "`n")
+        $ap = Get-Val $Rule 'AlertProperties'
+        $agg = Get-Text $ap 'AggregationType'
+        $thr = Get-Text $ap 'Threshold'; $vol = Get-Text $ap 'VolumeThreshold'; $win = Get-Text $ap 'Window'
+        if ($agg -eq 'SimpleAggregation' -or $thr -or $vol) {
+            $lines = @('Send alert when the volume of matched activities reaches a threshold')
+            if ($thr) { $lines += "   $($script:Bullet) Number of activities: $thr" }
+            if ($vol) { $lines += "   $($script:Bullet) Volume of data: $vol MB" }
+            if ($win) { $lines += "   $($script:Bullet) During the last: $win minutes" }
+            Add-Field $S 'Alert trigger' ($lines -join "`n")
+        }
+        else { Add-Field $S 'Alert trigger' 'Send an alert every time an activity matches the rule' }
+    }
+    $ir = Get-Val $Rule 'GenerateIncidentReport'
+    if (Test-Empty $ir) { Add-Field $S 'Incident reports' 'No' -ListName 'Yes No' }
+    else {
+        Add-Field $S 'Incident reports' 'Yes' -Highlight Green -ListName 'Yes No'
+        Add-Field $S 'Report recipients' ((@($ir) | ForEach-Object { "$($script:Bullet) $_" }) -join "`n")
+        $irc = Get-Text $Rule 'IncidentReportContent'; if ($irc) { Add-Field $S 'Report content' $irc }
+    }
+    Close-Section $S
+
+    # Additional options
+    Add-Section $S 'Additional Options'
+    Add-Field $S 'Stop processing more rules' $(if ([bool](Get-Val $Rule 'StopPolicyProcessing')) { 'Yes' } else { 'No' }) -ListName 'Yes No'
+    $rea = Get-Text $Rule 'RuleErrorAction'
+    Add-Field $S 'Rule error action' $(if ($rea) { $rea } else { 'Default' })
+    Close-Section $S
+}
+
+function Add-RuleConfigSheet($Package, $Policy, [object[]]$PolicyRules) {
+    $S = New-FormSheet $Package 'Rule_Config' "DLP Rule Design  |  $($Policy.Name)"
+    if (-not $PolicyRules.Count) {
+        Add-Section $S 'Rules'
+        Add-Field $S 'Rules' 'This policy has no rules' -Highlight Red
+        Close-Section $S
+        return
+    }
+    $ruleNo = 0
+    foreach ($r in $PolicyRules) {
+        $ruleNo++
+        Add-Banner $S "Rule $ruleNo   |   $($r.Name)"
+
+        Add-Section $S 'Rule Details'
+        $prio = Get-Val $r 'Priority'
+        Add-Field $S 'Position' $ruleNo -Italic -Note "PowerShell priority value: $prio" -GreyNote
+        Add-Field $S 'Name' $r.Name -Bold
+        $c = Get-Text $r 'Comment'
+        Add-Field $S 'Description' $(if ($c) { $c } else { 'Not set' }) -MinHeight 40
+        if ([bool](Get-Val $r 'Disabled')) { Add-Field $S 'Status' 'Disabled' -Highlight Red } else { Add-Field $S 'Status' 'Enabled' -Highlight Green }
+        $isAdv = -not (Test-Empty (Get-Val $r 'AdvancedRule'))
+        Add-Field $S 'Rule type' $(if ($isAdv) { 'Advanced (condition builder)' } else { 'Simple' })
+        $rcb = Get-Text $r 'CreatedBy'; $rco = Format-When $r 'WhenCreated'
+        $rmb = Get-Text $r 'LastModifiedBy'; $rmo = Format-When $r 'WhenChanged'
+        Add-Field $S 'Created by' $(if ($rcb) { $rcb } else { 'Not recorded' })
+        Add-Field $S 'Created on' $(if ($rco) { $rco } else { 'Not recorded' })
+        Add-Field $S 'Last modified by' $(if ($rmb) { $rmb } else { 'Not recorded' })
+        Add-Field $S 'Last modified on' $(if ($rmo) { $rmo } else { 'Not recorded' }) -Highlight Yellow
+        Close-Section $S
+
+        $items = Get-RuleConditionItems $r
+        Add-ConditionBlocks $S $items.Conditions $ruleNo 'Condition'
+        if (@($items.Exceptions | Where-Object { $_.Kind -eq 'Cond' }).Count) {
+            Add-OperatorRow $S 'EXCEPT'
+            Add-ConditionBlocks $S $items.Exceptions $ruleNo 'Exception'
+        }
+
+        Add-RuleActionSections $S $r
+        $S.Row += 2
+    }
+}
+
+function Add-SitConfigSheet($Package, $Policy, [object[]]$PolicyRules, [object[]]$PolicySitRows) {
+    $S = New-FormSheet $Package 'SIT_Config' "Sensitive Information Types  |  $($Policy.Name)"
+    if (-not $PolicySitRows.Count) {
+        Add-Section $S 'Sensitive Information Types'
+        Add-Field $S 'SITs' 'No sensitive information types or classifiers are used by this policy' -Italic
+        Close-Section $S
+        return
+    }
+    $ruleNo = 0
+    foreach ($r in $PolicyRules) {
+        $ruleNo++
+        $rows = @($PolicySitRows | Where-Object { $_.Rule -eq $r.Name })
+        if (-not $rows.Count) { continue }
+        Add-Banner $S "Rule $ruleNo   |   $($r.Name)"
+        $n = 0
+        foreach ($row in $rows) {
+            $n++
+            $num = "$ruleNo.$n"
+            Add-Section $S 'SIT:' $num
+            Add-Field $S 'Position' $num -Italic
+            Add-Field $S 'Sensitive info type' $row.Name -Highlight Green -Bold
+            Add-Field $S 'Classifier type' $row.'Classifier Kind'
+            $src = if ($row.'Built-in / Custom') { "$($row.'Built-in / Custom')" + $(if ($row.Publisher) { " ($($row.Publisher))" } else { '' }) } else { 'Unknown' }
+            Add-Field $S 'Source' $src -Highlight $(if ($row.'Built-in / Custom' -eq 'Custom') { 'Yellow' } else { '' })
+            Add-Field $S 'Used as' $row.'Condition / Exception'
+            if ($row.'Group Name') {
+                $gop = switch ([string]$row.'Group Operator') { 'And' { 'all of these' } 'Or' { 'any of these' } default { [string]$row.'Group Operator' } }
+                Add-Field $S 'Group' ("{0} ({1})" -f $row.'Group Name', $gop)
+            }
+            if ($row.'Classifier Kind' -eq 'Sensitivity label') {
+                Add-Field $S 'Confidence level' 'N/A'
+                Add-Field $S 'Instance count' 'N/A'
+            }
+            else {
+                $conf = if ($row.'Confidence Level') { $row.'Confidence Level' } elseif ($row.'Min Confidence') { "$($row.'Min Confidence') to $($row.'Max Confidence')" } else { 'Default' }
+                Add-Field $S 'Confidence level' $conf -Highlight Yellow -ListName 'Confidence'
+                $ic = if ($row.'Min Instance Count') { "$($row.'Min Instance Count') to $($row.'Max Instance Count')" } else { 'Default' }
+                Add-Field $S 'Instance count' $ic -Highlight Yellow
+            }
+            if ($row.Id) { Add-Field $S 'SIT ID' $row.Id -Italic }
+            Close-Section $S
+        }
+    }
+}
+
+function Add-AdditionalInfoSheet($Package, $Policy, [object[]]$PolicyRules, $PolicyRow, [object[]]$SitInv) {
+    $S = New-FormSheet $Package 'Additional Information' "Additional Information  |  $($Policy.Name)"
+
+    Add-Section $S 'Export Details'
+    Add-Field $S 'Tenant' $tenant
+    Add-Field $S 'Exported by' $exportedBy
+    Add-Field $S 'Export date' $exportDate
+    Add-Field $S 'Generated by' 'Export-DlpDesignDocument.ps1'
+    Add-Field $S 'Policy GUID' $PolicyRow.Guid -Italic
+    Add-Field $S 'Created' ((@($PolicyRow.Created, $(if ($PolicyRow.'Created By') { "by $($PolicyRow.'Created By')" })) | Where-Object { $_ }) -join ' ')
+    Add-Field $S 'Last modified' ((@($PolicyRow.'Last Modified', $(if ($PolicyRow.'Last Modified By') { "by $($PolicyRow.'Last Modified By')" })) | Where-Object { $_ }) -join ' ')
+    Close-Section $S
+
+    Add-Section $S 'Workloads & Distribution'
+    Add-Field $S 'Workloads' $PolicyRow.Workloads
+    Add-Field $S 'Distribution status' $PolicyRow.'Distribution Status'
+    if ($PolicyRow.'Distribution Results') { Add-Field $S 'Distribution results' $PolicyRow.'Distribution Results' }
+    if ($PolicyRow.'Policy Template') { Add-Field $S 'Policy template' $PolicyRow.'Policy Template' }
+    Close-Section $S
+
+    if ($SitInv.Count) {
+        Add-Section $S 'SIT Summary'
+        foreach ($si in $SitInv) {
+            $val = "{0}  |  {1}  |  instances: {2}  |  confidence: {3}  |  used in {4} rule(s)" -f `
+                $(if ($si.'Built-in / Custom') { $si.'Built-in / Custom' } else { 'Unknown' }), $si.'Classifier Kind',
+            $(if ($si.'Instance Count Thresholds') { $si.'Instance Count Thresholds' } else { 'n/a' }),
+            $(if ($si.'Confidence Levels') { $si.'Confidence Levels' } else { 'n/a' }), $si.'Rule Count'
+            Add-Field $S $si.Name $val
+        }
+        Close-Section $S
+    }
+
+    Add-Section $S 'Raw Policy Properties'
+    foreach ($prop in $Policy.PSObject.Properties) {
+        if (Test-Empty $prop.Value) { continue }
+        Add-Field $S $prop.Name (ConvertTo-CellText $prop.Value "`n") -Italic
+    }
+    Close-Section $S
+
+    foreach ($r in $PolicyRules) {
+        Add-Section $S "Raw Rule Properties  |  $($r.Name)"
+        foreach ($prop in $r.PSObject.Properties) {
+            if (Test-Empty $prop.Value) { continue }
+            Add-Field $S $prop.Name (ConvertTo-CellText $prop.Value "`n") -Italic
+        }
+        Close-Section $S
+    }
+}
+
+function Write-PolicyDesignWorkbook([string]$Path, $Policy, $PolicyRow, [object[]]$PolicyRules, [object[]]$PolicySitRows) {
+    $pkg = Open-ExcelPackage -Path $Path -Create
+    Add-ListsSheet $pkg                                   # created first so named ranges exist for drop-downs
+    Add-PolicyConfigSheet $pkg $Policy $PolicyRow $PolicyRules
+    Add-RuleConfigSheet $pkg $Policy $PolicyRules
+    Add-SitConfigSheet $pkg $Policy $PolicyRules $PolicySitRows
+    Add-AdditionalInfoSheet $pkg $Policy $PolicyRules $PolicyRow @(Get-SitInventory $PolicySitRows)
+    $pkg.Workbook.Worksheets.MoveToEnd('Lists')
+    foreach ($w in $pkg.Workbook.Worksheets) { $w.View.TabSelected = ($w.Name -eq 'Policy_Config') }
+    $pkg.Workbook.View.ActiveTab = 0
+    Close-ExcelPackage $pkg
+}
+
+#endregion
+
+Write-Step 'Building Excel design documents'
+
+function Get-SafeFileName([string]$Name) {
+    $clean = ($Name -replace '[\\/:*?"<>|\[\]]', '_').Trim().TrimEnd('.')
+    if ($clean.Length -gt 100) { $clean = $clean.Substring(0, 100) }
+    return $clean
+}
+
+function Export-Sheet {
+    param([string]$Path, [string]$Name, $Rows)
+    $data = @($Rows)
+    if ($data.Count -eq 0) { $data = @([pscustomobject]@{ Info = 'No data found for this section.' }) }
+    $table = 't' + ($Name -replace '[^A-Za-z0-9]', '')
+    $data | Export-Excel -Path $Path -WorksheetName $Name -TableName $table -TableStyle Medium2 `
+        -AutoSize -FreezeTopRow -BoldTopRow
+}
+
+function Format-Workbook([string]$Path) {
+    # Cap column widths, wrap text, top-align
+    $pkg = Open-ExcelPackage -Path $Path
+    foreach ($ws in $pkg.Workbook.Worksheets) {
+        if (-not $ws.Dimension) { continue }
+        for ($c = 1; $c -le $ws.Dimension.End.Column; $c++) {
+            $col = $ws.Column($c)
+            if ($col.Width -gt 60) { $col.Width = 60 }
+            if ($col.Width -lt 10) { $col.Width = 10 }
+            $col.Style.WrapText = $true
+            $col.Style.VerticalAlignment = [OfficeOpenXml.Style.ExcelVerticalAlignment]::Top
+        }
+    }
+    Close-ExcelPackage $pkg
+}
+
+$sheetGuide = @(
+    @{ Sheet = 'Scoping'; Description = 'Every location, user, group, adaptive scope and admin unit included / excluded.' }
+    @{ Sheet = 'Rules'; Description = 'One row per rule: conditions (incl. AND/OR/NOT logic), exceptions, SITs, actions, notification/alert flags.' }
+    @{ Sheet = 'SIT Conditions'; Description = 'Every SIT / classifier / label per rule, with group logic, instance counts and confidence.' }
+    @{ Sheet = 'SIT Inventory'; Description = 'Distinct SITs used, built-in vs custom, thresholds and which rules use them.' }
+    @{ Sheet = 'Notifications'; Description = 'User notification recipients, email subject/body, policy tips and override settings.' }
+    @{ Sheet = 'Alerts & Incidents'; Description = 'Alert recipients, severity, aggregation / threshold / window and incident reports.' }
+    @{ Sheet = 'Endpoint Restrictions'; Description = 'Device, browser, scanner and Defender for Cloud Apps restriction settings.' }
+    @{ Sheet = 'Raw Policy Properties'; Description = 'All non-empty policy properties, long format.' }
+    @{ Sheet = 'Raw Rule Properties'; Description = 'All non-empty rule properties, long format.' }
+) | ForEach-Object { [pscustomobject]$_ }
+
+function Write-SummarySheet {
+    param([string]$Path, [string]$Title, [System.Collections.IDictionary]$Items)
+    $rows = $Items.GetEnumerator() | ForEach-Object { [pscustomobject]@{ Item = $_.Key; Value = [string]$_.Value } }
+    $rows | Export-Excel -Path $Path -WorksheetName 'Summary' -TableName 'tSummary' -TableStyle Medium2 `
+        -Title $Title -TitleBold -TitleSize 16 -AutoSize
+    $sheetGuide | Export-Excel -Path $Path -WorksheetName 'Summary' -StartRow ($Items.Count + 5) `
+        -TableName 'tSheetGuide' -TableStyle Light9 -AutoSize
+}
+
+function Get-RuleStats([object[]]$RuleRows) {
+    [ordered]@{
+        '   Enabled rules'                      = @($RuleRows | Where-Object { $_.Enabled -eq 'Yes' }).Count
+        '   Advanced (condition builder) rules' = @($RuleRows | Where-Object { $_.'Rule Type' -like 'Advanced*' }).Count
+        'Rules notifying users'                 = @($RuleRows | Where-Object { $_.'User Notification' -eq 'Yes' }).Count
+        'Rules generating alerts'               = @($RuleRows | Where-Object { $_.Alert -eq 'Yes' }).Count
+        'Rules blocking access'                 = @($RuleRows | Where-Object { $_.'Blocks Access' -ne 'No' }).Count
+    }
+}
+
+if (-not $exportDate) { $exportDate = Get-Date -Format 'yyyy-MM-dd HH:mm' }
+$policyDir = Join-Path $OutputFolder 'Policies'
+New-Item -ItemType Directory -Path $policyDir -Force | Out-Null
+$written = [System.Collections.Generic.List[object]]::new()
+
+# ---- One design workbook per policy (form layout)
+foreach ($pr in $policyRows) {
+    $pn = $pr.'Policy Name'
+    $prio = '{0:D2}' -f ([int]$pr.Priority + 1)
+    $file = Join-Path $policyDir ("{0} - {1}.xlsx" -f $prio, (Get-SafeFileName $pn))
+    if (Test-Path $file) { Remove-Item $file -Force }
+    Write-Host "  $pn"
+    $pRules = @($sortedRules | Where-Object { $_.ParentPolicyName -eq $pn })
+    $pSits = @($sitRows | Where-Object { $_.Policy -eq $pn })
+    Write-PolicyDesignWorkbook -Path $file -Policy $policyIndex[$pn] -PolicyRow $pr -PolicyRules $pRules -PolicySitRows $pSits
+    $written.Add([pscustomobject]@{ Policy = $pn; File = $file })
+}
+
+# ---- Optional estate-wide workbook
+if ($IncludeCombinedWorkbook) {
+    Write-Step 'Building combined estate workbook'
+    $xlsx = Join-Path $OutputFolder 'DLP-Design-Document (All Policies).xlsx'
+    if (Test-Path $xlsx) { Remove-Item $xlsx -Force }
+    $modeCount = { param($m) @($policies | Where-Object { "$($_.Mode)" -eq $m }).Count }
+    $items = [ordered]@{
+        'Tenant'                            = $tenant
+        'Exported by'                       = $exportedBy
+        'Export date'                       = $exportDate
+        'DLP policies'                      = $policies.Count
+        '   Enforced (Enable)'              = & $modeCount 'Enable'
+        '   Simulation with policy tips'    = & $modeCount 'TestWithNotifications'
+        '   Simulation without policy tips' = & $modeCount 'TestWithoutNotifications'
+        '   Disabled'                       = & $modeCount 'Disable'
+        'DLP rules'                         = $rules.Count
+    }
+    (Get-RuleStats @($ruleRows)).GetEnumerator() | ForEach-Object { $items[$_.Key] = $_.Value }
+    $items['Distinct SITs / classifiers'] = $sitInventory.Count
+    $items['   Custom SITs'] = @($sitInventory | Where-Object { $_.'Built-in / Custom' -eq 'Custom' }).Count
+
+    Write-SummarySheet -Path $xlsx -Title 'Microsoft Purview DLP - Design Document (All Policies)' -Items $items
+    Export-Sheet $xlsx 'Policies' $policyRows
+    Export-Sheet $xlsx 'Coverage Matrix' $coverageRows
+    Export-Sheet $xlsx 'Scoping' $scopeRows
+    Export-Sheet $xlsx 'Rules' $ruleRows
+    Export-Sheet $xlsx 'SIT Conditions' $sitRows
+    Export-Sheet $xlsx 'SIT Inventory' $sitInventory
+    Export-Sheet $xlsx 'Notifications' $notifyRows
+    Export-Sheet $xlsx 'Alerts & Incidents' $alertRows
+    Export-Sheet $xlsx 'Endpoint Restrictions' $restrictRows
+    Export-Sheet $xlsx 'Raw Policy Properties' $rawPolicyRows
+    Export-Sheet $xlsx 'Raw Rule Properties' $rawRuleRows
+    Format-Workbook $xlsx
+    $written.Add([pscustomobject]@{ Policy = '(All policies)'; File = $xlsx })
+}
+
+#endregion
+
+Write-Step 'Done'
+if ($PolicyName) { Write-Host "  Individual SIT lookups: $script:SitLookups" -ForegroundColor DarkGray }
+Write-Host ''
+Write-Host "  Design documents : $policyDir ($(@($written | Where-Object Policy -ne '(All policies)').Count) workbooks)" -ForegroundColor Green
+if ($IncludeCombinedWorkbook) { Write-Host "  Combined workbook: $xlsx" -ForegroundColor Green }
+Write-Host "  Raw exports      : $rawDir" -ForegroundColor Green
+if ($FromExport) { Write-Host "  Built offline from snapshot: $FromExport (exported $exportDate)" -ForegroundColor DarkGray }
+Write-Host "  Policies: $($policies.Count)  Rules: $($rules.Count)  SIT references: $($sitRows.Count)  Distinct SITs: $($sitInventory.Count)"
